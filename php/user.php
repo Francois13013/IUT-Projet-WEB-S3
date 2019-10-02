@@ -14,6 +14,7 @@ class user {
         $this->setPassword($_password);
         $this->setId($_id);
         $this->setStatut($_statut);
+        $this->getUser();
     }
     function  getName(){return $this->_name;}
     function  getSurname(){return $this->_surname;}
@@ -39,5 +40,8 @@ class user {
     }
 }
 //update git
+
+$test = new user('Coco','Test','coco@test.fr','test','1','utilisateur');
 echo 'test';
+$test->getUser();
 ?>
