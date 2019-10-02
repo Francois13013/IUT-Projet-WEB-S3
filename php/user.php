@@ -38,6 +38,6 @@ class user {
       $this->getStatut();
     }
 }
-
+//update git
 echo 'test';
 ?>
