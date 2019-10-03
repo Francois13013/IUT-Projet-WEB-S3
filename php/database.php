@@ -26,7 +26,7 @@ class database {
             echo 'Requête : ' . $query . '<br/>';
             exit();
         }
-//echo $query;
+//echo $query; //
         if(!($dbResult = mysqli_query($this->_dbLink, $query)))
         {
             echo 'Erreur de requête<br/>';
