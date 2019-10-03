@@ -49,6 +49,6 @@ $query = 'SELECT id,email,password FROM user';
 echo $query;
 //
 //$database1 = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0621013579','User');
-//$database1->CheckError()
+//$database1->CheckError()//
 
 ?>
