@@ -38,10 +38,22 @@ class user {
       $this->getId();
       $this->getStatut();
     }
+
+    function __toString()
+    {
+        $html = $this->getName() . ' ';
+        $html .= $this->getSurname(). ' ';
+        $html .= $this->getEmail(). ' ';
+        $html .=$this->getPassword(). ' ';
+        $html .=$this->getId(). ' ';
+        $html .=$this->getStatut(). ' ';
+        return $html;
+    }
 }
 //update git
 
 $test = new user('Coco','Test','coco@test.fr','test','1','utilisateur');
-echo 'test';
-$test->getUser();
+$test2 = new user('Baptiste','Test','baptiste@test.fr','test','2','admin');
+echo $test;
+echo $test2;
 ?>
