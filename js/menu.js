@@ -18,7 +18,7 @@ window.onresize = function size() {
         document.getElementById("menu").style.display = "";
         menuHamburger.style.display = "";
     }
-}
+};
 window.onload = function size() {
     if(window.innerWidth >= 1100){
         menuHamburger.style.display = "none";
@@ -31,7 +31,7 @@ window.onload = function size() {
         document.getElementById("menu").style.display = "";
         menuHamburger.style.display = "";
     }
-}
+};
 
 
 
@@ -44,13 +44,13 @@ inputpassword.onclick = function (){
     //!= 'password') {
     //
     // }
-}
+};
 
 inputusername.onclick = function (){
     if(inputusername.getAttribute('value') == 'username'){
         inputusername.setAttribute('value', '');
     }
-}
+};
 
 LogoHamburger.onclick = function(){
     timetmp = menuUser.style.transitionDuration;
@@ -58,7 +58,7 @@ LogoHamburger.onclick = function(){
     menuUser.classList.remove('offmenu');
     menuHamburger.classList.toggle("offmenu");
     menuUser.style.transitionDuration = timetmp.toString();
-}
+};
 
 LogoUser.onclick = function(){
     timetmp = menuHamburger.style.transitionDuration;
@@ -66,7 +66,7 @@ LogoUser.onclick = function(){
     menuHamburger.classList.remove('offmenu');
     menuUser.classList.toggle("offmenu");
     menuHamburger.style.transitionDuration = timetmp.toString();
-}
+};
 // window.onclick =function (){
 //     alert('100');
 // }

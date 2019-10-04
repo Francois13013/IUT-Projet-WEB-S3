@@ -14,8 +14,8 @@ class user {
         $this->setPassword($_password);
         $this->setId($_id);
         $this->setStatut($_statut);
-        $this->getUser();
     }
+
     function  getName(){return $this->_name;}
     function  getSurname(){return $this->_surname;}
     function  getEmail(){return $this->_email;}
@@ -30,15 +30,9 @@ class user {
     function  setId($tmpId){ $this->_id = $tmpId;}
     function  setStatut($tmpStatut){ $this->_statut = $tmpStatut;}
 
-    function getUser(){
-      $this->getName();
-      $this->getSurname();
-      $this->getEmail();
-      $this->getPassword();
-      $this->getId();
-      $this->getStatut();
-    }
+    function CheckUser($surname,$password){
 
+    }
     function __toString()
     {
         $html = $this->getName() . ' ';
