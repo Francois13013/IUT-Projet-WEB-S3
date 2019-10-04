@@ -50,6 +50,79 @@ $testArray = [
   "2" => "Password",
 ];
 
-$databaseBaptiste->CheckError('Select IdUser,Password from User',$testArray);
+$query = 'Select IdUser,Password from User';
+$databaseBaptiste->CheckError($query,$testArray);
 
+function shellSqlRequest($string){
+
+    echo $string . '<br><hr>';
+
+    $string2 = str_replace('Select', '',strstr($string,'from',true));
+
+    echo $string2 . '<br><hr>';
+
+    if(strpos($string2,',') >= 1) {
+
+        $tmp = '';
+        for ($j = 0; $j < strpos($string2, ','); $j++) {
+            $tmp .= $string2[$j];
+            $string2 = strstr($string2,$string2[$j]) . '<br>';
+        }
+
+        echo $string2 .'<br><hr>';
+        echo $tmp . '<br><hr>';
+
+
+//        $tmpx = '';
+//        for ($g = strpos($string2, ','); $g > 0; $g--) {
+//            $tmpx .= $string2[$g];
+//        }
+//
+//        echo $tmpx . '<br><hr>';
+//
+//        $tmpR = '';
+//        for ($h = strlen($tmpx) ; $h != 0 ; $h--) {
+//            echo $tmpx[$h];
+//        }
+//
+//        echo $tmpR . '<br><hr>';
+
+//        echo $tmpR . '<br>';
+
+
+//        echo strlen($tmpx) . "<br>";
+//        echo $tmpR. '<br>';
+//        echo $string2 . '<br>';
+//        echo strpos($string2, ',');
+////        echo $tmp . '<br>';
+////        echo $tmpx . '<br>';
+//        $tmp2 = strstr($string2,',');
+//        $tmp3 = str_replace(',','',$string2);
+//        echo $tmp2 . '<br>';
+//        echo $tmp3 . '<br>';
+
+//        shellSqlRequest()
+    }
+}
+
+$query = 'Select IdUser,Password,test from User';
+shellSqlRequest($query);
+
+//$query2 = strstr($query,'from',true);
+//$query3 = str_replace('Select', '',$query2);
+//for($j = 0 ; $j < strpos($query3,','); $j++) {
+//    $tmp .= $query3[$j];
+//}
+//$query3 = substr($query3,$j+1);;
+//
+//for($g = 0 ; $g < strpos($query3,','); $g++) {
+//    $tmp2 .= $query3[$g];
+//}
+//
+//$query3 = substr($query3,$g+1);;
+//
+//echo $tmp . '<br>';
+//echo $tmp2;
+//
+//echo '<br>' .$query3;
 ?>
