@@ -6,6 +6,35 @@ menuUser = document.querySelector('.menuphoneuser');
 inputusername = document.getElementById('usernameinput');
 inputpassword = document.getElementById('passwordinput');
 
+window.onresize = function size() {
+    if(window.innerWidth >= 1100){
+        menuHamburger.style.display = "none";
+        document.getElementById("menu").style.display = "none";
+        menuHamburger.style.display = "none";
+        document.getElementById("menupc").style.display = "";
+    } else if(window.innerWidth <= 1100 && menuHamburger.style.display == "none"){
+        document.getElementById("menupc").style.display = "none";
+        menuHamburger.style.display = "";
+        document.getElementById("menu").style.display = "";
+        menuHamburger.style.display = "";
+    }
+}
+window.onload = function size() {
+    if(window.innerWidth >= 1100){
+        menuHamburger.style.display = "none";
+        document.getElementById("menu").style.display = "none";
+        menuHamburger.style.display = "none";
+        document.getElementById("menupc").style.display = "";
+    } else if(window.innerWidth <= 1100 && menuHamburger.style.display == "none"){
+        document.getElementById("menupc").style.display = "none";
+        menuHamburger.style.display = "";
+        document.getElementById("menu").style.display = "";
+        menuHamburger.style.display = "";
+    }
+}
+
+
+
 inputpassword.onclick = function (){
     // alert(inputpassword.getAttribute('value'));
     if(inputpassword.getAttribute('value') == 'password'){
@@ -38,9 +67,6 @@ LogoUser.onclick = function(){
     menuUser.classList.toggle("offmenu");
     menuHamburger.style.transitionDuration = timetmp.toString();
 }
-
-
-
 // window.onclick =function (){
 //     alert('100');
 // }
