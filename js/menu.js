@@ -41,3 +41,6 @@ LogoUser.onclick = function(){
 document.getElementById('userpc').onclick = function() {
     document.querySelector('.menuphoneuser').classList.toggle('menuuserpcoff');
 }
+
+document.getElementById("mainimg").onclick = function() {document.location.href="/index.html";}
+document.getElementById("mainimg2").onclick = function() {document.location.href="/index.html";}
