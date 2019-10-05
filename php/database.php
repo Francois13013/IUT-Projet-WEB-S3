@@ -42,14 +42,40 @@ class database {
             }
         }
     }
+    function Comparator($query)
+    {
+        if (!($dbResult = mysqli_query($this->_dbLink, $query))) {
+            echo 'Erreur de requête' . '<br/><br/>';
+            // Affiche le type d'erreur.
+            echo 'Erreur : ' . mysqli_error($this->_dbLink) . '<br/>';
+            // Affiche la requête envoyée.
+            echo 'Requête : ' . $query . '<br/>';
+            exit();
+        }
+        if (!($dbResult = mysqli_query($this->_dbLink, $query))) {
+            echo 'Erreur de requête<br/>';
+            // Affiche le type d'erreur.
+            echo 'Erreur : ' . mysqli_error($this->_dbLink) . '<br/>';
+            // Affiche la requête envoyée.
+            echo 'Requête : ' . $query . '<br/>';
+            exit();
+        } else {
+            if (mysqli_num_rows(mysqli_query($this->_dbLink, $query)) == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
     function InsertUser(User $user){
-        $query = 'INSERT INTO User (FirstName,LastName,Surname,Email,Password,Status) VALUES (\'' . $user->getFirstName() . '\', \'' . $user->getLastName() . '\', \'' . $user->getSurname() . '\',\'' . $user->getEmail() . '\',\'' . $user->getPassword() . '\',\'' . '2' . '\');';
+        $query = 'INSERT INTOc User (FirstName,LastName,Surname,Email,Password,Status) VALUES (\'' . $user->getFirstName() . '\', \'' . $user->getLastName() . '\', \'' . $user->getSurname() . '\',\'' . $user->getEmail() . '\',\'' . $user->getPassword() . '\',\'' . '2' . '\');';
         if(mysqli_query($this->_dbLink, $query)){
             echo 'Bonjour,' . $user->getEmail() . 'l\'incription a bien été erengistrée, merci.';
         } else{
             echo 'erreur' . mysqli_error($this->_dbLink);
         }
     }
+
 }
 
 //$databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');

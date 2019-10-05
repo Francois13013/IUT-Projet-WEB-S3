@@ -39,10 +39,12 @@ class user {
         $testArray = [
             "1" => "IdUser",
             "2" => "Password",
-            "3" => "Surname"
+            "3" => "Email"
         ];
-        $query = 'Select IdUser,Surname,Password from User Where Surname = \'' . $this->_surname . '\' ';
-        $databaseBaptiste->CheckError($query,$testArray);
+//        $query = 'Select IdUser,Password,Email from User Where Surname = \'' . $this->_surname . '\' ';
+//        $databaseBaptiste->CheckError($query,$testArray);
+        $query = 'Select Surname from User Where Surname = \'' . $this->_surname . '\' ';
+        echo $databaseBaptiste->Comparator($query);
     }
     function __toString()
     {
@@ -59,12 +61,12 @@ class user {
 //update git
 
 //$test = new user('','test','coco@test.fr','test','1','utilisateur');
-//$test2 = new user('Baptiste','Sevilla','Baptiste13','baptiste@test.fr','test','2','admin');
+$test2 = new user('Baptiste','Sevilla','Baptiste13','baptiste@test.fr','test','2','admin');
 //
 //$databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
 //$databaseBaptiste->InsertUser($test2);
 
-//$test->CheckUser('surname','');
+$test2->CheckUser();
 
 
 
