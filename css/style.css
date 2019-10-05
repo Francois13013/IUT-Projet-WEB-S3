@@ -65,12 +65,37 @@
     position: absolute;
     height:91.5%;
     top:8.5%;
+    width:100%;
+
 }
 #menu{
     display:none;
 }
 #mainimg2 {
     height:70%;
+}
+
+#singupform{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-content: center;
+    height:80%;
+    padding-top: 3%;
+    width:100%;
+}
+#singupform * {
+    align-self: center;
+    text-align: center;
+}
+.inputsingup, #submitform {
+    background-color: darkgrey;
+    max-width:430px;
+    width:63%;
+    height:6%;
+    border-radius: 8px;
+    font-size: 24px;
 }
 
 @media only screen and (max-width: 1100px) {
