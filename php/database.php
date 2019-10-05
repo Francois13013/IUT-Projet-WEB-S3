@@ -75,7 +75,37 @@ class database {
             echo 'erreur' . mysqli_error($this->_dbLink);
         }
     }
+    function Error($query){
+        if (!($dbResult = mysqli_query($this->_dbLink, $query))) {
+            echo 'Erreur de requête' . '<br/><br/>';
+            // Affiche le type d'erreur.
+            echo 'Erreur : ' . mysqli_error($this->_dbLink) . '<br/>';
+            // Affiche la requête envoyée.
+            echo 'Requête : ' . $query . '<br/>';
+            exit();
+        }
+        if (!($dbResult = mysqli_query($this->_dbLink, $query))) {
+            echo 'Erreur de requête<br/>';
+            // Affiche le type d'erreur.
+            echo 'Erreur : ' . mysqli_error($this->_dbLink) . '<br/>';
+            // Affiche la requête envoyée.
+            echo 'Requête : ' . $query . '<br/>';
+            exit();
+        }
+    }
+    function Login(user $User)
+    {
+        $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
 
+
+
+            if (mysqli_num_rows(mysqli_query($this->_dbLink, $query)) == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
+        }
+    }
 }
 
 //$databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');

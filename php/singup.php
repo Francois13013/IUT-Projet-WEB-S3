@@ -18,6 +18,7 @@ include_once ('database.php');
     } else {
         $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
         $newUser->setStatut('2');
+        $newUser->setPassword(sha1($newUser->getPassword()));
         $databaseBaptiste->InsertUser($newUser);
     }
     ?>
