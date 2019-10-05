@@ -6,32 +6,32 @@ menuUser = document.querySelector('.menuphoneuser');
 inputusername = document.getElementById('usernameinput');
 inputpassword = document.getElementById('passwordinput');
 
-window.onresize = function size() {
-    if(window.innerWidth >= 1100){
-        menuHamburger.style.display = "none";
-        document.getElementById("menu").style.display = "none";
-        menuHamburger.style.display = "none";
-        document.getElementById("menupc").style.display = "";
-    } else if(window.innerWidth <= 1100 && menuHamburger.style.display == "none"){
-        document.getElementById("menupc").style.display = "none";
-        menuHamburger.style.display = "";
-        document.getElementById("menu").style.display = "";
-        menuHamburger.style.display = "";
-    }
-};
-window.onload = function size() {
-    if(window.innerWidth >= 1100){
-        menuHamburger.style.display = "none";
-        document.getElementById("menu").style.display = "none";
-        menuHamburger.style.display = "none";
-        document.getElementById("menupc").style.display = "";
-    } else if(window.innerWidth <= 1100 && menuHamburger.style.display == "none"){
-        document.getElementById("menupc").style.display = "none";
-        menuHamburger.style.display = "";
-        document.getElementById("menu").style.display = "";
-        menuHamburger.style.display = "";
-    }
-};
+// window.onresize = function size() {
+//     if(window.innerWidth >= 1100){
+//         // menuHamburger.style.display = "none";
+//         document.getElementById("menu").style.display = "none";
+//         // menuHamburger.style.display = "none";
+//         document.getElementById("menupc").style.display = "";
+//     } else if(window.innerWidth <= 1100 && menuHamburger.style.display == "none"){
+//         document.getElementById("menupc").style.display = "none";
+//         menuHamburger.style.display = "";
+//         document.getElementById("menu").style.display = "";
+//         menuHamburger.style.display = "";
+//     }
+// };
+// window.onload = function size() {
+//     if(window.innerWidth >= 1100){
+//         menuHamburger.style.display = "none";
+//         document.getElementById("menu").style.display = "none";
+//         menuHamburger.style.display = "none";
+//         document.getElementById("menupc").style.display = "";
+//     } else if(window.innerWidth <= 1100 && menuHamburger.style.display == "none"){
+//         document.getElementById("menupc").style.display = "none";
+//         menuHamburger.style.display = "";
+//         document.getElementById("menu").style.display = "";
+//         menuHamburger.style.display = "";
+//     }
+// };
 
 
 
@@ -67,6 +67,14 @@ LogoUser.onclick = function(){
     menuUser.classList.toggle("offmenu");
     menuHamburger.style.transitionDuration = timetmp.toString();
 };
+
+document.getElementById('userpc').onclick = function() {
+    document.querySelector('.menuphoneuser').classList.toggle('menuuserpcoff');
+}
+
+
+
+
 // window.onclick =function (){
 //     alert('100');
 // }

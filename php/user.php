@@ -59,10 +59,10 @@ class user {
 //update git
 
 //$test = new user('','test','coco@test.fr','test','1','utilisateur');
-$test2 = new user('Baptiste','Sevilla','Baptiste13','baptiste@test.fr','test','2','admin');
-
-$databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
-$databaseBaptiste->InsertUser($test2);
+//$test2 = new user('Baptiste','Sevilla','Baptiste13','baptiste@test.fr','test','2','admin');
+//
+//$databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
+//$databaseBaptiste->InsertUser($test2);
 
 //$test->CheckUser('surname','');
 
