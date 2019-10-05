@@ -4,9 +4,12 @@
     user-select: none;
     text-decoration: none;
 }
+.menu{
+    z-index: 4;
+}
 .menuphonehamburger {
     position:absolute;
-    top:0;
+    top:0%;
     background-color:blue;
     width:100%;
     height:8.5%;
@@ -14,18 +17,18 @@
     justify-content: space-between;
     background-color: blue;
     align-items: center;
-    z-index:3;
+    z-index:2;
 }
 
 .menuphoneuser {
-    display:block;
+    display:initial;
     top:-15%;
     height:20%;
-    width: 25%;
+    width: 15%;
     position: absolute;
     right: 0;
-    z-index:2;
-    transition-duration: 0.4s;
+    z-index:1;
+    transition-duration: 0.1s;
     background-color: aqua;
     display:flex;
     justify-content: center;
@@ -51,7 +54,7 @@
     padding-right: 10%;
 }
 
-.menulinkpc{
+.menulink{
     display: flex;
     align-self: center;
     color:white;
@@ -117,7 +120,7 @@
 
     .menuphoneuser{
         position:absolute;
-        top:-97.5%;
+        top:-107.5%;
         height:87.5%;
         width:100%;
         background-color:blueviolet;
@@ -184,4 +187,26 @@
     #mainimg2{
         display:none;
     }
+    #singupform{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-content: space-around;
+        align-content: center;
+        height:100%;
+        width:100%;
+    }
+    #singupform * {
+        align-self: center;
+        text-align: center;
+    }
+    .inputsingup, #submitform {
+        background-color: darkgrey;
+        max-width:430px;
+        width:63%;
+        height:6%;
+        border-radius: 8px;
+        font-size: 24px;
+    }
+
 } /*Fin QUERY */
