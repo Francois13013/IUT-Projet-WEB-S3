@@ -11,19 +11,13 @@ include_once ('database.php');
     $checkbox  = $_POST['checkbox'];
     $submit  = $_POST['submit'];
 
-    if(strlen($password) <= 8            //Verifie des conditions minimales de sécurités
-        || strlen($password) > 14
-        || strlen($surname) > 16
-        || strlen($email)> 32
-        || strlen($lastName)> 32
-        || strlen($firstName > 32)
-        || $password != $passwordTwice
-        || $checkbox == NULL){
+    $newUser = new user($firstName,$lastName,$surname,$email,$password,'','3');
+    if($password != $passwordTwice || $checkbox == NULL || $newUser->CheckUser() == false){
         header('Location: /singup.html');
         exit();
     } else {
-        $newuser = new user($firstName,$lastName,$surname,$email,sha1($password),'','2');
         $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
-        $databaseBaptiste->InsertUser($newuser);
+        $newUser->setStatut('2');
+        $databaseBaptiste->InsertUser($newUser);
     }
     ?>
