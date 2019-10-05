@@ -1,4 +1,5 @@
 <?php
+include_once('user.php');
 class database {
     private $_host;
     private $_user;
@@ -41,53 +42,72 @@ class database {
             }
         }
     }
+    function InsertUser(User $user){
+        $query = 'INSERT INTO User (FirstName,LastName,Surname,Email,Password,Status) VALUES (\'' . $user->getFirstName() . '\', \'' . $user->getLastName() . '\', \'' . $user->getSurname() . '\',\'' . $user->getEmail() . '\',\'' . $user->getPassword() . '\',\'' . '2' . '\');';
+        if(mysqli_query($this->_dbLink, $query)){
+            echo 'Bonjour,' . $user->getEmail() . 'l\'incription a bien été erengistrée, merci.';
+        } else{
+            echo 'erreur' . mysqli_error($this->_dbLink);
+        }
+    }
 }
 
-$databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
-
-$testArray = [
-  "1" => "IdUser",
-  "2" => "Password",
-];
+//$databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
+//
+//$testArray = [
+//  "1" => "IdUser",
+//  "2" => "Password",
+//];
+//
+//$query = 'Select IdUser,Password from User';
+//CheckError($query,$testArray);
 
 //$query = 'Select IdUser,Password from User';
 //$databaseBaptiste->CheckError($query,$testArray);
 //$string2 = '';
 
-function shellSqlRequest($string)
-{
-    $arrayName = [];
-    $string2 = str_replace('Select', '', strstr($string, 'from', true));
-    for($a = 1 ; $a<= (substr_count($string,',')+1); $a++) {
-            if($a==(substr_count($string2,',') +1 )) {
-                $tmp = '';
-                for ($t = 0; $t <= strlen($string2); $t++) $tmp .= $string2[$t];
-                $string2 = strstr($string2, $string2[(strpos($string2, ',') + 1)]);
-                echo $tmp . '<br><hr>';
-                array_push($arrayName,$tmp);
-            } else {
-                $tmp = '';
-                for ($j = 0; $j < strpos($string2, ','); $j++){
-//                    echo strpos($string2, ',');
-                    $tmp .= $string2[$j];
-//                    echo $string2;
-                }
+//function shellSqlRequest($string)
+//{
+//    $arrayName = [];
+//    $string2 = str_replace('Select', '', strstr($string, 'from', true));
+//    for ($a = 1; $a <= (substr_count($string, ',') + 1); $a++) {
+//        $tmp = NULL;
+//        for ($t = 0; $t <= strlen($string2); $t++) {
+//            $tmp .= $string2[$t];
+//            $string2 = strstr($string2, $string2[(strpos($string2, ",") + 1)]);
+//            print_r ($tmp);
+//        }
+//        echo '<br><hr>';
+//
+////        echo $tmp . '<br><hr>';
+//        array_push($arrayName, $tmp);
+////        echo $arrayName[4];
+//    }
+//}
+
+
+    //            if($a==(substr_count($string2,',') + 1)) {
+//            } else {
+//                $tmp = '';
+//                for ($j = 0; $j < strpos($string2, ','); $j++){
+////                    echo strpos($string2, ',');
+//                    $tmp .= $string2[$j];
+////                    echo $string2;
+//                }
 //                $string2 = strstr($string2, $string2[(strpos($string2, ','))]);
-                echo $string2[(strpos($string2, ',')) + 1];
+//                echo $string2[(strpos($string2, ',')) + 1];
+
+//
+//                echo $tmp . '<br><hr>';
+//                array_push($arrayName,$tmp);
+//            }
+////        }
+//    return $arrayName;
 
 
-                echo $tmp . '<br><hr>';
-                array_push($arrayName,$tmp);
-            }
-        }
-    return $arrayName;
-}
-
-$query = 'Select IdUser,Password,Topics,dazo,test from User';
 
 
 //$query = 'Select IdUser,Password,voice,un,test,zu,paif,dzada,hhzz,adza,hq,dzq,ywt,dz,wzd,grzge,tprohk from User';
-shellSqlRequest($query);
 
 //            echo $string2 . '<br><hr>';
 //            shellSqlRequest($string2);
