@@ -1,5 +1,3 @@
-<?php
-echo 'test2';
-echo 'test8888';
-echo 'lololo';
-?>
+<?php include_once('header.php')?>
+<?php include_once('footer.php')?>
+

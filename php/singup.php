@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once('user.php');
 require_once('database.php');
 
@@ -14,7 +14,7 @@ require_once('database.php');
 
     $newUser = new user($firstName,$lastName,$surname,$email,$password,'','3');
     if($password != $passwordTwice || $checkbox == NULL || $newUser->CheckUser() == false){
-        header('Location: /singup.html');
+        header('Location: /singup.php');
         exit();
     } else {
         $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');

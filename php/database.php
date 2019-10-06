@@ -1,7 +1,7 @@
 <?php
 
 require_once ('user.php');
-
+session_start();
 class database {
     private $_host;
     private $_user;
@@ -106,15 +106,15 @@ class database {
         $dbResult = $this->Error($query);
         if (mysqli_num_rows(mysqli_query($this->_dbLink, $query)) == 0) {
             echo 'il y pas ton pseudo';
-            header('Location: /index.html');
+            header('Location: /index.php');
             exit();
         } else {
             if(mysqli_fetch_assoc($dbResult)['Password'] == sha1($User->getPassword())){
                 echo $_SESSION["login"] = true;
-                header('Location: /index.html');
+                header('Location: /index.php');
                 exit();
             } else {
-                header('Location: /index.html');
+                header('Location: /index.php');
                 exit();
             }
         }

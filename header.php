@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <?php session_start(); ?>
     <meta charset="UTF-8">
     <title>FreeNote</title>
     <link rel="stylesheet" href="css/style.css">
@@ -31,24 +32,3 @@
     <button formaction="singup.html" id='singup'>Inscrivez vous</button>
 </form>
 <div id='midpage'>
-    <form id="singupform" action="php/singup.php" method="post">
-        <a>FirstName</a>
-        <input class="inputsingup" type="text" name="FirstName">
-        <a>LastName</a>
-        <input class="inputsingup" type="text" name="LastName">
-        <a>Surname</a>
-        <input class="inputsingup" type="text" name="Surname">
-        <a>Email</a>
-        <input class="inputsingup" type="text" name="Email">
-        <a>Password</a>
-        <input class="inputsingup" type="text" name="Password">
-        <a>PasswordTwice</a>
-        <input class="inputsingup" type="text" name="PasswordTwice">
-        <input class="inputsingup" type="checkbox" name="checkbox" value="close">
-        <input id="submitform" type="submit" value="submit">
-    </form>
-</div>
-<script src="js/menu.js"></script>
-</body>
-
-</html>
