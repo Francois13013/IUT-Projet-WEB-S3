@@ -1,6 +1,7 @@
 <?php
-include_once ('user.php');
-include_once ('database.php');
+
+require_once('user.php');
+require_once('database.php');
 
     $firstName =  $_POST['FirstName'];
     $lastName =  $_POST['LastName'];

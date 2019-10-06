@@ -1,13 +1,15 @@
 <?php
-include_once('database.php');
+
+require_once ('database.php');
+
 class user {
-    private $_firstName;
-    private $_lastName;
-    private $_surname;
-    private $_email;
-    private $_password;
-    private $_id;
-    private $_statut;
+    private $_firstName = '';
+    private $_lastName = '';
+    private $_surname = '';
+    private $_email = '';
+    private $_password = '';
+    private $_id = '';
+    private $_statut = '';
     function __construct($_firstName,$_lastName,$_surname,$_email,$_password,$_id,$_statut){
         $this->setFirstName($_firstName);
         $this->setlastName($_lastName);

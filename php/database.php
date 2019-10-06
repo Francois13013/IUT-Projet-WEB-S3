@@ -1,5 +1,7 @@
 <?php
-include_once('user.php');
+
+require_once ('user.php');
+
 class database {
     private $_host;
     private $_user;
@@ -92,18 +94,25 @@ class database {
             echo 'Requête : ' . $query . '<br/>';
             exit();
         }
+        return $dbResult;
     }
     function Login(user $User)
     {
-        $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
-
-
-
-            if (mysqli_num_rows(mysqli_query($this->_dbLink, $query)) == 0) {
-                return 0;
-            } else {
-                return 1;
-            }
+        $array = array(
+          1 => "Password",
+        );
+        $username = $User->getSurname();
+        echo $username;
+        $query = 'Select Password from User Where Surname = \'' . $User->getSurname() . '\' ';
+        print_r($query);
+        $dbResult = $this->Error($query);
+        print_r($dbResult);
+        $this->CheckError($query,$array);
+        echo mysqli_fetch_assoc($dbResult);
+        if (mysqli_num_rows(mysqli_query($this->_dbLink, $query)) == 0) {
+            echo 'test';
+        } else {
+            echo $dbResult;
         }
     }
 }
