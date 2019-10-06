@@ -104,15 +104,16 @@ class database {
         $username = $User->getSurname();
         echo $username;
         $query = 'Select Password from User Where Surname = \'' . $User->getSurname() . '\' ';
-        print_r($query);
         $dbResult = $this->Error($query);
-        print_r($dbResult);
         $this->CheckError($query,$array);
-        echo mysqli_fetch_assoc($dbResult);
         if (mysqli_num_rows(mysqli_query($this->_dbLink, $query)) == 0) {
-            echo 'test';
+            echo 'il y pas ton pseudo';
         } else {
-            echo $dbResult;
+            if(mysqli_fetch_assoc($dbResult)['Password'] == sha1($User->getPassword())){
+                echo 'tu es co';
+            } else {
+                echo 'nope';
+            }
         }
     }
 }
