@@ -10,7 +10,7 @@ session_start();
 //    exit;
 //}
 
-    echo $_POST['submit'] . '<br><hr>';
+//    echo $_POST['submit'] . '<br><hr>';
     $username = $_POST['username'] ;
     $password = $_POST['password'] ;
 

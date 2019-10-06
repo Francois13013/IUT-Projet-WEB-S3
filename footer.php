@@ -6,7 +6,7 @@
     echo $_SESSION['login'];
     echo $_SESSION['firstName'];
     if($_SESSION['login'] == 'ok') {
-     echo '<script type="text/javascript">' . 'loggedMenu('.' \''. $_SESSION['firstName'] .'\' '.');'     . '</script>';
+     echo '<script type="text/javascript">' . 'loggedMenu('.' \''. $_SESSION['Surname'] .'\' '.');'     . '</script>';
 } ?>
 </body>
 

@@ -104,15 +104,41 @@ class database {
         $query = 'Select Password from User Where Surname = \'' . $User->getSurname() . '\' ';
         $dbResult = $this->Error($query);
         if (mysqli_num_rows(mysqli_query($this->_dbLink, $query)) == 0) {
-            echo 'il y pas ton pseudo';
+//            echo 'il y pas ton pseudo';
             header('Location: /index.php');
             exit();
         } else {
             if(mysqli_fetch_assoc($dbResult)['Password'] == sha1($User->getPassword())){
                 session_start();
                 $_SESSION["login"] = 'ok';
-                $_SESSION["user"] = $User;
-                $_SESSION["firstName"] = $User->getSurname();
+
+                $array = array(
+                    1 => "IdUser",
+                    2 => "FirstName",
+                    3 => "LastName",
+                    4 => "Surname",
+                    5 => "Email",
+                    6 => "Password",
+                    7 => "Status",
+                );
+                for($i = 1 ; $i <= count($array) ; $i++) {
+//                    $arraytmp = array(1 => $array[$i]);
+                    $query = 'Select ' . $array[$i] . ' from User Where Surname = \'' . $User->getSurname() . '\' ';
+                    $dbResult = $this->Error($query);
+                    $_SESSION[$array[$i]] = mysqli_fetch_assoc($dbResult)[$array[$i]];
+//                    echo  $_SESSION['FirstName'];
+                }
+//                $query = 'Select IdUSer,FirstName,LastName,Surname,Email,Password,Status from User Where Surname = \'' . $User->getSurname() . '\' ';
+
+//                $User = new user ('')
+//                $_SESSION["user"] = $User;
+//                $_SESSION["firstName"] = $User->getFirstName();
+//                $_SESSION["lastName"] = $User->getLastName();
+//                $_SESSION["username"] = $User->getSurname();
+//                $_SESSION["email"] = $User->getEmail();
+//                $_SESSION["id"] = $User->getId();
+//                $_SESSION["statut"] = $User->getStatut();
+
                 header('Location: /index.php');
                 exit();
             } else {
@@ -121,6 +147,7 @@ class database {
             }
         }
     }
+    function RequestUser(){}
 }
 
 //$databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
