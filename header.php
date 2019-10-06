@@ -34,6 +34,6 @@
         <button formaction="php/login.php" type="submit" name="submit" class="subbutton">Connection</button>
         <button formaction="forgetpassword.php" class="subbutton">Mdp forget</button>
     </div>
-    <button formaction="singup.html" id='singup'>Inscrivez vous</button>
+    <button formaction="singup.php" id='singup'>Inscrivez vous</button>
 </form>
 <div id='midpage'>

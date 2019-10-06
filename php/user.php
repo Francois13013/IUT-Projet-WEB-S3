@@ -35,7 +35,9 @@ class user {
     function  setPassword($tmpPassword){ $this->_password = $tmpPassword;}
     function  setId($tmpId){ $this->_id = $tmpId;}
     function  setStatut($tmpStatut){ $this->_statut = $tmpStatut;}
+    function GetNewPassword(){
 
+    }
     function CheckUser(){
         $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
         $query = 'Select Surname from User Where Surname = \'' . $this->_surname . '\' ';
