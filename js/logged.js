@@ -1,5 +1,6 @@
-function loggedMenu(){
-    document.querySelector('.menuphoneuser').innerHTML = 'Vous êtes co';
+function loggedMenu(firstName){
+    var menu = document.querySelector('.menuphoneuser');
+    menu.innerHTML = 'Bonjour,' + firstName;
     var btn = document.createElement("BUTTON");
     btn.innerHTML = "Déconnexion ";
     btn.setAttribute('formaction','php/logoff.php');

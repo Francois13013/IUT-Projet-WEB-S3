@@ -32,7 +32,7 @@
     <input name="password" id="passwordinput" class="login" type="password" value="password">
     <div id="divsubbutton">
         <button formaction="php/login.php" type="submit" name="submit" class="subbutton">Connection</button>
-        <button formaction="forgetpassword.html" class="subbutton">Mdp forget</button>
+        <button formaction="forgetpassword.php" class="subbutton">Mdp forget</button>
     </div>
     <button formaction="singup.html" id='singup'>Inscrivez vous</button>
 </form>

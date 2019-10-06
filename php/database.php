@@ -101,7 +101,6 @@ class database {
         $array = array(
           1 => "Password",
         );
-        $username = $User->getSurname();
         $query = 'Select Password from User Where Surname = \'' . $User->getSurname() . '\' ';
         $dbResult = $this->Error($query);
         if (mysqli_num_rows(mysqli_query($this->_dbLink, $query)) == 0) {
@@ -112,7 +111,8 @@ class database {
             if(mysqli_fetch_assoc($dbResult)['Password'] == sha1($User->getPassword())){
                 session_start();
                 $_SESSION["login"] = 'ok';
-                $_SESSION["userstoring"] = $User;
+                $_SESSION["user"] = $User;
+                $_SESSION["firstName"] = $User->getSurname();
                 header('Location: /index.php');
                 exit();
             } else {
