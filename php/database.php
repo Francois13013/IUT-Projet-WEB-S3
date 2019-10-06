@@ -237,4 +237,4 @@ class database {
 //echo $tmp2;
 //
 //echo '<br>' .$query3;
-?>
+//?>

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php session_start(); ?>
+    <?php session_start();
+
+    ?>
     <meta charset="UTF-8">
     <title>FreeNote</title>
     <link rel="stylesheet" href="css/style.css">
@@ -15,7 +17,7 @@
 
 <header class="menuphonehamburger">
     <img alt="logo site" id='mainimg2' src="media/freenote.png" >
-    <a class="menulink" href="">Lien 1</a>
+    <a class="menulink" href="test.php">Lien 1</a>
     <a class="menulink" href="">Lien 2</a>
     <a class="menulink" href="">Lien 3</a>
     <a class="menulink" href="">Lien 4</a>
