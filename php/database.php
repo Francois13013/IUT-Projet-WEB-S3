@@ -110,7 +110,9 @@ class database {
             exit();
         } else {
             if(mysqli_fetch_assoc($dbResult)['Password'] == sha1($User->getPassword())){
-                echo $_SESSION["login"] = true;
+                session_start();
+                $_SESSION["login"] = 'ok';
+                $_SESSION["userstoring"] = $User;
                 header('Location: /index.php');
                 exit();
             } else {

@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php session_start();
+    <?php
+    session_start();
 
+//    if(isset($_SESSION) && $_SESSION['login'] = 'cestbon') {
+//    }
     ?>
     <meta charset="UTF-8">
     <title>FreeNote</title>
