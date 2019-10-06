@@ -39,20 +39,7 @@ class user {
     function CheckUser(){
         $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
         $query = 'Select Surname from User Where Surname = \'' . $this->_surname . '\' ';
-
-//        $testarray = array(
-//            1 => "Surname");
-//
-//        echo $databaseBaptiste->CheckError($query,$testarray);
-//        echo $databaseBaptiste->Comparator($query);
-
-//        if($databaseBaptiste->Comparator($query) == 1) {echo 'il y a surname';}
-
         $query = 'Select Email from User Where Email = \'' . $this->_email . '\' ';
-
-//        $testarray = array(
-//            1 => "Email");
-//        echo $databaseBaptiste->CheckError($query,$testarray);
 
         if($databaseBaptiste->Comparator($query) == 1) {return false;}
         if(strlen($this->_password) < 8 || strlen($this->_password)>16) {return false;}
@@ -76,19 +63,4 @@ class user {
         return $html;
     }
 }
-
-//update git
-
-//$test = new user('','test','coco@test.fr','test','1','utilisateur');
-//$test2 = new user('Baptiste','Sevilla','Baptiste13','baptiste@test.fr','test','2','admin');
-//
-//$databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
-//$databaseBaptiste->InsertUser($test2);
-
-//$test2->CheckUser();
-
-
-
-//echo $test;
-//echo $test2;
 ?>

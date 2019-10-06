@@ -102,17 +102,20 @@ class database {
           1 => "Password",
         );
         $username = $User->getSurname();
-        echo $username;
         $query = 'Select Password from User Where Surname = \'' . $User->getSurname() . '\' ';
         $dbResult = $this->Error($query);
-        $this->CheckError($query,$array);
         if (mysqli_num_rows(mysqli_query($this->_dbLink, $query)) == 0) {
             echo 'il y pas ton pseudo';
+            header('Location: /index.html');
+            exit();
         } else {
             if(mysqli_fetch_assoc($dbResult)['Password'] == sha1($User->getPassword())){
-                echo 'tu es co';
+                echo $_SESSION["login"] = true;
+                header('Location: /index.html');
+                exit();
             } else {
-                echo 'nope';
+                header('Location: /index.html');
+                exit();
             }
         }
     }
