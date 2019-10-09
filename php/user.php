@@ -35,18 +35,46 @@ class user {
     function  setPassword($tmpPassword){ $this->_password = $tmpPassword;}
     function  setId($tmpId){ $this->_id = $tmpId;}
     function  setStatut($tmpStatut){ $this->_statut = $tmpStatut;}
-    function GetNewPassword(){
+    function GetNewPassword(){}
+    function checkEmailHost($email)
+    {
+        $array = array(
+            "1" => "@gmail.com",
+            "2" => "@yahoo.fr",
+            "3" => "@hotmail.fr",
+            "4" => "@laposte.net",
+            "5" => "@etu.univ-amu.fr",
+            "6" => "@univ-amu.fr",
+        );
+        $strstrEmail = strstr($email, '@');
+        for ($i = 1; $i <= count($array); $i++) {
+            if ($strstrEmail == $array[$i]) {
+                return false;
+                break;
+            } else if ($i== count($array)){
+                return true;
+            }
+
+        }
+
     }
+
+
     function CheckUser(){
         $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
         $query = 'Select Surname from User Where Surname = \'' . $this->_surname . '\' ';
+        if($databaseBaptiste->Comparator($query) == 1) {return false;}
         $query = 'Select Email from User Where Email = \'' . $this->_email . '\' ';
-
         if($databaseBaptiste->Comparator($query) == 1) {return false;}
         if(strlen($this->_password) < 8 || strlen($this->_password)>16) {return false;}
 
         if(strpos($this->_email,'@') == 0){return false;}
-        if(strstr($this->_email,'@') != '@gmail.com' ) {return false;} /* || '@yahoo.fr' || '@laposte.net'*/
+
+
+        if($this->checkEmailHost('adzoijzda@gmail.com') == false) {return false;} /* || '@yahoo.fr' || '@laposte.net'*/
+
+
+
         if(strlen($this->_email) > 32) {return false;}
         if(strlen($this->_lastName) > 32) {return false;}
         if(strlen($this->_firstName) > 32) {return false;}
