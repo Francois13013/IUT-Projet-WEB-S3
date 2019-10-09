@@ -1,6 +1,12 @@
 footer {
+    display:flex;
+    width :100%;
     background-color:blue ;
     padding: 10px;
     text-align: center;
     color: white;
+}
+
+ul{
+    display:  flex;
 }
