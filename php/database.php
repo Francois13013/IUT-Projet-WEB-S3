@@ -135,7 +135,7 @@ class database {
             }
         }
     }
-    function CheckEmail($email){
+    function checkEmail($email){
         $array = array(
             1 => "Email",
         );
@@ -164,24 +164,24 @@ class database {
 //$databaseBaptiste->CheckError($query,$testArray);
 //$string2 = '';
 
-//function shellSqlRequest($string)
-//{
-//    $arrayName = [];
-//    $string2 = str_replace('Select', '', strstr($string, 'from', true));
-//    for ($a = 1; $a <= (substr_count($string, ',') + 1); $a++) {
-//        $tmp = NULL;
-//        for ($t = 0; $t <= strlen($string2); $t++) {
-//            $tmp .= $string2[$t];
-//            $string2 = strstr($string2, $string2[(strpos($string2, ",") + 1)]);
-//            print_r ($tmp);
-//        }
-//        echo '<br><hr>';
-//
-////        echo $tmp . '<br><hr>';
-//        array_push($arrayName, $tmp);
-////        echo $arrayName[4];
-//    }
-//}
+function shellSqlRequest($string)
+{
+    $arrayName = [];
+    $string2 = str_replace('Select', '', strstr($string, 'from', true));
+    for ($a = 1; $a <= (substr_count($string, ',') + 1); $a++) {
+        $tmp = NULL;
+        for ($t = 0; $t <= strlen($string2); $t++) {
+            $tmp .= $string2[$t];
+            $string2 = strstr($string2, $string2[(strpos($string2, ",") + 1)]);
+            print_r ($tmp);
+        }
+        echo '<br><hr>';
+
+//        echo $tmp . '<br><hr>';
+        array_push($arrayName, $tmp);
+//        echo $arrayName[4];
+    }
+}
 
 
     //            if($a==(substr_count($string2,',') + 1)) {
