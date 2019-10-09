@@ -21,7 +21,7 @@ body{
     justify-content: space-between;
     background-color: blue;
     align-items: center;
-    z-index:2;
+    z-index:2; /**/
 }
 
 .menuphoneuser {
