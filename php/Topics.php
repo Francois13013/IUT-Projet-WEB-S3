@@ -38,6 +38,8 @@ class Topics
         $query = 'Select NameTopics from Topics Where NameTopics = \'' . $this->_nametopics . '\' ';
         if($databaseBaptiste->Comparator($query) == 1) {return false;}
 
+
+
     }
 
 }
