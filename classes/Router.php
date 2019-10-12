@@ -1,15 +1,18 @@
 <?php
+
 class Router {
     public static $url = array();
     public static function add($route, callable $innerText){
         self::$url[$route] = $innerText;
         $path = $_SERVER["REQUEST_URI"];
+        print_r($path);
+        print_r(self::$url);
         if(array_key_exists($path, self::$url)) {
             $innerText();
             self::$url[$path];
         } else {
             self::$url['Error'];
-//            header('Location: Error404');
+//            print_r(self::$url);
         }
     }
 //    public static function set($route, callable $innerPage){
