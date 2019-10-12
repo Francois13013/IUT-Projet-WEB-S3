@@ -68,9 +68,8 @@ body{
 }
 
 #midpage {
-    position: absolute;
+    position: relative;
     height:91.5%;
-    top:8.5%;
     width:100%;
 
 }
@@ -126,7 +125,7 @@ body{
         align-self: center;
     }
     .menuphonehamburger{
-        position:relative;
+        position:absolute;
         top:-97.5%;
         height:87.5%;
         width:100%;
@@ -201,10 +200,9 @@ body{
         width:80%;
     }
     #midpage {
-        position: absolute;
+        position: relative;
         width:100%;
         height:87.5%;
-        top:12.5%;
     }
     body{
         width:100%;
