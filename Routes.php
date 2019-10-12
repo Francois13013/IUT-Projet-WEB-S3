@@ -19,6 +19,12 @@ Router::add('/MyProfile', function() {
 Router::add('/Error404', function() {
     Controller::CreateView('viewError404');
 });
+
+Router::add('/Register', function() {
+//    echo 'test';
+    Controller::CreateStandardView('viewRegister');
+});
+
 //
 //$test = new Router();
 //$test->add('/testa', function (){

@@ -8,5 +8,9 @@ class Controller {
         self::CreateView($nameView);
         require_once('Views/Templates/footer.php');
     }
+    public static function CreateErrorView($errorNumber){
+        self::CreateView('viewError');
+        echo $errorNumber;
+    }
 };
 ?>

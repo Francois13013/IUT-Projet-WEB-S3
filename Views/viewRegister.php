@@ -1,4 +1,4 @@
-    <form id="singupform" action="php/singup.php" method="post">
+    <form id="singupform" action="/Controllers/controllerRegister.php" method="post">
         <a>FirstName</a>
         <input class="inputsingup" type="text" name="FirstName">
         <a>LastName</a>

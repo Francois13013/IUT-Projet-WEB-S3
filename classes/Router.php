@@ -20,6 +20,10 @@ class Router {
             }
         } else {
             self::$url['']; //remet l'url a ''
+            self::$innerComparator = self::$innerComparator + 1;
+            if(self::$innerComparator == 1) {
+                Controller::CreateErrorView('404');
+            }
 //            echo "<br><hr>";
 //            echo 'marche po';
 //            echo "<br><hr>";

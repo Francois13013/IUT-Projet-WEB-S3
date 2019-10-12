@@ -16,7 +16,7 @@ header('Location: /index.php');
 exit();
 }
 ?>
-<form action="forgetPassword" method="POST">
+<form action="ForgetPassword" method="POST">
     <input name='email' type='text'>
     <button>Envoyer</button>
 </form>

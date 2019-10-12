@@ -1,7 +1,10 @@
 <?php
 
-require_once('user.php');
-require_once('database.php');
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+require_once("{$root}/classes/User.php");
+
+//require_once('../classes/User.php');
+require_once('../classes/Database.php');
 session_start();
 
 //session_start();
