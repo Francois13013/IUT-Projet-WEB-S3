@@ -2,16 +2,27 @@
 
 class Router {
     public static $url = array();
+
+    public static $innerComparator;
+
     public static function add($route, callable $innerText){
-        self::$url[$route] = $innerText;
-        $path = $_SERVER["REQUEST_URI"];
-        print_r($path);
-        print_r(self::$url);
+        self::$url[$route] = $innerText; // dans array url[Url] = func
+        $path = $_SERVER["REQUEST_URI"]; // met dans path l'url courante
+//        print_r($path);
+
+//        if($path == self::$url[$route]) {
         if(array_key_exists($path, self::$url)) {
-            $innerText();
-            self::$url[$path];
+//            print_r(self::$url[$path]);
+            self::$innerComparator = self::$innerComparator + 1;
+//            echo  self::$innerComparator;
+            if(self::$innerComparator == 1) {
+                $innerText(); //lance la fonction de view
+            }
         } else {
-            self::$url['Error'];
+            self::$url['']; //remet l'url a ''
+//            echo "<br><hr>";
+//            echo 'marche po';
+//            echo "<br><hr>";
 //            print_r(self::$url);
         }
     }
