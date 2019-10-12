@@ -10,7 +10,7 @@ class Controller {
     }
     public static function CreateErrorView($errorNumber){
         self::CreateView('viewError');
-        echo $errorNumber;
+        echo '<h1>' . $errorNumber . '</h1>';
     }
 };
 ?>

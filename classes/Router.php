@@ -2,34 +2,69 @@
 
 class Router {
     public static $url = array();
-
+    public static $function;
     public static $innerComparator;
 
     public static function add($route, callable $innerText){
-        self::$url[$route] = $innerText; // dans array url[Url] = func
-        $path = $_SERVER["REQUEST_URI"]; // met dans path l'url courante
-//        print_r($path);
-
-//        if($path == self::$url[$route]) {
-        if(array_key_exists($path, self::$url)) {
-//            print_r(self::$url[$path]);
-            self::$innerComparator = self::$innerComparator + 1;
-//            echo  self::$innerComparator;
-            if(self::$innerComparator == 1) {
-                $innerText(); //lance la fonction de view
-            }
-        } else {
-            self::$url['']; //remet l'url a ''
-            self::$innerComparator = self::$innerComparator + 1;
-            if(self::$innerComparator == 1) {
-                Controller::CreateErrorView('404');
-            }
-//            echo "<br><hr>";
-//            echo 'marche po';
-//            echo "<br><hr>";
-//            print_r(self::$url);
+//        if($route == 'FinalKey'){
+//            $innerText();
+//        }
+        self::$url[$route] = $route; // dans array url[Url] = func
+        if($_SERVER["REQUEST_URI"] == $route) {
+            $innerText(); //lance la fonction de view
+//        } else if ((array_key_exists($_SERVER["REQUEST_URI"], self::$url)) == false ){
+//            echo 'pas trouvé';
         }
     }
+
+    public static function checkErrorUrl(){
+        if ((array_key_exists($_SERVER["REQUEST_URI"], self::$url)) == false ){
+            Controller::CreateErrorView(    '404');
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//            self::$url[$route] = $route; // dans array url[Url] = func
+//        echo self::$url[$route] . '<br><hr>';
+//        $path = $_SERVER["REQUEST_URI"]; // met dans path l'url courante
+//        print_r($path);
+//
+////        if($path == self::$url[$route]) {
+//        if(array_key_exists($path, self::$url) && ($path == self::$url)) {
+////            print_r(self::$url[$path]);
+////            self::$innerComparator = self::$innerComparator + 1;
+////            echo  self::$innerComparator;
+////            if(self::$innerComparator == 1) {
+//            $innerText(); //lance la fonction de view
+////                exit();
+////        }
+//        } else{
+//            self::$url['']; //remet l'url a ''
+////            self::$innerComparator = self::$innerComparator + 1;
+////            if(self::$innerComparator != 1) {
+//            Controller::CreateErrorView('404');
+////            break;
+//
+////            }
+////            echo "<br><hr>";
+////            echo 'marche po';
+////            echo "<br><hr>";
+////            print_r(self::$url);
+//        }
+//    }
 //    public static function set($route, callable $innerPage){
 //        $tmp = new Router();
 //        $tmp->add($route, $innerPage);

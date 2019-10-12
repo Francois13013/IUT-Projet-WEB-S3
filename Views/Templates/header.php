@@ -31,9 +31,9 @@
     <input name="username" id="usernameinput" class="login" type="text" value="username">
     <input name="password" id="passwordinput" class="login" type="password" value="password">
     <div id="divsubbutton">
-        <button formaction="php/login.php" type="submit" name="submit" class="subbutton">Connection</button>
-        <button formaction="forgetpassword.php" class="subbutton">Mdp forget</button>
+        <button formaction="Login" type="submit" name="submit" class="subbutton">Connection</button>
+        <button formaction="ForgetPassword" class="subbutton">Mdp forget</button>
     </div>
-    <button formaction="singup.php" id='singup'>Inscrivez vous</button>
+    <button formaction="Register" id='singup'>Inscrivez vous</button>
 </form>
 <div id='midpage'>

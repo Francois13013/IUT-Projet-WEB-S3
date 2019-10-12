@@ -3,27 +3,29 @@ require_once('classes/Router.php');
 require_once('classes/Controller.php');
 
 Router::add('/Index', function() {
-//    echo "<br><hr> test <br><hr> ";
+//    echo "Index <br><hr> ";
     Controller::CreateStandardView('viewIndex');
 });
 
 Router::add('/ForgetPassword', function() {
-//    echo "<br><hr> test2";
-    Controller::CreateStandardView('viewForgetPassword');
+//    echo "ForgetPassword <br><hr> ";
+
+        Controller::CreateStandardView('viewForgetPassword');
 });
 
 Router::add('/MyProfile', function() {
     Controller::CreateStandardView('viewMyProfile');
 });
 
-Router::add('/Error404', function() {
-    Controller::CreateView('viewError404');
-});
+//Router::add('', function() {
+//    Controller::CreateView('viewError404');
+//});
 
-Router::add('/Register', function() {
-//    echo 'test';
-    Controller::CreateStandardView('viewRegister');
-});
+Router::checkErrorUrl();
+
+//Router::add('FinalKey', function() {
+//    Controller::CreateView('viewError404');
+//});
 
 //
 //$test = new Router();
