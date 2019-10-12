@@ -1,6 +1,6 @@
 <?php
 
-require_once('../classes/User.php');
+require_once('classes/User.php');
 session_start();
 class database {
     private $_host;

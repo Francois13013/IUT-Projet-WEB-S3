@@ -9,12 +9,18 @@ class Router {
 //        if($route == 'FinalKey'){
 //            $innerText();
 //        }
+//        if(isset($route2)){ self::$url[$route2]= $route2;}
         self::$url[$route] = $route; // dans array url[Url] = func
         if($_SERVER["REQUEST_URI"] == $route) {
             $innerText(); //lance la fonction de view
 //        } else if ((array_key_exists($_SERVER["REQUEST_URI"], self::$url)) == false ){
 //            echo 'pas trouvé';
         }
+    }
+
+    public static function addTwoWay($route,$route2, callable $innerText){
+            self::add($route,$innerText);
+            self::add($route2,$innerText);
     }
 
     public static function checkErrorUrl(){
@@ -24,7 +30,9 @@ class Router {
 
     }
 
-
+//    public static function oneMoreWay($name){
+//        self::add($name,);
+//    }
 
 
 

@@ -2,6 +2,5 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-#DirectoryIndex /classes/Controller.php
 #RewriteRule ^(css|images|scripts|js|png|jpg) - [QSA,L]
 RewriteRule ^([^/]+)/? index.php?url=$1 [L,QSA]
