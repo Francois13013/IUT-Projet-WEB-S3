@@ -1,8 +1,8 @@
 <?php
 require_once('classes/Route.php');
-$router = new Route();
-$router->add_route('/azerty', function(){
-    echo 'Hello World';
+$test = new Router();
+$test->add('/testa', function (){
+    require ('header.php');
 });
-$router->execute();
+$test->Launch();
 ?>
