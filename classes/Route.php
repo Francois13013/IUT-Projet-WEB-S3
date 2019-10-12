@@ -1,20 +1,43 @@
 <?php
 
 class Router {
-    private $url = array();
-    function add($route, callable $innerText){
-        $this->url[$route] = $innerText;
-    }
-    function Launch() {
+    public static $url = array();
+    public static function add($route, callable $innerText){
+        self::$url[$route] = $innerText;
         $path = $_SERVER["REQUEST_URI"];
         print_r($path);
         echo '<br><hr>';
-        if(array_key_exists($path, $this->url)) {
-            $this->url[$path]();
+        if(array_key_exists($path, self::$url)) {
+            $innerText();
+            self::$url[$path];
         } else {
-            $this->url['zdazdzaazdzaaz'];
+            self::$url['Error'];
+            print_r(self::$url);
         }
-}
+    }
+//    public static function set($route, callable $innerPage){
+//        $tmp = new Router();
+//        $tmp->add($route, $innerPage);
+//        $tmp->Launch();
+//        $path = $_SERVER["REQUEST_URI"];
+//        print_r($path);
+//        echo '<br><hr>';
+//        if(array_key_exists($path, self::$url)) {
+//            self::$url[$path];
+//        } else {
+//            self::$url['zdazdzaazdzaaz'];
+//        }
+//    }
+//    function Launch() {
+//        $path = $_SERVER["REQUEST_URI"];
+//        print_r($path);
+//        echo '<br><hr>';
+//        if(array_key_exists($path, self::$url)) {
+//            self::$url[$path];
+//        } else {
+//            self::$url['zdazdzaazdzaaz'];
+//        }
+//}
 }
 
 
