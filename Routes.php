@@ -18,6 +18,10 @@ Router::add('/Register', function() {
     Controller::CreateStandardView('viewRegister');
 });
 
+Router::add('/Thanks', function() {
+    Controller::CreateStandardView('viewThanks');
+});
+
 Router::checkErrorUrl();
 
 //

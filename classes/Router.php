@@ -6,15 +6,9 @@ class Router {
     public static $innerComparator;
 
     public static function add($route, callable $innerText){
-//        if($route == 'FinalKey'){
-//            $innerText();
-//        }
-//        if(isset($route2)){ self::$url[$route2]= $route2;}
         self::$url[$route] = $route; // dans array url[Url] = func
         if($_SERVER["REQUEST_URI"] == $route) {
             $innerText(); //lance la fonction de view
-//        } else if ((array_key_exists($_SERVER["REQUEST_URI"], self::$url)) == false ){
-//            echo 'pas trouvé';
         }
     }
 
@@ -34,11 +28,6 @@ class Router {
             self::add($route, $innerText);
         }
     }
-
-//    public static function oneMoreWay($name){
-//        self::add($name,);
-//    }
-
 
 
 
