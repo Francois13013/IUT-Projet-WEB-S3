@@ -31,7 +31,7 @@
     <input name="username" id="usernameinput" class="login" type="text" value="username">
     <input name="password" id="passwordinput" class="login" type="password" value="password">
     <div id="divsubbutton">
-        <button formaction="Login" type="submit" name="submit" class="subbutton">Connection</button>
+        <button formaction="Controllers/controllerLogin.php" type="submit" name="submit" class="subbutton">Connection</button>
         <button formaction="ForgetPassword" class="subbutton">Mdp forget</button>
     </div>
     <button formaction="Register" id='singup'>Inscrivez vous</button>
