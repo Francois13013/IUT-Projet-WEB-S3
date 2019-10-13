@@ -56,6 +56,7 @@ class Topics { //passer la class topics en mvc avec Controller de topics qui cal
     private $_message = array();
     private $_maxMessage;
     private $_statut;
+    private $_maxWords;
     function __construct(){
         $this->createIdTopics(); //request en sql l'id de la base vu qu'il est en auto increment insert un nouveau et le recupere avec l'AI
 

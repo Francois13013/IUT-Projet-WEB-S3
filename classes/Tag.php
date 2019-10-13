@@ -3,17 +3,22 @@ class Tag
 {
     private $_type;
     private $_html;
+    private $_id;
+    private $_class;
 
     /**
      * Tag constructor.
      * @param $type
      * @param string $content
      */
-    function __construct($type, $content = '')
+    function __construct($type, $content,$id,$class)
     {
         $this->_type = $type;
-        $this->_html = '<' . $type . '>';
-        $this->_html .= $content;
+        $this->_html = '<' . $type;
+        if($id != ""){ $this->_html .= ' id= "' . $id . '"'; }
+        if($class != ""){ $this->_html .= ' class= "' . $class . '"'; }
+        $this->_html .= '>';
+        if(isset($content)){$this->_html .= $content;}
         $this->_html .= '</' . $type . '>';
     }
 

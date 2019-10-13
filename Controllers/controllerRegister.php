@@ -1,6 +1,6 @@
 <?php
-    require('classes/User.php');
-    require('classes/Database.php');
+require('classes/User.php');
+require('classes/Database.php');
 
     class Register {
         static public function login(){

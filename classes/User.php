@@ -1,6 +1,8 @@
 <?php
-session_start();
+
 require_once('Database.php');
+
+session_start();
 
 class user {
     private $_firstName = '';
@@ -46,6 +48,7 @@ class user {
             "5" => "@etu.univ-amu.fr",
             "6" => "@univ-amu.fr",
         );
+        if ( preg_match ( " /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ " , $email ) ) {
         $strstrEmail = strstr($email, '@');
         for ($i = 1; $i <= count($array); $i++) {
             if ($strstrEmail == $array[$i]) {
@@ -56,7 +59,9 @@ class user {
             }
 
         }
-
+        } else {
+            return false;
+        }
     }
 
 
