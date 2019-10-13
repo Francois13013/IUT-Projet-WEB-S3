@@ -4,8 +4,8 @@ function loggedMenu(firstName){
     var btn = document.createElement("BUTTON");
     btn.innerHTML = "Déconnexion ";
     var btn2 = document.createElement("BUTTON");
-    btn.setAttribute('formaction','Controller/controllerLogOff.php');
-    btn2.setAttribute('formaction','Views/viewMyProfile');
+    btn.setAttribute('formaction','Controllers/controllerLogOff.php');
+    btn2.setAttribute('formaction','MyProfile');
     btn2.innerHTML = "Mon profil ";
     document.querySelector('.menuphoneuser').appendChild(btn);
     document.querySelector('.menuphoneuser').appendChild(btn2);

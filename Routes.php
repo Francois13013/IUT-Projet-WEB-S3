@@ -10,7 +10,7 @@ Router::add('/ForgetPassword', function() {
         Controller::CreateStandardView('viewForgetPassword');
 });
 
-Router::add('/MyProfile', function() {
+Router::addLoggedWay('/MyProfile', function() {
     Controller::CreateStandardView('viewMyProfile');
 });
 

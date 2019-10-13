@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class Router {
     public static $url = array();
     public static $function;
@@ -28,6 +28,11 @@ class Router {
             Controller::CreateErrorView(    '404');
         }
 
+    }
+    public static function addLoggedWay($route, callable $innerText){
+        if($_SESSION['login'] == 'ok') {
+            self::add($route, $innerText);
+        }
     }
 
 //    public static function oneMoreWay($name){
