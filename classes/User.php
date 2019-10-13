@@ -40,20 +40,22 @@ class user {
             "5" => "@etu.univ-amu.fr",
             "6" => "@univ-amu.fr",
         );
-        if ( preg_match ( " /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ " , $email ) ) {
+
+//        if ( preg_match ( " /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ " , $email ) ) {
             $strstrEmail = strstr($email, '@');
+//            echo $strstrEmail;
             for ($i = 1; $i <= count($array); $i++) {
                 if ($strstrEmail == $array[$i]) {
-                    return false;
+                    return true;
                     break;
                 } else if ($i== count($array)){
-                    return true;
+                    return false;
                 }
 
             }
-        } else {
-            return false;
-        }
+//        } else {
+//            return false;
+//        }
     }
 
     function CheckUser(){
@@ -66,9 +68,11 @@ class user {
 
         if(strpos($this->_email,'@') == 0){return false;}
 
-
-        if($this->checkEmailHost('adzoijzda@gmail.com') == false) {return false;} /* || '@yahoo.fr' || '@laposte.net'*/
+//        echo $this . '<br><hr>';
+        if($this->checkEmailHost($this->getEmail()) == false) {return false;} /* || '@yahoo.fr' || '@laposte.net'*/
         if(strlen($this->_email) > 32) {return false;}
+//        echo $this . '<br><hr>';
+
         return true;
     }
     function __toString()

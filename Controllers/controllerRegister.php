@@ -11,8 +11,9 @@ require_once('../classes/Database.php');
             $email = $_POST['Email'] ;
             $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
             $user = new user($username,$email,$password,'','');
-            $databaseBaptiste->InsertUser($user);
-
+            if($user->CheckUser() == true){  $databaseBaptiste->InsertUser($user);}
+//            else {echo '<meta http-equiv="refresh" content="0;url='. "/Register" .'" />';}
+else {echo 'ziodakjzdaiojzdaiojzdaiojzdaiozjda marche pas';}
 
 //    require_once('classes/User.php');
 //    require_once('classes/Database.php');

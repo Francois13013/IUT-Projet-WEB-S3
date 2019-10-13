@@ -70,7 +70,7 @@ class database {
         }
     }
     function InsertUser(User $user){
-        $query = 'INSERT INTO User (Surname,Email,Password,Status) VALUES (\'' . $user->getPseudo() . '\',\'' . $user->getEmail() . '\',\'' . $user->getPassword() . '\',\'' . '2' . '\');';
+        $query = 'INSERT INTO User (Surname,Email,Password,Status) VALUES (\'' . $user->getPseudo() . '\',\'' . $user->getEmail() . '\',\'' . sha1($user->getPassword()) . '\',\'' . '2' . '\');';
         if(mysqli_query($this->_dbLink, $query)){
             echo '<meta http-equiv="refresh" content="0;url='. "/Thanks" .'" />';
         } else{
