@@ -1,7 +1,7 @@
 <?php
+require_once('Message.php');
+require_once('User.php');
 
-require_once('classes/User.php');
-session_start();
 class database {
     private $_host;
     private $_user;
@@ -104,7 +104,7 @@ class database {
         $query = 'Select Password from User Where Surname = \'' . $User->getSurname() . '\' ';
         $dbResult = $this->Error($query);
         if (mysqli_num_rows(mysqli_query($this->_dbLink, $query)) == 0) {
-            header('Location: /index.php');
+            header('Location: /Index');
             exit();
         } else {
             if(mysqli_fetch_assoc($dbResult)['Password'] == sha1($User->getPassword())){
@@ -127,10 +127,10 @@ class database {
                 }
                 $User = new user($_SESSION["FirstName"],$_SESSION["LastName"],$_SESSION["Surname"],$_SESSION["Email"],$_SESSION["Password"],$_SESSION["IdUser"],$_SESSION["Status"]);
                 $User = $_SESSION['user'];
-                header('Location: /index.php');
+                header('Location: /Index');
                 exit();
             } else {
-                header('Location: /index.php');
+                header('Location: /error.php');
                 exit();
             }
         }
@@ -146,6 +146,18 @@ class database {
             return false;
         } else {
             return true;
+        }
+    }
+    function insertSqlMessage(Message $message){
+        $query = 'INSERT INTO message (idMessage,idUser,nameUser,message,time,idTopic) VALUES (\'' . $message->setIdMessage() . '\', 
+            \'' . $message->getIdUser() . '\', 
+            \'' . $message->getNameUser() . '\',
+            \'' . $message->getMessage() . '\',
+            \'' . $message->getTime() . '\',
+            \'' . $message->getIdTopic() . '\',';
+        if(mysqli_query($this->_dbLink, $query)){
+        } else{
+            echo 'erreur' . mysqli_error($this->_dbLink);
         }
     }
 }

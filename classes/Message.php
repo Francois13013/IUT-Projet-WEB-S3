@@ -9,6 +9,7 @@ require_once('Tag.php');
         private $_message;
         private $_time;
         private $_mainDiv;
+        private $_idTopic;
 
         function __construct($text,$id,$name)
         {
@@ -21,6 +22,24 @@ require_once('Tag.php');
             $content = new Tag('p',$this->_message,'','textmessage');
             $this->_mainDiv = new Tag('div',$content . $infodiv ,'','message');
         }
+
+
+        function  getIdMessage(){return $this->_idMessage;}
+        function  getIdUser(){return $this->_idUser;}
+        function  getIdTopic(){return $this->_idTopic;}
+        function  getNameUser(){return $this->_nameUser;}
+        function  getTime(){return $this->_time;}
+        function  getMainDiv(){return $this->_mainDiv;}
+        function  getMessage(){return $this->_message;}
+
+        function  setIdMessage($tmp){$this->_idMessage = $tmp;}
+        function  setIdUser($tmp){ $this->_idUser = $tmp;}
+        function  setIdTopic($tmp){ $this->_idTopic = $tmp;}
+        function  setNameUser($tmp){ $this->_nameUser = $tmp;}
+        function  setTime($tmp){ $this->_time = $tmp;}
+        function  setMainDiv($tmp){ $this->_mainDiv = $tmp;}
+        function  setMessage($tmp){$this->_message = $tmp;}
+
         function addText($text){
 //            echo $this->_message;
 //            echo $text;

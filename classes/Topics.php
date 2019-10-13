@@ -57,8 +57,15 @@ class Topics { //passer la class topics en mvc avec Controller de topics qui cal
     private $_maxMessage;
     private $_statut;
     private $_maxWords;
-    function __construct(){
-        $this->createIdTopics(); //request en sql l'id de la base vu qu'il est en auto increment insert un nouveau et le recupere avec l'AI
+    function __construct($id,$name,$message){
+
+        $dbh = new PDO('mysql:host='.HOST.';dbname='.DATABASE,USERNAME,PASSWORD);
+        $stmt = $pdo->query('SELECT name FROM users');
+        while ($row = $stmt->fetch())
+        {
+            echo $row['name'] . "\n";
+        }
+//        $this->createIdTopics(); //request en sql l'id de la base vu qu'il est en auto increment insert un nouveau et le recupere avec l'AI
 
         // call message constructor en boucle
 

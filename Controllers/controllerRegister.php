@@ -1,9 +1,9 @@
 <?php
-require('classes/User.php');
-require('classes/Database.php');
+require('../classes/User.php');
+//require('./classes/Database.php');
 
-    class Register {
-        static public function login(){
+//    class Register {
+//        static public function login(){
             session_start();
             $username = $_POST['username'] ;
             $password = $_POST['password'] ;
@@ -30,7 +30,9 @@ require('classes/Database.php');
 //    $databaseBaptiste->Login($user);
 //
 ////
-    }
-    }
+//    }
+//    }
+//
+//    Register::login();
 //    Register::login();
 ?>
