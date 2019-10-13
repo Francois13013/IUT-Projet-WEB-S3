@@ -5,7 +5,16 @@ class Router {
     public static $function;
     public static $innerComparator;
 
+    public static function forceHTTPS(){
+        if( isset($_SERVER['HTTPS'] ) ) {
+            echo 'yes';
+        } else {
+            echo '<meta http-equiv="refresh" content="0;url='. "Https://www." . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] .'" />';
+        }
+    }
+
     public static function add($route, callable $innerText){
+//        self::forceHTTPS();
         self::$url[$route] = $route; // dans array url[Url] = func
         if($_SERVER["REQUEST_URI"] == $route) {
             $innerText(); //lance la fonction de view
