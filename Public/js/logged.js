@@ -1,6 +1,6 @@
-function loggedMenu(firstName){
+function loggedMenu(Pseudo){
     var menu = document.querySelector('.menuphoneuser');
-    menu.innerHTML = 'Bonjour, ' + firstName;
+    menu.innerHTML = 'Bonjour, ' + Pseudo;
     var btn = document.createElement("BUTTON");
     btn.innerHTML = "Déconnexion ";
     var btn2 = document.createElement("BUTTON");

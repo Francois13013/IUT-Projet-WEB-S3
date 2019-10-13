@@ -17,7 +17,8 @@ session_start();
     $password = $_POST['password'] ;
 
 $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
-$user = new user('','',$username,'',$password,'','');
+$user = new user($username,'',$password,'','');
+//echo $user;
 $databaseBaptiste->Login($user);
 
 ?>

@@ -6,10 +6,11 @@ require_once('../classes/Database.php');
 //    class Register {
 //        static public function login(){
             session_start();
-            $username = $_POST['username'] ;
-            $password = $_POST['password'] ;
+            $username = $_POST['Pseudo'] ;
+            $password = $_POST['Password'] ;
+            $email = $_POST['Email'] ;
             $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
-            $user = new user('','',$username,'',$password,'','');
+            $user = new user($username,$email,$password,'','');
             $databaseBaptiste->InsertUser($user);
 
 

@@ -70,7 +70,7 @@ class database {
         }
     }
     function InsertUser(User $user){
-        $query = 'INSERT INTO User (FirstName,LastName,Surname,Email,Password,Status) VALUES (\'' . $user->getFirstName() . '\', \'' . $user->getLastName() . '\', \'' . $user->getSurname() . '\',\'' . $user->getEmail() . '\',\'' . $user->getPassword() . '\',\'' . '2' . '\');';
+        $query = 'INSERT INTO User (Surname,Email,Password,Status) VALUES (\'' . $user->getPseudo() . '\',\'' . $user->getEmail() . '\',\'' . $user->getPassword() . '\',\'' . '2' . '\');';
         if(mysqli_query($this->_dbLink, $query)){
             echo '<meta http-equiv="refresh" content="0;url='. "/Thanks" .'" />';
         } else{
@@ -101,11 +101,12 @@ class database {
         $array = array(
           1 => "Password",
         );
-        $query = 'Select Password from User Where Surname = \'' . $User->getSurname() . '\' ';
+        $query = 'Select Password from User Where Surname = \'' . $User->getPseudo() . '\' ';
         $dbResult = $this->Error($query);
         if (mysqli_num_rows(mysqli_query($this->_dbLink, $query)) == 0) {
-            header('Location: /Index');
-            exit();
+            echo 'Utilisateur Introuvable';
+            //            header('Location: /Index');
+//            exit();
         } else {
             if(mysqli_fetch_assoc($dbResult)['Password'] == sha1($User->getPassword())){
                 session_start();
@@ -113,25 +114,25 @@ class database {
 
                 $array = array(
                     1 => "IdUser",
-                    2 => "FirstName",
-                    3 => "LastName",
-                    4 => "Surname",
-                    5 => "Email",
-                    6 => "Password",
-                    7 => "Status",
+                    2 => "Surname",
+                    3 => "Email",
+                    4 => "Password",
+                    5 => "Status",
                 );
                 for($i = 1 ; $i <= count($array) ; $i++) {
-                    $query = 'Select ' . $array[$i] . ' from User Where Surname = \'' . $User->getSurname() . '\' ';
+                    $query = 'Select ' . $array[$i] . ' from User Where Surname = \'' . $User->getPseudo() . '\' ';
                     $dbResult = $this->Error($query);
                     $_SESSION[$array[$i]] = mysqli_fetch_assoc($dbResult)[$array[$i]];
                 }
-                $User = new user($_SESSION["FirstName"],$_SESSION["LastName"],$_SESSION["Surname"],$_SESSION["Email"],$_SESSION["Password"],$_SESSION["IdUser"],$_SESSION["Status"]);
+                $User = new user($_SESSION["Surname"],$_SESSION["Email"],$_SESSION["Password"],$_SESSION["IdUser"],$_SESSION["Status"]);
                 $User = $_SESSION['user'];
+//                echo 'Ca marche mais pas trop';
                 header('Location: /Index');
                 exit();
             } else {
-                header('Location: /error.php');
-                exit();
+                echo 'mdp invalide';
+//                header('Location: /error.php');
+//                exit();
             }
         }
     }

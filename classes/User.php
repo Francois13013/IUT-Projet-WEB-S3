@@ -41,21 +41,20 @@ class user {
             "6" => "@univ-amu.fr",
         );
         if ( preg_match ( " /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ " , $email ) ) {
-        $strstrEmail = strstr($email, '@');
-        for ($i = 1; $i <= count($array); $i++) {
-            if ($strstrEmail == $array[$i]) {
-                return false;
-                break;
-            } else if ($i== count($array)){
-                return true;
-            }
+            $strstrEmail = strstr($email, '@');
+            for ($i = 1; $i <= count($array); $i++) {
+                if ($strstrEmail == $array[$i]) {
+                    return false;
+                    break;
+                } else if ($i== count($array)){
+                    return true;
+                }
 
-        }
+            }
         } else {
             return false;
         }
     }
-
 
     function CheckUser(){
         $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
