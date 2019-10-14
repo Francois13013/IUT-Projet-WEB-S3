@@ -1,7 +1,7 @@
 <form id="singupform" action="/Controllers/controllerRegister.php" method="post">
-    <label for="Surname">Pseudo</label>
+    <label id="labelSurname" for="Surname">Pseudo</label>
     <input id="Surname" class="inputsingup" type="text" name="Pseudo">
-    <label for="Email">Email</label>
+    <label id="labelEmail" for="Email">Email</label>
     <input id="Email" class="inputsingup" type="text" name="Email">
     <label for="Password">Mot de passe</label>
     <input id="Password" class="inputsingup" type="password" name="Password">
@@ -12,6 +12,33 @@
 
     <input id="submitform" type="submit" value="submit">
 </form>
+
+
+<?php
+if (isset($_SESSION['Probleme'])) {
+    if (strpos($_SESSION['Probleme'], ',') > 1) {
+        $bypass = array();
+        $bypass = explode(',', $_SESSION['Probleme']);
+        print_r($bypass);
+//        $count = count($bypass);
+    } else {
+        $bypass = $_SESSION['Probleme'];
+        print_r($bypass);
+        $count = true;
+    }
+}
+echo '<script type="text/javascript" src="../Public/js/RedBorder.js"></script>';
+
+if($count == true){
+    echo '<script type="text/javascript">' . 'RedBorder(' . ' \'' . $bypass . '\' ' . ');' . '</script>';
+} else {
+    for ($i = 0; $i < count($bypass); $i++) {
+        echo '<script type="text/javascript">' . 'RedBorder(' . ' \'' . $bypass[$i] . '\' ' . ');' . '</script>';
+    }
+}
+    unset($_SESSION['Probleme']);
+?>
+
 
 <!--    <form id="singupform" action="/Controllers/controllerRegister.php" method="post">-->
 <!--        <a>FirstName</a>-->

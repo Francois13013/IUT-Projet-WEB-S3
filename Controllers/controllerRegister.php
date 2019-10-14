@@ -14,8 +14,11 @@ require_once('../classes/Database.php');
             if($user->CheckUser() == true){  $databaseBaptiste->InsertUser($user);}
 //            else {echo '<meta http-equiv="refresh" content="0;url='. "/Register" .'" />';}
 else {
-    echo $_SESSION['Probleme'];
+    header( 'Location: /Register' ) ;
+    exit();
 }
+
+
 
 //    require_once('classes/User.php');
 //    require_once('classes/Database.php');
