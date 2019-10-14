@@ -85,6 +85,14 @@ class user {
         return true;
     }
 
+    function CheckPseudo(){
+        if(strlen($this->_pseudo) < 8 || strlen($this->_pseudo)>16) {
+            return false;
+        }else {
+            return true;
+        }
+    }
+
     function PseudoAlreadyExist(){
         $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
         $query = 'Select Surname from User Where Surname = \'' . $this->_pseudo . '\' ';
@@ -114,6 +122,11 @@ class user {
 
         if($this->CheckEmail() == false){
             if(isset($_SESSION['Probleme'])){ $_SESSION['Probleme'] .=',Email';} else {$_SESSION['Probleme'] = "Email";}
+            $return = false;
+        }
+
+        if($this->CheckPseudo() == false){
+            if(isset($_SESSION['Probleme'])){ $_SESSION['Probleme'] .=',Pseudo';} else {$_SESSION['Probleme'] = "Pseudo";}
             $return = false;
         }
 

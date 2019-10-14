@@ -1,5 +1,5 @@
 <form id="singupform" action="/Controllers/controllerRegister.php" method="post">
-    <label id="labelSurname" for="Surname">Pseudo</label>
+    <label id="labelPseudo" for="Surname">Pseudo</label>
     <input id="Surname" class="inputsingup" type="text" name="Pseudo">
     <label id="labelEmail" for="Email">Email</label>
     <input id="Email" class="inputsingup" type="text" name="Email">
