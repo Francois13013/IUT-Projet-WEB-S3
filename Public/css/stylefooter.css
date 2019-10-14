@@ -1,6 +1,7 @@
 footer {
     background-color:blue ;
-    padding: 10px;
+    align-items: center;
+    height: 4%;
     text-align: center;
     color: white;
     display:flex;
