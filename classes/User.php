@@ -58,23 +58,76 @@ class user {
 //        }
     }
 
-    function CheckUser(){
+
+
+    function CheckPassword(){
+        if(strlen($this->_password) < 8 || strlen($this->_password)>16) {
+            return false;
+        }else {
+            return true;
+        }
+    }
+
+    function CheckEmail(){
+        if(preg_match("/^([\w-\.]+)@((?:[\w]+\.)+)([a-zA-Z]{2,4})/i", $this->getEmail()) == true
+            && $this->checkEmailHost($this->getEmail()) == true
+            && strlen($this->_email) < 32) {
+                return true;
+        } else {
+            return false;
+        }
+    }
+
+    function EmailAlreadyExist(){
+        $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
+        $query = 'Select Email from User Where Email = \'' . $this->_email . '\' ';
+        if($databaseBaptiste->Comparator($query) == 1) {return false;}
+        return true;
+    }
+
+    function PseudoAlreadyExist(){
         $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
         $query = 'Select Surname from User Where Surname = \'' . $this->_pseudo . '\' ';
         if($databaseBaptiste->Comparator($query) == 1) {return false;}
-        $query = 'Select Email from User Where Email = \'' . $this->_email . '\' ';
-        if($databaseBaptiste->Comparator($query) == 1) {return false;}
-        if(strlen($this->_password) < 8 || strlen($this->_password)>16) {return false;}
-
-        if(strpos($this->_email,'@') == 0){return false;}
-
-//        echo $this . '<br><hr>';
-        if($this->checkEmailHost($this->getEmail()) == false) {return false;} /* || '@yahoo.fr' || '@laposte.net'*/
-        if(strlen($this->_email) > 32) {return false;}
-//        echo $this . '<br><hr>';
-
         return true;
     }
+
+        function CheckUser(){
+        session_start();
+        $return = true;
+        unset($_SESSION['Probleme']);
+
+        if($this->EmailAlreadyExist() == false){
+            if(isset($_SESSION['Probleme'])){ $_SESSION['Probleme'] .=',EmailExistant';} else {$_SESSION['Probleme'] = "EmailExistant";}
+            $return = false;
+        }
+
+        if($this->PseudoAlreadyExist() == false){
+           if(isset($_SESSION['Probleme'])){ $_SESSION['Probleme'] .=',PseudoExistant';} else {$_SESSION['Probleme'] = "PseudoExistant";}
+           $return = false;
+        }
+
+        if($this->CheckPassword() == false){
+            if(isset($_SESSION['Probleme'])){ $_SESSION['Probleme'] .=',Password';} else {$_SESSION['Probleme'] = "Password";}
+            $return = false;
+        }
+
+        if($this->CheckEmail() == false){
+            if(isset($_SESSION['Probleme'])){ $_SESSION['Probleme'] .=',Email';} else {$_SESSION['Probleme'] = "Email";}
+            $return = false;
+        }
+
+//        if(strpos($this->_email,'@') == 0){return false;}
+
+//        echo $this . '<br><hr>';
+//        if($this->checkEmailHost($this->getEmail()) == false) {return false;} /* || '@yahoo.fr' || '@laposte.net'*/
+//        if() {return false;}
+//        echo $this . '<br><hr>';
+
+        return $return;
+    }
+
+
     function __toString()
     {
         $html = $this->getPseudo(). ' ';

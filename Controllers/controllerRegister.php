@@ -13,7 +13,9 @@ require_once('../classes/Database.php');
             $user = new user($username,$email,$password,'','');
             if($user->CheckUser() == true){  $databaseBaptiste->InsertUser($user);}
 //            else {echo '<meta http-equiv="refresh" content="0;url='. "/Register" .'" />';}
-else {echo 'ziodakjzdaiojzdaiojzdaiojzdaiozjda marche pas';}
+else {
+    echo $_SESSION['Probleme'];
+}
 
 //    require_once('classes/User.php');
 //    require_once('classes/Database.php');
