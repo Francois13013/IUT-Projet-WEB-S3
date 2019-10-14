@@ -57,8 +57,8 @@ require_once('Tag.php');
             echo $this->_message . '<br><hr>';
         }
     }
-    $message = new Message ('testzad','1','abd');
-    $message->show();
-    $message->addText('rajout');
-    $message->show();
+//    $message = new Message ('testzad','1','abd');
+//    $message->show();
+//    $message->addText('rajout');
+//    $message->show();
 ?>
