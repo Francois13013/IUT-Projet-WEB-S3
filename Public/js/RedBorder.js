@@ -6,7 +6,7 @@
 //
 
 // alert('500');
-function RedBorder(errorname){
+function ErrorCall(errorname){
     var tmp = errorname;
     if(errorname == 'PseudoExistant'){
         tmp = 'Surname';
@@ -16,7 +16,7 @@ function RedBorder(errorname){
         tmp = 'Email';
         document.getElementById('labelEmail').innerHTML = document.getElementById('labelEmail').innerHTML + ' (Email déjà incrite)';
     }
-    if(errorname == 'SecondPassword'){ tmp = 'RepeterMDP'}
+    if(errorname == 'SecondPassword'){ tmp = 'RepeterMDP'; ErrorCall('Password');}
     if(errorname == 'Pseudo'){
         tmp = 'Surname';
     }

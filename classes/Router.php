@@ -38,8 +38,11 @@ class Router {
         }
     }
 
-
-
+    public static function addNoLoggedWay($route, callable $innerText){
+        if($_SESSION['login'] != 'ok') {
+            self::add($route, $innerText);
+        }
+    }
 
 
 

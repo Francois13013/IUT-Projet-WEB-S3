@@ -103,7 +103,6 @@ class user {
         function CheckUser(){
         session_start();
         $return = true;
-        unset($_SESSION['Probleme']);
 
         if($this->EmailAlreadyExist() == false){
             if(isset($_SESSION['Probleme'])){ $_SESSION['Probleme'] .=',EmailExistant';} else {$_SESSION['Probleme'] = "EmailExistant";}

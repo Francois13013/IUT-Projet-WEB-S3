@@ -14,7 +14,7 @@ Router::addLoggedWay('/MyProfile', function() {
     Controller::CreateStandardView('viewMyProfile');
 });
 
-Router::add('/Register', function() {
+Router::addNoLoggedWay('/Register', function() {
     Controller::CreateStandardView('viewRegister');
 });
 

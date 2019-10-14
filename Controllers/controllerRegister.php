@@ -8,15 +8,28 @@ require_once('../classes/Database.php');
             session_start();
             $username = $_POST['Pseudo'] ;
             $password = $_POST['Password'] ;
+            $secondPassword = $_POST['PasswordTwice'] ;
+            echo $secondPassword . "<br><hr>";
+            echo $password . "<br><hr>";
             $email = $_POST['Email'] ;
             $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
             $user = new user($username,$email,$password,'','');
-            if($user->CheckUser() == true){  $databaseBaptiste->InsertUser($user);}
+            if($secondPassword == $password) {
+                if ($user->CheckUser() == true) {$databaseBaptiste->InsertUser($user);} else {
+                    header( 'Location: /Register' ) ;
+                    exit();
+                }
+            } else {
+                 if(isset($_SESSION['Probleme'])){ $_SESSION['Probleme'] .=',SecondPassword';} else {$_SESSION['Probleme'] = "SecondPassword";}
+                 echo $_SESSION['Probleme'];
+                 $user->CheckUser();
+                header( 'Location: /Register' ) ;
+                exit();
+            }
 //            else {echo '<meta http-equiv="refresh" content="0;url='. "/Register" .'" />';}
-else {
-    header( 'Location: /Register' ) ;
-    exit();
-}
+//else {
+
+//}
 
 
 
