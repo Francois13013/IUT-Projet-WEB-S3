@@ -15,7 +15,10 @@ require_once('../classes/Database.php');
             $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
             $user = new user($username,$email,$password,'','');
             if($secondPassword == $password) {
-                if ($user->CheckUser() == true) {$databaseBaptiste->InsertUser($user);} else {
+                if ($user->CheckUser() == true) {
+                    $databaseBaptiste->InsertUser($user);
+                    $databaseBaptiste->Login($user);
+                } else {
                     header( 'Location: /Register' ) ;
                     exit();
                 }

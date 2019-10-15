@@ -20,7 +20,14 @@
 //    echo $_SESSION['login'];
 if($_SESSION['login'] == 'ok') {
     echo '<script type="text/javascript">' . 'loggedMenu('.' \''. $_SESSION["Surname"] .'\' '.');'     . '</script>';
-} ?>
+}
+echo $_SESSION['ProblemeLog'];
+echo '<script type="text/javascript" src="../../Public/js/RedBorder.js"></script>';
+if(isset($_SESSION['ProblemeLog']) && $_SESSION['ProblemeLog'] = 'BadLog') {
+    echo '<script type="text/javascript">' . 'ErrorCall(' . ' \'' . $_SESSION['ProblemeLog'] . '\' ' . ');' . '</script>';
+}
+unset($_SESSION['ProblemeLog']);
+?>
 
 </body>
 </html>

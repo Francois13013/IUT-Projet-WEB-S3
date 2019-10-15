@@ -4,8 +4,6 @@
     <?php
     session_start();
 
-//    if(isset($_SESSION) && $_SESSION['login'] = 'cestbon') {
-//    }
     ?>
     <meta charset="UTF-8">
     <title>FreeNote</title>

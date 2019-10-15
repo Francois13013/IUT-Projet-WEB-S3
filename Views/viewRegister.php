@@ -32,7 +32,7 @@ echo '<script type="text/javascript" src="../Public/js/RedBorder.js"></script>';
 if($count == true){
     echo '<script type="text/javascript">' . 'ErrorCall(' . ' \'' . $bypass . '\' ' . ');' . '</script>';
 } else {
-    for ($i = 0; $i < count($bypass); $i++) {
+    for ($i = 0; $i < (count($bypass)); $i++) {
         echo '<script type="text/javascript">' . 'ErrorCall(' . ' \'' . $bypass[$i] . '\' ' . ');' . '</script>';
     }
 }

@@ -73,6 +73,7 @@ class database {
         $query = 'INSERT INTO User (Surname,Email,Password,Status) VALUES (\'' . $user->getPseudo() . '\',\'' . $user->getEmail() . '\',\'' . sha1($user->getPassword()) . '\',\'' . '2' . '\');';
         if(mysqli_query($this->_dbLink, $query)){
             echo '<meta http-equiv="refresh" content="0;url='. "/Thanks" .'" />';
+//            header('Location : /Index');
         } else{
             echo 'erreur' . mysqli_error($this->_dbLink);
         }
@@ -104,9 +105,10 @@ class database {
         $query = 'Select Password from User Where Surname = \'' . $User->getPseudo() . '\' ';
         $dbResult = $this->Error($query);
         if (mysqli_num_rows(mysqli_query($this->_dbLink, $query)) == 0) {
-            echo 'Utilisateur Introuvable';
-            //            header('Location: /Index');
-//            exit();
+//            echo 'Utilisateur Introuvable';
+            $_SESSION['ProblemeLog'] = 'BadLog';
+            header('Location: /Index');
+            exit();
         } else {
             if(mysqli_fetch_assoc($dbResult)['Password'] == sha1($User->getPassword())){
                 session_start();
@@ -126,13 +128,14 @@ class database {
                 }
                 $User = new user($_SESSION["Surname"],$_SESSION["Email"],$_SESSION["Password"],$_SESSION["IdUser"],$_SESSION["Status"]);
                 $User = $_SESSION['user'];
-//                echo 'Ca marche mais pas trop';
+                unset($_SESSION['ProblemeLog']);
                 header('Location: /Index');
                 exit();
             } else {
-                echo 'mdp invalide';
-//                header('Location: /error.php');
-//                exit();
+//                echo 'mdp invalide';
+                $_SESSION['ProblemeLog'] = 'BadLog';
+                header('Location: /Index');
+                exit();
             }
         }
     }

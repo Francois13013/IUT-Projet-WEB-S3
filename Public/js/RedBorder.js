@@ -8,7 +8,12 @@
 // alert('500');
 function ErrorCall(errorname){
     var tmp = errorname;
-    if(errorname == 'PseudoExistant'){
+    if(errorname == 'BadLog') {
+        document.querySelector('.menuphoneuser').classList.toggle("menuuserpcoff");
+        tmp = 'usernameinput';
+        ErrorCall('passwordinput');
+    }
+        if(errorname == 'PseudoExistant'){
         tmp = 'Surname';
         document.getElementById('labelPseudo').innerHTML = document.getElementById('labelPseudo').innerHTML + ' (Pseudo déjà pris)';
     }
@@ -21,6 +26,7 @@ function ErrorCall(errorname){
         tmp = 'Surname';
     }
     // var bypass = translator(errorname);
+    document.getElementById(tmp).style.borderWidth = '3px';
     document.getElementById(tmp).style.borderColor = 'Red';
     // document.getElementById(errorname).style.borderColor = '';
 }
