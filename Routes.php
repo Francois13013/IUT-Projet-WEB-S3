@@ -22,6 +22,10 @@ Router::add('/Thanks', function() {
     Controller::CreateStandardView('viewThanks');
 });
 
+Router::add('/Contact', function() {
+    Controller::CreateView('viewContact');
+});
+
 Router::checkErrorUrl();
 
 //
