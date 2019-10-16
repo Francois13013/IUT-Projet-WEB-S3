@@ -9,7 +9,12 @@
 function ErrorCall(errorname){
     var tmp = errorname;
     if(errorname == 'BadLog') {
-        document.querySelector('.menuphoneuser').classList.toggle("menuuserpcoff");
+        if(window.innerWidth <= 1100) {
+            document.querySelector('.menuphoneuser').classList.toggle("offmenu");
+
+        } else {
+            document.querySelector('.menuphoneuser').classList.toggle("menuuserpcoff");
+        }
         tmp = 'usernameinput';
         ErrorCall('passwordinput');
     }
@@ -26,7 +31,7 @@ function ErrorCall(errorname){
         tmp = 'Surname';
     }
     // var bypass = translator(errorname);
-    document.getElementById(tmp).style.borderWidth = '3px';
+    document.getElementById(tmp).style.borderWidth = '2px';
     document.getElementById(tmp).style.borderColor = 'Red';
     // document.getElementById(errorname).style.borderColor = '';
 }
