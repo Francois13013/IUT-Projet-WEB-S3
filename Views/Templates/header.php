@@ -6,7 +6,7 @@
 
     ?>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="200" >
+    <meta http-equiv="refresh" content="1000000" >
     <title>FreeNote</title>
     <link rel="stylesheet" href="../../Public/css/style.css">
 </head>

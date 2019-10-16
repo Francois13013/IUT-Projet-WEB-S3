@@ -63,13 +63,21 @@
         width:100%;
     }
     #mainIndex {
-        height:100%;
-        margin-left: 10%;
-        margin-right: 10%;
+        height:80%;
+        width:100%;
+        margin-left: inherit;
+        margin-right: inherit;
         flex-direction: column;
         display:flex;
         align-items: center;
         justify-content: space-around;
+    }
+
+    #otherbox{
+        width:100%;
+    }
+    #containerTopic{
+        width:100%;
     }
 } /*Fin query*/
 
