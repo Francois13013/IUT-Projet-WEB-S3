@@ -80,6 +80,10 @@
 
 /*} !*Fin query*!*/
 
+.container{
+    border-radius: 22px;
+}
+
 #mainIndex{
     display:flex;
     flex-direction: column;
@@ -91,23 +95,22 @@
 }
 #otherbox{
     height:45%;
-    background-color: aquamarine;
     display:flex;
     flex-direction: column;
     justify-content: space-between;
 }
 #containerTopic{
     height:45%;
-    background-color: chartreuse;
+    background-color: lightblue;
     overflow-y: scroll;
 }
 #containerInfo{
     height:50%;
-    background-color: red;
+    background-color: lightblue;
 }
 #TopSubject{
     height:40%;
-    background-color: violet;
+    background-color: lightblue;
 }
 @media only screen and (min-width: 1100px) {
     #midpage{
@@ -127,12 +130,10 @@
     #otherbox{
         width:20%;
         height:100%;
-        background-color: aquamarine;
     }
     #containerTopic{
         height:100%;
         width:70%;
-        background-color: blueviolet;
     }
     #containerInfo{}
     #TopSubject{}
