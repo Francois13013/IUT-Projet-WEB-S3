@@ -80,62 +80,62 @@
 
 /*} !*Fin query*!*/
 
-.container{
-    border-radius: 22px;
-}
+/*.container{*/
+/*    border-radius: 22px;*/
+/*}*/
 
-#mainIndex{
-    display:flex;
-    flex-direction: column;
-    height:100%;
-    width: 90%;
-    justify-content: space-around;
-    margin-right: 5%;
-    margin-left: 5%;
-}
-#otherbox{
-    height:45%;
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-#containerTopic{
-    height:45%;
-    background-color: lightblue;
-    overflow-y: scroll;
-}
-#containerInfo{
-    height:50%;
-    background-color: lightblue;
-}
-#TopSubject{
-    height:40%;
-    background-color: lightblue;
-}
-@media only screen and (min-width: 1100px) {
-    #midpage{
-        display:flex;
-        align-items: center;
-    }
-    #mainIndex{
-        /*flex-wrap: wrap;*/
-        width:100%;
-        /*margin-top: 5%;*/
-        height:90%;
-        /*align-items: center;*/
-        display:flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    #otherbox{
-        width:20%;
-        height:100%;
-    }
-    #containerTopic{
-        height:100%;
-        width:70%;
-    }
-    #containerInfo{}
-    #TopSubject{}
-}
+/*#mainIndex{*/
+/*    display:flex;*/
+/*    flex-direction: column;*/
+/*    height:100%;*/
+/*    width: 90%;*/
+/*    justify-content: space-around;*/
+/*    margin-right: 5%;*/
+/*    margin-left: 5%;*/
+/*}*/
+/*#otherbox{*/
+/*    height:45%;*/
+/*    display:flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: space-between;*/
+/*}*/
+/*#containerTopic{*/
+/*    height:45%;*/
+/*    background-color: lightblue;*/
+/*    overflow-y: scroll;*/
+/*}*/
+/*#containerInfo{*/
+/*    height:50%;*/
+/*    background-color: lightblue;*/
+/*}*/
+/*#TopSubject{*/
+/*    height:40%;*/
+/*    background-color: lightblue;*/
+/*}*/
+/*@media only screen and (min-width: 1100px) {*/
+/*    #midpage{*/
+/*        display:flex;*/
+/*        align-items: center;*/
+/*    }*/
+/*    #mainIndex{*/
+/*        !*flex-wrap: wrap;*!*/
+/*        width:100%;*/
+/*        !*margin-top: 5%;*!*/
+/*        height:90%;*/
+/*        !*align-items: center;*!*/
+/*        display:flex;*/
+/*        flex-direction: row;*/
+/*        justify-content: space-around;*/
+/*    }*/
+/*    #otherbox{*/
+/*        width:20%;*/
+/*        height:100%;*/
+/*    }*/
+/*    #containerTopic{*/
+/*        height:100%;*/
+/*        width:70%;*/
+/*    }*/
+/*    #containerInfo{}*/
+/*    #TopSubject{}*/
+/*}*/
 

@@ -22,6 +22,10 @@ Router::add('/Thanks', function() {
     Controller::CreateStandardView('viewThanks');
 });
 
+Router::add('/test', function() {
+    Controller::CreateStandardView('view');
+});
+
 Router::checkErrorUrl();
 
 //
