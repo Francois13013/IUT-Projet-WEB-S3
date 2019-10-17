@@ -262,18 +262,21 @@ button {
     background-color:lightcoral;
     border-radius: 4%;
     border-width: 0;
+
 }
 body {
-    background-image: url('../media/background.jpg');
+    background-color: #0b00ab;
     position: relative;
     height:100%;
     overflow-x: hidden;
-    width:100%;
+    width:98%;
+    margin-left: 2%;
+    color: wheat;
 }
 header{
     width:100%;
     position:relative;
-    height:11.5%;
+    height:10%;
     display:flex;
     justify-content: space-around;
     top:0;
@@ -289,45 +292,50 @@ header{
 
 header img{
     height:70%;
+    flex-direction: row;
+
 }
 #userMenuOff {
-    top:11.5%;
+    top:10%;
     transition-duration: 0.3s;
 }
 
 .userMenu {
     position: absolute;
-    height:88.5%;
+    height:70%;
     /*background-color: aliceblue;*/
     width:100%;
     bottom:0;
     z-index: 2;
-    top:-88.5%;
+    top:-70%;
     transition-duration: 0.3s;
     /*display: none;*/
-    display:flex;
-    justify-content:space-around;
+    display: flex;
+    justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
-    background: blue;
+    background: #ff9300;
 }
+
 
 
 
 footer{
     position: relative;
-    bottom:0;
+    bottom:0%;
     width:100%;
     display:flex;
     flex-direction: column;
     align-items: center;
     line-height: 1.6;
-    font-size: 50%;
+    font-size: 20px;
 }
 
 footer a {
     color:grey;
 }
+
+
 
 /*************************************/
 

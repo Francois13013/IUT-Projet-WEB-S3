@@ -1,14 +1,14 @@
-<form id="singupform" action="/Controllers/controllerRegister.php" method="post">
-    <label id="labelPseudo" for="Surname">Pseudo</label>
-    <input id="Surname" class="inputsingup" type="text" name="Pseudo">
-    <label id="labelEmail" for="Email">Email</label>
-    <input id="Email" class="inputsingup" type="text" name="Email">
-    <label for="Password">Mot de passe</label>
-    <input id="Password" class="inputsingup" type="password" name="Password">
-    <label for="RepeterMDP">Repeter MDP</label>
-    <input id="RepeterMDP" class="inputsingup" type="password" name="PasswordTwice">
-    <input id="checkbox" class="inputsingup" type="checkbox" name="checkbox" value="close">
-    <label href="/ConditionUtilisateur" for="checkbox">J'accepte vous les conditions d'utilisation</label>
+<form id="" action="/Controllers/controllerRegister.php" method="post">
+    <label id="pseudoLabel" for="pseudo">Pseudo</label>
+    <input id="pseudoInput" class="pseudo" type="text" name="Pseudo">
+    <label id="emailLabel" for="email">Email</label>
+    <input id="emailInput" class="email" type="text" name="Email">
+    <label for="passwordLabel">Mot de passe</label>
+    <input id="passwordInput" class="password" type="password" name="Password">
+    <label for="repeatPassword">Repeter Mot de passe</label>
+    <input id="twicePasswordInput" class="twicePassword" type="password" name="PasswordTwice">
+    <input id="" class="" type="checkbox" name="checkbox" value="close">
+    <label href="/ConditionUtilisateur" for="checkbox">J'accepte ²les conditions d'utilisation</label>
 
     <input id="submitform" type="submit" value="submit">
 </form>
