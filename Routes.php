@@ -26,6 +26,7 @@ Router::add('/test', function() {
     Controller::CreateStandardView('view');
 });
 
+Router::forceHTTPS();
 Router::checkErrorUrl();
 
 //
