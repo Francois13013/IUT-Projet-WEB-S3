@@ -26,6 +26,10 @@ Router::add('/test', function() {
     Controller::CreateStandardView('view');
 });
 
+Router::add('/Contact',function () {
+    Controller::CreateView('viewContact');
+});
+
 Router::forceHTTPS();
 Router::checkErrorUrl();
 

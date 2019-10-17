@@ -3,7 +3,7 @@
     <footer id="footer">
         <a class="bottom" href="#" onClick="MyWindow=window.open('/Index','Accueil','width=600,height=300'); return false;">Accords de confidentialité</a>
         <a class="bottom" href="#" onClick="MyWindow=window.open('/Index','Accueil','width=600,height=300'); return false;">Termes d'utilisation</a>
-        <a class="bottom" href="#" onClick="MyWindow=window.open('/Index','Accueil','width=600,height=300'); return false;">Nous contacter</a>
+        <a class="bottom" href="#" onClick="MyWindow=window.open('/Contact','Nous contacter','width=600,height=300'); return false;">Nous contacter</a>
         <a class="bottom" href="#" onClick="MyWindow=window.open('/Index','Accueil','width=600,height=300'); return false;">A propos de nous</a>
         <!--        <p>Ce site a été réaliser par un groupe d'étudiant de l'Iut d'informatique d'Aix-Marseille composé de :..... .... ..... ..... ...... ...... ...... .....</p>-->
     </footer>
