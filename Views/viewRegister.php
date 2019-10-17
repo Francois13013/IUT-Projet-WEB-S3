@@ -22,7 +22,12 @@ if (isset($_SESSION['Probleme'])) {
         print_r($bypass);
 //        $count = count($bypass);
     } else {
-        $bypass = $_SESSION['Probleme'];
+        $bypass = array($_SESSION['Probleme']);
+//        $fruits = array (
+//            "fruits"  => array("a" => "orange", "b" => "banana", "c" => "apple"),
+//            "numbers" => array(1, 2, 3, 4, 5, 6),
+//            "holes"   => array("first", 5 => "second", "third")
+//        );
         print_r($bypass);
         $count = true;
     }
@@ -32,7 +37,7 @@ echo '<script type="text/javascript" src="../Public/js/RedBorder.js"></script>';
 if($count == true){
     echo '<script type="text/javascript">' . 'ErrorCall(' . ' \'' . $bypass . '\' ' . ');' . '</script>';
 } else {
-    for ($i = 0; $i < (count($bypass)); $i++) {
+    for ($i = 0; $i < count($bypass); $i++) {
         echo '<script type="text/javascript">' . 'ErrorCall(' . ' \'' . $bypass[$i] . '\' ' . ');' . '</script>';
     }
 }
