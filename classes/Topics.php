@@ -49,44 +49,83 @@ require_once('User.php');
 //}
 
 
+class Topics
+{ //passer la class topics en mvc avec Controller de topics qui call et rewrite l'appche.
 
-class Topics { //passer la class topics en mvc avec Controller de topics qui call et rewrite l'appche.
-    private $_idTopics;
-    private $_topicsName;
-    private $_message = array();
-    private $_maxMessage;
-    private $_statut;
-    private $_maxWords;
-    function __construct($id,$name,$message){
+    private $_idTopics = '';
+    private $_idCreator = '';
+    private $_surname = '';
+    private $_nameTopics = '';
+    private $_date = '';
+    private $_time = '';
+    private $_script = '';
 
-        $dbh = new PDO('mysql:host='.HOST.';dbname='.DATABASE,USERNAME,PASSWORD);
-        $stmt = $pdo->query('SELECT name FROM users');
-        while ($row = $stmt->fetch())
+    function __construct($_surname, $_nameTopics, $_date, $_time, $_script)
+    {
+        $this->setIdUser($_surname);
+        $this->setNameTopics($_nameTopics);
+        $this->setDate($_date);
+        $this->setTime($_time);
+        $this->setScript($_script);
+
+
+        function __construct($id, $name, $message)
         {
-            echo $row['name'] . "\n";
-        }
+
+            $dbh = new PDO('mysql:host=' . HOST . ';dbname=' . DATABASE, USERNAME, PASSWORD);
+            $stmt = $pdo->query('SELECT  FROM users');
+            while ($row = $stmt->fetch()) {
+                echo $row['name'] . "\n";
+            }
 //        $this->createIdTopics(); //request en sql l'id de la base vu qu'il est en auto increment insert un nouveau et le recupere avec l'AI
 
-        // call message constructor en boucle
+            // call message constructor en boucle
 
 
-    }
-    function createIdTopics(){
+        }
 
-    }
-    function requestAllMessage(){
+        function CheckError()
+        {
 
-    }
-    function toggleStatut(){
-        if($this->_statut == false){$this->_statut = true;}
-        if($this->_statut == true){$this->_statut = false;}
-    }
-    function CheckTopics ()
-    {
-        $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
-        $query = 'Select NameTopics from Topics Where NameTopics = \'' . $this->_topicsName . '\' ';
-        if($databaseBaptiste->Comparator($query) == 1) {return false;}
-        return true;
+        }
+
+        function createIdTopics(Topics $topics)
+        {
+            $query = 'INSERT INTO Topics (Surname, NameTopics, Date, Time, Sctipt) VALUES (\'' . $topics->NameTopics() . '\',\'' . $user->getEmail() . '\',\'' . sha1($user->getPassword()) . '\',\'' . '2' . '\');';
+            if (mysqli_query($this->_dbLink, $query)) {
+                echo '<meta http-equiv="refresh" content="0;url=' . "/Thanks" . '" />';
+//            header('Location : /Index');
+            } else {
+                echo 'erreur' . mysqli_error($this->_dbLink);
+            }
+
+        }
+
+        function requestAllMessage()
+        {
+
+        }
+
+        function toggleStatut()
+        {
+            if ($this->_statut == false) {
+                $this->_statut = true;
+            }
+            if ($this->_statut == true) {
+                $this->_statut = false;
+            }
+        }
+
+        function CheckTopics()
+        {
+            $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net', '189826_admin1', '0651196362', 'baptistesevilla_projetweb');
+            $query = 'Select NameTopics from Topics Where NameTopics = \'' . $this->_topicsName . '\' ';
+            if ($databaseBaptiste->Comparator($query) == 1) {
+                return false;
+            }
+            return true;
+        }
+
     }
 
 }

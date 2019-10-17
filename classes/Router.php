@@ -7,9 +7,8 @@ class Router {
 
     public static function forceHTTPS(){
         if( isset($_SERVER['HTTPS'] ) ) {
-            echo 'yes';
         } else {
-            echo '<meta http-equiv="refresh" content="0;url='. "Https://www." . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] .'" />';
+            echo '<meta http-equiv="refresh" content="0;url='. "Https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] .'" />';
         }
     }
 

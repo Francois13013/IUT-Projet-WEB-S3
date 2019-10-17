@@ -22,10 +22,11 @@ Router::add('/Thanks', function() {
     Controller::CreateStandardView('viewThanks');
 });
 
-Router::add('/Contact', function() {
-    Controller::CreateView('viewContact');
+Router::add('/test', function() {
+    Controller::CreateStandardView('view');
 });
 
+Router::forceHTTPS();
 Router::checkErrorUrl();
 
 //
