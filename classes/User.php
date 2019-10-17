@@ -86,7 +86,7 @@ class user {
     }
 
     function CheckPseudo(){
-        if(strlen($this->_pseudo) < 8 || strlen($this->_pseudo)>16) {
+        if(strlen($this->_pseudo) < 3 || strlen($this->_pseudo)>16) {
             return false;
         }else {
             return true;
