@@ -17,7 +17,7 @@ require_once('../classes/Database.php');
             if($secondPassword == $password) {
                 if ($user->CheckUser() == true) {
                     $databaseBaptiste->InsertUser($user);
-                    $databaseBaptiste->Login($user);
+//                    $databaseBaptiste->Login($user);
                 } else {
                     header( 'Location: /Register' ) ;
                     exit();

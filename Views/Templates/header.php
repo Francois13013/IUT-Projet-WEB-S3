@@ -28,9 +28,9 @@
 
 <form class="userMenu" method="post">
     <label for='usernameInput'>Nom d'utilisateur</label>
-    <input name="username" id="usernameInput" class="login" type="text" value="username">
+    <input name="username" id="usernameInput" class="login" type="text">
     <label for='passwordInput'>Mot de passe</label>
-    <input name="password" id="passwordInput" class="login" type="password" value="password">
+    <input name="password" id="passwordInput" class="login" type="password">
     <div id="divisionButton">
         <button formaction="Controllers/controllerLogin.php" type="submit" name="submit" class="subButton">Connexion</button>
         <button formaction="ForgetPassword" class="subButton">Mot de passe oublié</button>

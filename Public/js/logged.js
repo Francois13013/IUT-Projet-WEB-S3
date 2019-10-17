@@ -1,5 +1,5 @@
 function loggedMenu(Pseudo){
-    var menu = document.querySelector('.menuphoneuser');
+    var menu = document.querySelector('.userMenu');
     menu.innerHTML = 'Bonjour, ' + Pseudo;
     var btn = document.createElement("BUTTON");
     btn.innerHTML = "Déconnexion ";
@@ -7,6 +7,6 @@ function loggedMenu(Pseudo){
     btn.setAttribute('formaction','Controllers/controllerLogOff.php');
     btn2.setAttribute('formaction','MyProfile');
     btn2.innerHTML = "Mon profil ";
-    document.querySelector('.menuphoneuser').appendChild(btn);
-    document.querySelector('.menuphoneuser').appendChild(btn2);
+    document.querySelector('.userMenu').appendChild(btn);
+    document.querySelector('.userMenu').appendChild(btn2);
 }

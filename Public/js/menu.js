@@ -72,3 +72,7 @@ logoElement.onclick = function(){
     }
     // menuElement.classList.toggle('userMenuOff');
 }
+
+document.getElementById('logoFreenote').onclick = function() {
+    document.location.href='/';
+}
