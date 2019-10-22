@@ -1,3 +1,5 @@
+<?php require_once('Controllers/controllerIndex.php')?>
+
 <div id="mainIndex">
 <link rel="stylesheet" href="../Public/css/styleIndex.css">
 <!--<h1>Bievenue sur l'accueil</h1>-->
@@ -25,13 +27,7 @@
          </div>
     </div>
     <div class="container" id="containerTopic">
-        <?php
-        $database = new database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
-        $database->getAllTopic();
-
-        foreach($_SESSION['topicArray'] as &$value){
-        echo '<div class = \'topicRow\'>' . $value->getNameTopics() . $value->getStatut() . '</div>';
-        };?>
+        <?php Request();?>
     </div>
 
 

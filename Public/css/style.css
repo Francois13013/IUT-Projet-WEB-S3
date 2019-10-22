@@ -346,7 +346,15 @@ footer a {
 }
 
 .topicRow{
+    display:flex;
+    align-items: center;
     height:20%;
+}
+
+.Statut, .NameTopic{
+    display:flex;
+    justify-content: center;
+    width:50%;
 }
 
 /*************************************/
