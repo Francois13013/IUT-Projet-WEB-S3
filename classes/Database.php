@@ -3,12 +3,14 @@ require_once('Message.php');
 require_once('User.php');
 require_once('Topics.php');
 
-class database {
+class database
+{
     private $_host;
     private $_user;
     private $_password;
     private $_dbLink;
-    function __construct($host,$user,$password,$dbName)
+
+    function __construct($host, $user, $password, $dbName)
     {
         $this->_host = $host;
         $this->_user = $user;
@@ -19,9 +21,10 @@ class database {
         or die('Erreur dans la sélection de la base : ' . mysqli_error($this->_dbLink)
         );
     }
-    function CheckError($query,$nameArray){
-        if(!($dbResult = mysqli_query($this->_dbLink, $query)))
-        {
+
+    function CheckError($query, $nameArray)
+    {
+        if (!($dbResult = mysqli_query($this->_dbLink, $query))) {
             echo 'Erreur de requête' . '<br/><br/>';
             // Affiche le type d'erreur.
             echo 'Erreur : ' . mysqli_error($this->_dbLink) . '<br/>';
@@ -29,8 +32,7 @@ class database {
             echo 'Requête : ' . $query . '<br/>';
             exit();
         }
-        if(!($dbResult = mysqli_query($this->_dbLink, $query)))
-        {
+        if (!($dbResult = mysqli_query($this->_dbLink, $query))) {
             echo 'Erreur de requête<br/>';
             // Affiche le type d'erreur.
             echo 'Erreur : ' . mysqli_error($this->_dbLink) . '<br/>';
@@ -40,13 +42,14 @@ class database {
         } else {
             $returnArray = array();
             while ($row = mysqli_fetch_assoc($dbResult)) {
-                for($i = 1 ; $i <= count($nameArray) ; $i++){
-                    array_push($returnArray,$row[$nameArray[$i]]);
+                for ($i = 1; $i <= count($nameArray); $i++) {
+                    array_push($returnArray, $row[$nameArray[$i]]);
                 }
             }
         }
         return $returnArray;
     }
+
     function Comparator($query)
     {
         if (!($dbResult = mysqli_query($this->_dbLink, $query))) {
@@ -72,16 +75,20 @@ class database {
             }
         }
     }
-    function InsertUser(User $user){
+
+    function InsertUser(User $user)
+    {
         $query = 'INSERT INTO User (Surname,Email,Password,Status) VALUES (\'' . $user->getPseudo() . '\',\'' . $user->getEmail() . '\',\'' . sha1($user->getPassword()) . '\',\'' . '2' . '\');';
-        if(mysqli_query($this->_dbLink, $query)){
-            echo '<meta http-equiv="refresh" content="0;url='. "/Thanks" .'" />';
+        if (mysqli_query($this->_dbLink, $query)) {
+            echo '<meta http-equiv="refresh" content="0;url=' . "/Thanks" . '" />';
 //            header('Location : /Index');
-        } else{
+        } else {
             echo 'erreur' . mysqli_error($this->_dbLink);
         }
     }
-    function Error($query){
+
+    function Error($query)
+    {
         if (!($dbResult = mysqli_query($this->_dbLink, $query))) {
             echo 'Erreur de requête' . '<br/><br/>';
             // Affiche le type d'erreur.
@@ -100,10 +107,11 @@ class database {
         }
         return $dbResult;
     }
+
     function Login(user $User)
     {
         $array = array(
-          1 => "Password",
+            1 => "Password",
         );
         $query = 'Select Password from User Where Surname = \'' . $User->getPseudo() . '\' ';
         $dbResult = $this->Error($query);
@@ -113,7 +121,7 @@ class database {
             header('Location: /Index');
             exit();
         } else {
-            if(mysqli_fetch_assoc($dbResult)['Password'] == sha1($User->getPassword())){
+            if (mysqli_fetch_assoc($dbResult)['Password'] == sha1($User->getPassword())) {
                 session_start();
                 $_SESSION["login"] = 'ok';
 
@@ -124,12 +132,12 @@ class database {
                     4 => "Password",
                     5 => "Status",
                 );
-                for($i = 1 ; $i <= count($array) ; $i++) {
+                for ($i = 1; $i <= count($array); $i++) {
                     $query = 'Select ' . $array[$i] . ' from User Where Surname = \'' . $User->getPseudo() . '\' ';
                     $dbResult = $this->Error($query);
                     $_SESSION[$array[$i]] = mysqli_fetch_assoc($dbResult)[$array[$i]];
                 }
-                $User = new user($_SESSION["Surname"],$_SESSION["Email"],$_SESSION["Password"],$_SESSION["IdUser"],$_SESSION["Status"]);
+                $User = new user($_SESSION["Surname"], $_SESSION["Email"], $_SESSION["Password"], $_SESSION["IdUser"], $_SESSION["Status"]);
                 $User = $_SESSION['user'];
                 unset($_SESSION['ProblemeLog']);
                 header('Location: /Index');
@@ -142,7 +150,9 @@ class database {
             }
         }
     }
-    function checkEmail($email){
+
+    function checkEmail($email)
+    {
         $array = array(
             1 => "Email",
         );
@@ -155,20 +165,23 @@ class database {
             return true;
         }
     }
-    function insertSqlMessage(Message $message){
+
+    function insertSqlMessage(Message $message)
+    {
         $query = 'INSERT INTO message (idMessage,idUser,nameUser,message,time,idTopic) VALUES (\'' . $message->setIdMessage() . '\', 
             \'' . $message->getIdUser() . '\', 
             \'' . $message->getNameUser() . '\',
             \'' . $message->getMessage() . '\',
             \'' . $message->getTime() . '\',
             \'' . $message->getIdTopic() . '\',';
-        if(mysqli_query($this->_dbLink, $query)){
-        } else{
+        if (mysqli_query($this->_dbLink, $query)) {
+        } else {
             echo 'erreur' . mysqli_error($this->_dbLink);
         }
     }
 
-    function getAllTopic(){
+    function getAllTopic()
+    {
         session_start();
         $query = 'Select IdTopic,NameTopic,Statut from Topics';
         $array = array(
@@ -177,22 +190,31 @@ class database {
             3 => "Statut",
         );
         $_SESSION['topicArray'] = array();
-        $returnedArray = $this->CheckError($query,$array);
-        for($i = 0 ; $i < count($this->CheckError($query,$array));  $i = $i + 3){
-            array_push($_SESSION['topicArray'],new Topic($returnedArray[$i],$returnedArray[$i+1],$returnedArray[$i+2]));
-        }}
-
-        function getTopic($id){
-            $query = 'Select IdTopic,NameTopic,Statut from Topics where IdTopic = ' . '\'' . $id . '\'';
-            $array = array(
-                1 => "IdTopic",
-                2 => "NameTopic",
-                3 => "Statut",
-            );
-            $returnedArray = $this->CheckError($query,$array);
-            $topic = new Topic($returnedArray[0],$returnedArray[1],$returnedArray[2]);
-            return $topic;
+        $returnedArray = $this->CheckError($query, $array);
+        for ($i = 0; $i < count($this->CheckError($query, $array)); $i = $i + 3) {
+            array_push($_SESSION['topicArray'], new Topic($returnedArray[$i], $returnedArray[$i + 1], $returnedArray[$i + 2]));
         }
+    }
+
+    function getTopic($id)
+    {
+        $query = 'Select IdTopic,NameTopic,Statut from Topics where IdTopic = ' . '\'' . $id . '\'';
+        $array = array(
+            1 => "IdTopic",
+            2 => "NameTopic",
+            3 => "Statut",
+        );
+        $returnedArray = $this->CheckError($query, $array);
+        $topic = new Topic($returnedArray[0], $returnedArray[1], $returnedArray[2]);
+        return $topic;
+    }
+
+    function updatePassword($email, $newPassword)
+    {
+        $query = 'Update User SET Password = ' . '\'' . $newPassword . '\'' . 'WHERE Email =' . '\'' . $email . '\'';
+        echo $query;
+        mysqli_query($this->_dbLink, $query);
+    }
 }
 
 //function shellSqlRequest($string)
