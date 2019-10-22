@@ -12,17 +12,16 @@ function Request() {
 //        Router::add('/' . $value->getIdTopic(),function() {
 //            Controller::CreateStandardView('viewForgetPassword');
 //        });
-        echo $value->getIdTopic();
         $url = 'https://' . $_SERVER['HTTP_HOST'] . '/' . $value->getIdTopic();
 
 //        onclick="fonction(this.href); return false;"
 
-        $onclick = 'onClick=' . 'location.href="/' . $value->getIdTopic() . '";';
-
+        $onclick = 'onClick=' . 'location.href="/Topic/' . $value->getIdTopic() . '";';
+        if($value->getStatut() == 1){$txt = 'ouvert';} else {$txt = 'Fermée';}
 
         echo '<div class = \'topicRow\' '. $onclick . '>' .
         '<p class=\'NameTopic\'>' . $value->getNameTopics() . '</p>' .
-        '<p class=\'Statut\'>' .  $value->getStatut() . '</p>' .
+        '<p class=\'Statut\'>' .  $txt . '</p>' .
         '</div>';
     }
 };

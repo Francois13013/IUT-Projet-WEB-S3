@@ -55,8 +55,8 @@ class Router {
     {
         if(isset($_SESSION['topicArray'])){
             foreach ($_SESSION['topicArray'] as &$value) {
-               Router::add('/' . $value->getIdTopic(),function() {
-               Controller::CreateStandardView('viewForgetPassword');
+               Router::add('/Topic/' . $value->getIdTopic(),function() {
+               Controller::CreateStandardView('viewDiscussion');
         });
         } }
     }

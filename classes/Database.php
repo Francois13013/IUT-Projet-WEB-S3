@@ -181,6 +181,18 @@ class database {
         for($i = 0 ; $i < count($this->CheckError($query,$array));  $i = $i + 3){
             array_push($_SESSION['topicArray'],new Topic($returnedArray[$i],$returnedArray[$i+1],$returnedArray[$i+2]));
         }}
+
+        function getTopic($id){
+            $query = 'Select IdTopic,NameTopic,Statut from Topics where IdTopic = ' . '\'' . $id . '\'';
+            $array = array(
+                1 => "IdTopic",
+                2 => "NameTopic",
+                3 => "Statut",
+            );
+            $returnedArray = $this->CheckError($query,$array);
+            $topic = new Topic($returnedArray[0],$returnedArray[1],$returnedArray[2]);
+            return $topic;
+        }
 }
 
 //function shellSqlRequest($string)
