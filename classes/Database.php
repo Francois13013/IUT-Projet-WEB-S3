@@ -212,7 +212,6 @@ class database
     function updatePassword($email, $newPassword)
     {
         $query = 'Update User SET Password = ' . '\'' . $newPassword . '\'' . 'WHERE Email =' . '\'' . $email . '\'';
-        echo $query;
         mysqli_query($this->_dbLink, $query);
     }
 }
