@@ -1,6 +1,7 @@
 <?php
 require_once('Message.php');
 require_once('User.php');
+require_once('Topics.php');
 
 class database {
     private $_host;
@@ -37,12 +38,14 @@ class database {
             echo 'Requête : ' . $query . '<br/>';
             exit();
         } else {
+            $returnArray = array();
             while ($row = mysqli_fetch_assoc($dbResult)) {
                 for($i = 1 ; $i <= count($nameArray) ; $i++){
-                    echo $row[$nameArray[$i]] . '<br>';
+                    array_push($returnArray,$row[$nameArray[$i]]);
                 }
             }
         }
+        return $returnArray;
     }
     function Comparator($query)
     {
@@ -166,15 +169,18 @@ class database {
     }
 
     function getAllTopic(){
+        session_start();
         $query = 'Select IdTopic,NameTopic,Statut from Topics';
         $array = array(
             1 => "IdTopic",
             2 => "NameTopic",
             3 => "Statut",
         );
-        $this->CheckError($query,$array);
-    }
-
+        $_SESSION['topicArray'] = array();
+        $returnedArray = $this->CheckError($query,$array);
+        for($i = 0 ; $i < count($this->CheckError($query,$array));  $i = $i + 3){
+            array_push($_SESSION['topicArray'],new Topic($returnedArray[$i],$returnedArray[$i+1],$returnedArray[$i+2]));
+        }}
 }
 
 //function shellSqlRequest($string)
