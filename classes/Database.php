@@ -164,6 +164,17 @@ class database {
             echo 'erreur' . mysqli_error($this->_dbLink);
         }
     }
+
+    function getAllTopic(){
+        $query = 'Select IdTopic,NameTopic,Statut from Topics';
+        $array = array(
+            1 => "IdTopic",
+            2 => "NameTopic",
+            3 => "Statut",
+        );
+        $this->CheckError($query,$array);
+    }
+
 }
 
 //function shellSqlRequest($string)

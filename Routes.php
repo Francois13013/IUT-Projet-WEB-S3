@@ -23,7 +23,7 @@ Router::add('/Thanks', function() {
 });
 
 Router::add('/test', function() {
-    Controller::CreateStandardView('view');
+    Controller::CreateStandardView('test');
 });
 
 Router::add('/Contact',function () {
