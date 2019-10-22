@@ -139,6 +139,12 @@ class Topic
         $this->setStatut($_statut);
     }
 
+    function getIdTopic(){return $this->_idTopics;}
+    function getNameTopics(){return $this->_nameTopics;}
+    function getStatut(){return $this->_statut;}
+
+
+
     function setIdTopics($tmp)
     {
         $this->_idTopics = $tmp;}
