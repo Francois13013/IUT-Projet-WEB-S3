@@ -13,7 +13,14 @@ function Request() {
 //            Controller::CreateStandardView('viewForgetPassword');
 //        });
         echo $value->getIdTopic();
-        echo '<div class = \'topicRow\'>' .
+        $url = 'https://' . $_SERVER['HTTP_HOST'] . '/' . $value->getIdTopic();
+
+//        onclick="fonction(this.href); return false;"
+
+        $onclick = 'onClick=' . 'location.href="/' . $value->getIdTopic() . '";';
+
+
+        echo '<div class = \'topicRow\' '. $onclick . '>' .
         '<p class=\'NameTopic\'>' . $value->getNameTopics() . '</p>' .
         '<p class=\'Statut\'>' .  $value->getStatut() . '</p>' .
         '</div>';
