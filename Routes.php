@@ -1,6 +1,8 @@
 <?php
 require_once('classes/Router.php');
 require_once('classes/Controller.php');
+//require_once('classes/Topics.php');
+
 
 Router::addTwoWay('/','/Index', function() {
     Controller::CreateStandardView('viewIndex');
@@ -30,6 +32,7 @@ Router::add('/Contact',function () {
     Controller::CreateView('viewContact');
 });
 
+Router::getAllTopicsRoutes();
 Router::forceHTTPS();
 Router::checkErrorUrl();
 
