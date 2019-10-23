@@ -209,6 +209,23 @@ class database
         return $topic;
     }
 
+    function getAllMessages($id)
+    {
+        session_start();
+        $query = 'Select IdMessage,Statut,Content from Messages where IdTopic = ' . '\'' . $id . '\'';
+        $array = array(
+            1 => "IdMessage",
+            2 => "Statut",
+            3 => "Content",
+        );
+        $_SESSION['messagesArray' . $id] = array();
+        $returnedArray = $this->CheckError($query, $array);
+        for ($i = 0; $i < count($this->CheckError($query, $array)); $i = $i + 3) {
+            array_push($_SESSION['messagesArray' . $id], new Message($returnedArray[$i], $returnedArray[$i + 1], $returnedArray[$i + 2]));
+        }
+    }
+
+
     function updatePassword($email, $newPassword)
     {
         $query = 'Update User SET Password = ' . '\'' . $newPassword . '\'' . 'WHERE Email =' . '\'' . $email . '\'';
