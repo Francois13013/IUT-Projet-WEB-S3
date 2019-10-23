@@ -225,11 +225,35 @@ class database
         }
     }
 
+    function addContentMsg($id,$newContent){
+        session_start();
+        $queryOne = 'Select Content from Messages where IdMessage = ' . '\'' . $id . '\'';
+        $array = array(
+            1 => "Content",
+        );
+        $returnedArray = $this->CheckError($queryOne, $array);
+//        print_r($returnedArray[0]);
+        $contentToAdd = $returnedArray[0] . $newContent;
+//        print_r($contentToAdd);
+        $queryTwo = 'Update Messages SET Content = ' . '\'' . $contentToAdd . '\'' . 'where IdMessage = ' . '\'' . $id . '\'';
+        $this->Error($queryTwo);
+    }
 
     function updatePassword($email, $newPassword)
     {
         $query = 'Update User SET Password = ' . '\'' . $newPassword . '\'' . 'WHERE Email =' . '\'' . $email . '\'';
         mysqli_query($this->_dbLink, $query);
+    }
+
+    function getLastMessages($idTopic){
+        $queryOne = 'Select IdMessage,Statut,Content from Messages ORDER BY id DESC LIMIT 1';
+        $array = array(
+            1 => "IdMessage",
+            2 => "Statut",
+            3 => "Content",
+        );
+        $result = $this->CheckError($queryOne,$array);
+        print_r($result);
     }
 }
 

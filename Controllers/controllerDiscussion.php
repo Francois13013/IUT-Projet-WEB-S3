@@ -5,11 +5,14 @@ require_once ('Controllers/controllerDiscussion.php');
 
 session_start();
 
+
 function RequestMessages(){
     $database = new database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
     $currentTopic = $database->getTopic(explode('/Topic/',$_SERVER['REQUEST_URI'])[1]);
-    $allMessage = $database->getAllMessages($currentTopic->getIdTopic());
-//    print_r( $_SESSION['messagesArray' . $currentTopic->getIdTopic()]);
+    $database->addContentMsg('2',' et salut j ajoute ca');
+    $database->getLastMessages($currentTopic->getIdTopic());
+    $database->getAllMessages($currentTopic->getIdTopic());
+    //    print_r( $_SESSION['messagesArray' . $currentTopic->getIdTopic()]);
     $allMessageFromThisTopic = $_SESSION['messagesArray' . $currentTopic->getIdTopic()];
     foreach($allMessageFromThisTopic as &$thisMessage){
         $html = '<div>';
@@ -17,5 +20,9 @@ function RequestMessages(){
         $html .= '<div>';
         echo $html;
     }
+}
+
+function AddWords(){
+
 }
 ?>
