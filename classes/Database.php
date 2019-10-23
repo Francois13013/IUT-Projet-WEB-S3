@@ -246,14 +246,11 @@ class database
     }
 
     function getLastMessages($idTopic){
-        $queryOne = 'Select IdMessage,Statut,Content from Messages ORDER BY id DESC LIMIT 1';
+        $queryOne = 'Select IdMessage from Messages ORDER BY IdMessage DESC LIMIT 1';
         $array = array(
             1 => "IdMessage",
-            2 => "Statut",
-            3 => "Content",
         );
-        $result = $this->CheckError($queryOne,$array);
-        print_r($result);
+        return $this->CheckError($queryOne,$array)[0];
     }
 }
 

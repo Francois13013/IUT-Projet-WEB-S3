@@ -1,5 +1,8 @@
 <?php
 require_once ('Controllers/controllerDiscussion.php');
+session_start();
+//echo $_SESSION['test4'];
+//unset($_SESSION['test4']);
 ?>
 
 <div>
@@ -7,10 +10,10 @@ require_once ('Controllers/controllerDiscussion.php');
         <table>
             <?php RequestMessages();?>
         </table>
-        <form>
+        <form method="post"  onsubmit="<?php AddWords()?>" >
             <label>Message</label>
-            <input type='text'>
-            <button>Envoyer</button>
+            <input type='text' name="msg">
+            <button action="submit">Envoyer</button>
         </form>
     </div>
     <div id='MenuTopicIn'>
