@@ -20,10 +20,23 @@ session_start();
 
 <div>
     <?php
-    $database = new database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
-    $currentTopic = $database->getTopic(explode('/Topic/', $_SERVER['REQUEST_URI'])[1]);
-    $id = $currentTopic->getIdTopic();
-    print_r($database->getLastMessages($id));
+//    $database = new database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
+//    $currentTopic = $database->getTopic(explode('/Topic/', $_SERVER['REQUEST_URI'])[1]);
+//    $id = $currentTopic->getIdTopic();
+//    print_r($database->getLastMessages($id));
+
+    if(array_key_exists('Close', $_POST)) {
+        closeMessage();
+    } else if(array_key_exists('CloseDiscussion', $_POST)) {
+
+    }else if(array_key_exists('RenameTopic', $_POST)) {
+
+    }
+    else if(array_key_exists('DeleteTopic', $_POST)) {
+
+    }
+
+
     ?>
     <div id='ContentTopic'>
         <form method="post"  onsubmit="<?php AddWords();?>">
@@ -35,10 +48,15 @@ session_start();
             <?php RequestMessages();?>
         </table>
     </div>
-    <div id='MenuTopicIn'>
-        <button>Fermer cette discussion</button>
-        <button onClick="">Clore message</button>
-        <button>Rename Topic</button>
-        <button>Supprimer Topic</button>
-    </div>
+    <form id='MenuTopicIn' method="POST">
+        <input type="submit" name="Close" class="button" value="Fermer le message" />
+        <input type="submit" name="CloseDiscussion" class="button" value="Fermer la discussion" />
+        <input type="submit" name="RenameTopic" class="button" value="Renomer le topic" />
+        <input type="submit" name="DeleteTopic" class="button" value="Supprimer le topic" />
+        <!--        <button>Fermer cette discussion</button>-->
+<!--<!--        <input type="submit" action="submit" onsubmit="-->--><?php ////closeMessage();?><!--<!--">Fermer cette discussion-->-->
+<!--<!--        <button onsubmit="-->--><?php ////closeMessage();?><!--<!--">Clore message</button>-->-->
+<!--        <button>Rename Topic</button>-->
+<!--        <button>Supprimer Topic</button>-->
+    </form>
 </div>
