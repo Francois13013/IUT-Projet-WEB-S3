@@ -32,9 +32,9 @@
     <label for='passwordInput'>Mot de passe</label>
     <input name="password" id="passwordInput" class="login" type="password">
     <div id="divisionButton">
-        <button formaction="Controllers/controllerLogin.php" type="submit" name="submit" class="subButton">Connexion</button>
-        <button formaction="ForgetPassword" class="subButton">Mot de passe oublié</button>
+        <button formaction="/Controllers/controllerLogin.php" type="submit" name="submit" class="subButton">Connexion</button>
+        <button formaction="/ForgetPassword" class="subButton">Mot de passe oublié</button>
     </div>
-    <button formaction="Register" id='signup'>Inscrivez-vous</button>
+    <button formaction="/Register" id='signup'>Inscrivez-vous</button>
 </form>
 <div id='midpage'>
