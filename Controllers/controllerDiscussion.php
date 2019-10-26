@@ -30,7 +30,15 @@ function AddWords(){
 //    $_SESSION['test4'] = 'test1';
     $database = new database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
     $currentTopic = $database->getTopic(explode('/Topic/',$_SERVER['REQUEST_URI'])[1]);
-    $database->addContentMsg($database->getLastMessages($currentTopic->getIdTopic()),$_POST['msg']);
+    $id = $currentTopic->getIdTopic();
+    if($database->getLastMessages($id) > 0){
+//        $database->newMessage($currentTopic);
+        $database->addContentMsg($database->getLastMessages($currentTopic->getIdTopic()), $_POST['msg']);
+    } else {
+        $database->newMessage($id);
+        $database->addContentMsg($database->getLastMessages($currentTopic->getIdTopic()), $_POST['msg']);
+//        $database->addContentMsg($database->getLastMessages($currentTopic->getIdTopic()), $_POST['msg']);
+    }
 //    echo 'iojzadoijdzaiojziaodjzdaoizajoizajzioajaziojzdaojzaiozjo';
 //    header('Location : /Topic/12');
 //    exit();

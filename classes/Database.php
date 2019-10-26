@@ -246,12 +246,20 @@ class database
     }
 
     function getLastMessages($idTopic){
-        $queryOne = 'Select IdMessage from Messages ORDER BY IdMessage DESC LIMIT 1';
+        $queryOne = 'Select IdMessage from Messages where IdTopic =' . '\'' . $idTopic . '\'' . 'ORDER BY IdMessage DESC LIMIT 1';
         $array = array(
             1 => "IdMessage",
         );
         return $this->CheckError($queryOne,$array)[0];
     }
+
+    function newMessage($idTopic){
+        $queryOne = 'Insert INTO Messages (Statut,IdTopic) VALUES ("1", ' . '"'. $idTopic . '")';
+        $this->Error($queryOne);
+    }
+    function getDbLink(){
+        return $this->_dbLink;
+}
 }
 
 //function shellSqlRequest($string)
