@@ -7,8 +7,7 @@ session_start();
 
 <div>
     <div id='ContentTopic'>
-
-        <form method="post"  onsubmit="<?php AddWords()?>" >
+        <form method="post"  onsubmit="<?php AddWords();?>">
             <label>Message</label>
             <input type='text' name="msg">
             <button action="submit">Envoyer</button>

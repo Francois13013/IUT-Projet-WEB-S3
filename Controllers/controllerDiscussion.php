@@ -4,6 +4,8 @@
     require_once('Controllers/controllerDiscussion.php');
 
 session_start();
+//ini_set('session.cache_limiter','public');
+//session_cache_limiter(false);
 
 function RequestMessages(){
     $database = new database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');

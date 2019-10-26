@@ -257,6 +257,12 @@ class database
         $queryOne = 'Insert INTO Messages (Statut,IdTopic) VALUES ("1", ' . '"'. $idTopic . '")';
         $this->Error($queryOne);
     }
+
+    function newTopic($nameTopic){
+        $queryOne = 'Insert INTO Topics (NameTopic) VALUES ("' . $nameTopic . '")';
+        $this->Error($queryOne);
+    }
+
     function getDbLink(){
         return $this->_dbLink;
 }

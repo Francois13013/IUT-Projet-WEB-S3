@@ -27,6 +27,14 @@
          </div>
     </div>
     <div class="container" id="containerTopic">
+        <div>
+            <form method="post"  onsubmit="<?php controllerAddTopic();?>" >
+                <label>
+                    <input type="text" name="nameTopic">
+                </label>
+                <button action="submit"> Créer nouveau topic </button>
+            </form>
+        </div>
         <?php Request();?>
     </div>
 
