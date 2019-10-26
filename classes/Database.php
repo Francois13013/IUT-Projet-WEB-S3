@@ -266,6 +266,17 @@ class database
     function getDbLink(){
         return $this->_dbLink;
 }
+
+    function CloseMessage($id){
+        $query = 'Update Messages SET Statut = "0" WHERE IdMessage =' . '\'' . $id . '\'';
+        mysqli_query($this->getDbLink(), $query);
+    }
+
+    function GetNumberTopic(){
+        $query = 'Select count(IdTopic) from Topics';
+        $row = mysqli_fetch_assoc(mysqli_query($this->getDbLink(), $query));
+        return $row['count(IdTopic)'];
+    }
 }
 
 //function shellSqlRequest($string)

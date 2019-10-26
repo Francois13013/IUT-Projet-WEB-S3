@@ -1,8 +1,6 @@
 <?php
 include_once ('Controllers/controllerDiscussion.php');
 session_start();
-//echo $_SESSION['test4'];
-//unset($_SESSION['test4']);
 ?>
 
 <div>
