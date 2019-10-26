@@ -226,7 +226,6 @@ class database
     }
 
     function addContentMsg($id,$newContent){
-        session_start();
         $queryOne = 'Select Content from Messages where IdMessage = ' . '\'' . $id . '\'';
         $array = array(
             1 => "Content",
@@ -254,7 +253,7 @@ class database
     }
 
     function newMessage($idTopic){
-        $queryOne = 'Insert INTO Messages (Statut,IdTopic) VALUES ("1", ' . '"'. $idTopic . '")';
+        $queryOne = 'Insert INTO Messages (IdTopic) VALUES ("' . $idTopic . '")';
         $this->Error($queryOne);
     }
 

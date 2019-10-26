@@ -28,11 +28,12 @@ function AddWords()
         $database = new database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
         $currentTopic = $database->getTopic(explode('/Topic/', $_SERVER['REQUEST_URI'])[1]);
         $id = $currentTopic->getIdTopic();
-        if ($database->getLastMessages($id) > 0) {
+        if ($database->getLastMessages($id)) {
             $database->addContentMsg($database->getLastMessages($currentTopic->getIdTopic()), ' ' . $_POST['msg']);
         } else {
             $database->newMessage($id);
-            $database->addContentMsg($database->getLastMessages($currentTopic->getIdTopic()), $_POST['msg']);
+            $lastNewMessage = $database->getLastMessages($currentTopic->getIdTopic());
+            $database->addContentMsg($lastNewMessage, $_POST['msg']);
         }
         unset($_POST['msg']);
     } else {
