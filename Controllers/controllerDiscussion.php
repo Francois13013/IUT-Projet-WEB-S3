@@ -8,7 +8,7 @@ session_start();
 function RequestMessages(){
     $database = new database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
     $currentTopic = $database->getTopic(explode('/Topic/',$_SERVER['REQUEST_URI'])[1]);
-    echo $database->getLastMessages($currentTopic->getIdTopic());
+//    echo $database->getLastMessages($currentTopic->getIdTopic());
     $database->getAllMessages($currentTopic->getIdTopic());
     $allMessageFromThisTopic = $_SESSION['messagesArray' . $currentTopic->getIdTopic()];
     foreach($allMessageFromThisTopic as &$thisMessage){
