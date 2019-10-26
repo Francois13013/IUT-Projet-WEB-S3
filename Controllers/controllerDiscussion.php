@@ -16,8 +16,10 @@ function RequestMessages(){
     $allMessageFromThisTopic = $_SESSION['messagesArray' . $currentTopic->getIdTopic()];
     foreach($allMessageFromThisTopic as &$thisMessage){
         $html = '<div>';
+        $html .= '<p class="Message">';
         $html .= $thisMessage->getcontent();
-        $html .= '<div>';
+        $html .= '</p>';
+        $html .= '</div>';
         echo $html;
     }
 }
@@ -29,7 +31,7 @@ function AddWords(){
     $database = new database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
     $currentTopic = $database->getTopic(explode('/Topic/',$_SERVER['REQUEST_URI'])[1]);
     $database->addContentMsg($database->getLastMessages($currentTopic->getIdTopic()),$_POST['msg']);
-    echo 'iojzadoijdzaiojziaodjzdaoizajoizajzioajaziojzdaojzaiozjo';
+//    echo 'iojzadoijdzaiojziaodjzdaoizajoizajzioajaziojzdaojzaiozjo';
 //    header('Location : /Topic/12');
 //    exit();
 }

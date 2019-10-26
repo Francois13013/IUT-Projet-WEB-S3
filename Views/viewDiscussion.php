@@ -7,14 +7,15 @@ session_start();
 
 <div>
     <div id='ContentTopic'>
-        <table>
-            <?php RequestMessages();?>
-        </table>
+
         <form method="post"  onsubmit="<?php AddWords()?>" >
             <label>Message</label>
             <input type='text' name="msg">
             <button action="submit">Envoyer</button>
         </form>
+        <table>
+            <?php RequestMessages();?>
+        </table>
     </div>
     <div id='MenuTopicIn'>
         <button>Fermer cette discussion</button>
