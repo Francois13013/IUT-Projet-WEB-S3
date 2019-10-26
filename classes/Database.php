@@ -260,7 +260,7 @@ class database
 
     function newTopic($nameTopic){
         $queryOne = 'Insert INTO Topics (NameTopic) VALUES ("' . $nameTopic . '")';
-        $this->Error($queryOne);
+        mysqli_query($this->getDbLink(), $queryOne);
     }
 
     function getDbLink(){

@@ -9,19 +9,14 @@ $database->getAllTopic();
 //$_SESSION['noDouble'];
 
 function controllerAddTopic(){
-    if(isset($_POST['nameTopic']) && !empty($_POST['nameTopic']) && !empty($_POST['nameTopic'])){
-        $tmp = $_POST['nameTopic'];
+    if(isset($_POST['nameTopic']) && !empty($_POST['nameTopic']) && !empty($_POST['nameTopic']) && $_POST){
         $database = new database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
-        $queryOne = 'Insert INTO Topics (NameTopic) VALUES ("' . $tmp . '")';
-//        $database->Error($queryOne);
-        mysqli_query($database->getDbLink(), $queryOne);
+        $database->newTopic($_POST['nameTopic']);
+        unset($_POST['nameTopic']);
+        header("Refresh:0");
+        exit();
     }
-//    if(!empty($_POST['nameTopic'] && !empty($_POST['nameTopic']))){
-//        if(isset($_POST['nameTopic'])){
-//            if($_SESSION['noDouble']==false) {
-//                $_SESSION['noDouble'] = true;
-//            }
-//    unset($_POST['nameTopic']);
+    return false;
 }
 
 function Request()
