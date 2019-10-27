@@ -28,7 +28,7 @@ session_start();
     if(array_key_exists('Close', $_POST)) {
         closeMessage();
     } else if(array_key_exists('CloseDiscussion', $_POST)) {
-
+        closeTopic();
     }else if(array_key_exists('RenameTopic', $_POST)) {
 
     }
