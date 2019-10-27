@@ -301,10 +301,26 @@ class database
 
     function requestIdUsersWritten($id){
         $query = 'Select IdUsersCat from Messages WHERE IdMessage =' . '\'' . $id . '\'';
-        $row = mysqli_fetch_assoc(mysqli_query($this->getDbLink(), $query));
-        return explode(',',$row['IdUsersCat']);
+        $array = array(
+            1 => "IdUsersCat",
+        );
+        return $this->CheckError($query,$array)[0];
     }
-}
+//        $row = mysqli_fetch_assoc(mysqli_query($this->getDbLink(), $query));
+//        return $row['Statut'];
+//        return explode(',',$row['IdUsersCat']);
+
+
+    function CheckIdUserOnMessage($idMessage,$idUser){
+        $array = $this->requestIdUsersWritten($idMessage);
+        $arraytwo = explode(',',$array);
+        foreach($arraytwo as &$value){
+            if($value == $idUser){ return true ;}
+        }
+        return false;
+    }
+
+} // fin de la classe ===================================================================================================================================================
 
 //function shellSqlRequest($string)
 //{
