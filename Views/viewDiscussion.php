@@ -25,15 +25,15 @@ session_start();
 //    $id = $currentTopic->getIdTopic();
 //    print_r($database->getLastMessages($id));
 
+
     if(array_key_exists('Close', $_POST)) {
         closeMessage();
     } else if(array_key_exists('CloseDiscussion', $_POST)) {
         closeTopic();
     }else if(array_key_exists('RenameTopic', $_POST)) {
-
     }
     else if(array_key_exists('DeleteTopic', $_POST)) {
-
+        deleteTopic();
     }
 
 
@@ -49,14 +49,6 @@ session_start();
         </table>
     </div>
     <form id='MenuTopicIn' method="POST">
-        <input type="submit" name="Close" class="button" value="Fermer le message" />
-        <input type="submit" name="CloseDiscussion" class="button" value="Fermer la discussion" />
-        <input type="submit" name="RenameTopic" class="button" value="Renomer le topic" />
-        <input type="submit" name="DeleteTopic" class="button" value="Supprimer le topic" />
-        <!--        <button>Fermer cette discussion</button>-->
-<!--<!--        <input type="submit" action="submit" onsubmit="-->--><?php ////closeMessage();?><!--<!--">Fermer cette discussion-->-->
-<!--<!--        <button onsubmit="-->--><?php ////closeMessage();?><!--<!--">Clore message</button>-->-->
-<!--        <button>Rename Topic</button>-->
-<!--        <button>Supprimer Topic</button>-->
+        <?php echoMenu() ?>
     </form>
 </div>

@@ -287,6 +287,11 @@ class database
         $query = 'Update Topics SET Statut = "0" WHERE IdTopic =' . '\'' . $id . '\'';
         mysqli_query($this->getDbLink(), $query);
     }
+
+    function deleteTopic($id){
+        $query = 'DELETE FROM Topics WHERE IdTopic =' . '\'' . $id . '\'';
+        mysqli_query($this->getDbLink(), $query);
+    }
 }
 
 //function shellSqlRequest($string)

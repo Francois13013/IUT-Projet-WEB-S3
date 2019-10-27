@@ -58,4 +58,19 @@ function closeTopic(){
     $currentTopic = $database->getTopic(explode('/Topic/', $_SERVER['REQUEST_URI'])[1]);
     $database->closeTopic($currentTopic->getIdTopic());
 }
+
+function deleteTopic(){
+    $database = new database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
+    $currentTopic = $database->getTopic(explode('/Topic/', $_SERVER['REQUEST_URI'])[1]);
+    $database->deleteTopic($currentTopic->getIdTopic());
+    echo "<script>window.location.href='/'</script>";
+}
+
+function echoMenu(){
+    $html = '<input type="submit" name="Close" class="button" value="Fermer le message" />';
+    $html .= '<input type="submit" name="CloseDiscussion" class="button" value="Fermer la discussion" />';
+    $html .= '<input type="submit" name="RenameTopic" class="button" value="Renomer le topic" />';
+    $html .='<input type="submit" name="DeleteTopic" class="button" value="Supprimer le topic" />';
+    echo $html;
+}
 ?>
