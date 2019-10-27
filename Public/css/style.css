@@ -483,6 +483,15 @@ footer a {
     #containerInfo p {
         font-size: 1.8vh;
     }
+    .userMenu button {
+        height:inherit;
+    }
+    #signup{
+        height:16%;
+    }
+    .userMenu label{
+        font-size: 18px;
+    }
     /*.NameTopic{*/
     /*    width:67%;*/
     /*}*/
