@@ -30,16 +30,16 @@ function AddWords()
     if($currentTopic->getStatut() != 0){
     if (isset($messageToSend) && preg_match("/[A-Za-z0-9]+/", $messageToSend) && count(explode(' ', $messageToSend)) == 2) {
         if($database->getLastMessageStatut($id) == 0){
-            $database->newMessage($id);
+            $database->newMessage($id,$_SESSION["IdUser"]);
             $lastNewMessage = $database->getLastMessages($currentTopic->getIdTopic());
-            $database->addContentMsg($lastNewMessage, $_POST['msg']);
+            $database->addContentMsg($lastNewMessage, $_POST['msg'],$_SESSION["IdUser"]);
         } else {
             if ($database->getLastMessages($id)) {
-            $database->addContentMsg($database->getLastMessages($currentTopic->getIdTopic()), ' ' . $_POST['msg']);
+            $database->addContentMsg($database->getLastMessages($currentTopic->getIdTopic()), ' ' . $_POST['msg'],$_SESSION["IdUser"]);
             } else {
-            $database->newMessage($id);
+            $database->newMessage($id,$_SESSION["IdUser"]);
             $lastNewMessage = $database->getLastMessages($currentTopic->getIdTopic());
-            $database->addContentMsg($lastNewMessage, $_POST['msg']);
+            $database->addContentMsg($lastNewMessage, $_POST['msg'],$_SESSION["IdUser"]);
         }
         unset($_POST['msg']);
         }}}

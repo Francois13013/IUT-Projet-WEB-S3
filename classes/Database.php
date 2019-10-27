@@ -225,17 +225,23 @@ class database
         }
     }
 
-    function addContentMsg($id,$newContent){
-        $queryOne = 'Select Content from Messages where IdMessage = ' . '\'' . $id . '\'';
+    function addContentMsg($id,$newContent,$idUser){
+        $queryOne = 'Select Content,IdUsersCat from Messages where IdMessage = ' . '\'' . $id . '\'';
         $array = array(
             1 => "Content",
+            2 => "IdUsersCat",
         );
+
         $returnedArray = $this->CheckError($queryOne, $array);
-//        print_r($returnedArray[0]);
+        print_r($returnedArray);
+
         $contentToAdd = $returnedArray[0] . $newContent;
-//        print_r($contentToAdd);
+        $userToAdd = $returnedArray[1] . "," . $idUser;
+
         $queryTwo = 'Update Messages SET Content = ' . '\'' . $contentToAdd . '\'' . 'where IdMessage = ' . '\'' . $id . '\'';
+        $queryThree = 'Update Messages SET IdUsersCat = ' . '\'' . $userToAdd . '\'' . 'where IdMessage = ' . '\'' . $id . '\'';
         $this->Error($queryTwo);
+        $this->Error($queryThree);
     }
 
     function updatePassword($email, $newPassword)
@@ -252,8 +258,8 @@ class database
         return $this->CheckError($queryOne,$array)[0];
     }
 
-    function newMessage($idTopic){
-        $queryOne = 'Insert INTO Messages (IdTopic) VALUES ("' . $idTopic . '")';
+    function newMessage($idTopic,$idUser){
+        $queryOne = 'Insert INTO Messages (IdTopic,IdUsersCat) VALUES ("' . $idTopic . '"' . ',"' . $idUser . '")';
         $this->Error($queryOne);
     }
 
@@ -291,6 +297,12 @@ class database
     function deleteTopic($id){
         $query = 'DELETE FROM Topics WHERE IdTopic =' . '\'' . $id . '\'';
         mysqli_query($this->getDbLink(), $query);
+    }
+
+    function requestIdUsersWritten($id){
+        $query = 'Select IdUsersCat from Messages WHERE IdMessage =' . '\'' . $id . '\'';
+        $row = mysqli_fetch_assoc(mysqli_query($this->getDbLink(), $query));
+        return explode(',',$row['IdUsersCat']);
     }
 }
 
