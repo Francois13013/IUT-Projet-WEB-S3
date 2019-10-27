@@ -17,6 +17,7 @@
             texte, comme Aldus PageMaker. </p>
          </div>
          <div class="container" id="containerTop">
+             <?php RequestTop();?>
          </div>
     </div>
     <div class="container" id="containerTopic">

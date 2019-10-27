@@ -6,6 +6,13 @@ require_once('classes/Controller.php');
 $database = new database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
 $database->getAllTopic();
 
+function RequestTop(){
+    $html = '<h1>#1 bla bla bla bla</h1>';
+    $html .= '<h1>#2 bla bla bla bla</h1>';
+    $html .= '<h1>#3 bla bla bla bla</h1>';
+    echo $html;
+}
+
 function controllerAddTopic()
 {
     $database = new database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');

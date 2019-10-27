@@ -394,6 +394,21 @@ footer a {
     font-size: 3vh;
 }
 
+#containerInfo,#containerTop{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+#containerInfo{
+    height:60%;
+}
+#containerTop{
+    height:40%;
+}
+
 
 @media only screen and (min-width: 1100px) {
     #midpage{
@@ -446,11 +461,13 @@ footer a {
     #containerInfoTop {
         margin-top: 3%;
         width: 25%;
+        height:80%;
         display:flex;
         justify-content: center;
         text-align: center;
         align-items: center;
         align-content: center;
+        flex-direction: column;
     }
     #containerTopic{
         margin-top: 3%;
@@ -466,6 +483,12 @@ footer a {
     #containerInfo p {
         font-size: 1.8vh;
     }
+    /*.NameTopic{*/
+    /*    width:67%;*/
+    /*}*/
+    /*.Statut{*/
+    /*    width:33%;*/
+    /*}*/
 }
 
 /*****************************************/
