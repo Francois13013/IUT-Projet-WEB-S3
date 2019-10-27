@@ -276,6 +276,17 @@ class database
         $row = mysqli_fetch_assoc(mysqli_query($this->getDbLink(), $query));
         return $row['count(IdTopic)'];
     }
+
+    function getLastMessageStatut($idTopic){
+        $query = 'Select Statut from Messages where IdTopic =' . '\'' . $idTopic . '\'' . 'ORDER BY IdMessage DESC LIMIT 1';
+        $row = mysqli_fetch_assoc(mysqli_query($this->getDbLink(), $query));
+        return $row['Statut'];
+    }
+
+    function closeTopic($id){
+        $query = 'Update Topics SET Statut = "0" WHERE IdTopic =' . '\'' . $id . '\'';
+        mysqli_query($this->getDbLink(), $query);
+    }
 }
 
 //function shellSqlRequest($string)

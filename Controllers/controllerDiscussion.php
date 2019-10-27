@@ -23,22 +23,27 @@ function RequestMessages(){
 
 function AddWords()
 {
+    $database = new database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
+    $currentTopic = $database->getTopic(explode('/Topic/', $_SERVER['REQUEST_URI'])[1]);
+    $id = $currentTopic->getIdTopic();
     $messageToSend = $_POST['msg'];
+    if($currentTopic->getStatut() != 0){
     if (isset($messageToSend) && preg_match("/[A-Za-z0-9]+/", $messageToSend) && count(explode(' ', $messageToSend)) == 2) {
-        $database = new database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
-        $currentTopic = $database->getTopic(explode('/Topic/', $_SERVER['REQUEST_URI'])[1]);
-        $id = $currentTopic->getIdTopic();
-        if ($database->getLastMessages($id)) {
-            $database->addContentMsg($database->getLastMessages($currentTopic->getIdTopic()), ' ' . $_POST['msg']);
+        if($database->getLastMessageStatut($id) == 0){
+            $database->newMessage($id);
+            $lastNewMessage = $database->getLastMessages($currentTopic->getIdTopic());
+            $database->addContentMsg($lastNewMessage, $_POST['msg']);
         } else {
+            if ($database->getLastMessages($id)) {
+            $database->addContentMsg($database->getLastMessages($currentTopic->getIdTopic()), ' ' . $_POST['msg']);
+            } else {
             $database->newMessage($id);
             $lastNewMessage = $database->getLastMessages($currentTopic->getIdTopic());
             $database->addContentMsg($lastNewMessage, $_POST['msg']);
         }
         unset($_POST['msg']);
-    } else {
+        }}}
         return false;
-    }
 }
 
 function closeMessage(){
