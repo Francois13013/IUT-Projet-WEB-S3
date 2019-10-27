@@ -24,8 +24,7 @@ session_start();
 //    $currentTopic = $database->getTopic(explode('/Topic/', $_SERVER['REQUEST_URI'])[1]);
 //    $id = $currentTopic->getIdTopic();
 //    print_r($database->getLastMessages($id));
-
-
+    checknumbermsg();
     if(array_key_exists('Close', $_POST)) {
         closeMessage();
     } else if(array_key_exists('CloseDiscussion', $_POST)) {

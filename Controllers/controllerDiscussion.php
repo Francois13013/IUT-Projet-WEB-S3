@@ -88,4 +88,10 @@ function echoMenu(){
     }
     echo $html;
 }
+
+function checknumbermsg(){
+    $database = new database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
+    $currentTopic = $database->getTopic(explode('/Topic/', $_SERVER['REQUEST_URI'])[1]);
+
+}
 ?>
