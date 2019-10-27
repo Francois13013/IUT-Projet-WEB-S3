@@ -12,7 +12,7 @@ function RandPassword(){
 }
 
 $email = $_POST['email'];
-$databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net', '189826_admin1', '0651196362', 'baptistesevilla_projetweb');
+$databaseBaptiste = new database('mysql-francois.alwaysdata.net', 'francois_project', '0621013579', 'francois_user');
 if ($databaseBaptiste->CheckEmail($email) == 1) {
     $newPass = RandPassword();
     mail($email, 'Changement de mot de passe', 'Voici votre nouveau mdp ' . $newPass);
