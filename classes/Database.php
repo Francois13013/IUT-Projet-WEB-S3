@@ -299,17 +299,17 @@ class database
         mysqli_query($this->getDbLink(), $query);
     }
 
-    function requestIdUsersWritten($id){
+    function requestIdUsersWritten($id)
+    {
         $query = 'Select IdUsersCat from Messages WHERE IdMessage =' . '\'' . $id . '\'';
         $array = array(
             1 => "IdUsersCat",
         );
-        return $this->CheckError($query,$array)[0];
-    }
-//        $row = mysqli_fetch_assoc(mysqli_query($this->getDbLink(), $query));
-//        return $row['Statut'];
+        return $this->CheckError($query, $array)[0];
+//        return mysqli_fetch_assoc(mysqli_query($this->getDbLink(), $query));
+//        return $row;
 //        return explode(',',$row['IdUsersCat']);
-
+    }
 
     function CheckIdUserOnMessage($idMessage,$idUser){
         $array = $this->requestIdUsersWritten($idMessage);

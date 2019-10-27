@@ -46,6 +46,22 @@ session_start();
         </form>
         <table>
             <?php
+
+//            $database = new database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
+//            $currentTopic = $database->getTopic(explode('/Topic/', $_SERVER['REQUEST_URI'])[1]);
+//            $id = $currentTopic->getIdTopic();
+//            $idm = $database->getLastMessages($currentTopic->getIdTopic());
+//            $query = 'Select IdUsersCat from Messages WHERE IdMessage =' . '\'' . $idm . '\'';
+//            $array = array(
+//                 1 => "IdUsersCat",
+//            );
+//            print_r($database->CheckError($query, $array));
+//            echo 'test';
+
+//            $array = $database->requestIdUsersWritten($id);
+//            $arraytwo = explode(',',$array);
+//            print_r($array);
+
             RequestMessages();?>
 
         </table>
