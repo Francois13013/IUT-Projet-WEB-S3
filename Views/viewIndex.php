@@ -12,13 +12,6 @@
                des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de
                des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de
                des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de
-               des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de
-               des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de
-               des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de
-               des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de
-               des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de
-               des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de
-               des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de
 
             des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de
             texte, comme Aldus PageMaker. </p>
@@ -27,15 +20,12 @@
          </div>
     </div>
     <div class="container" id="containerTopic">
-        <div>
-            <form method="post"  onsubmit="<?php controllerAddTopic();?>" >
-                <label>
-                    <input type="text" name="nameTopic">
-                </label>
+            <form id="createTopic" method="post"  onsubmit="<?php controllerAddTopic();?>" >
+                <label></label>
+                <input type="text" name="nameTopic">
                 <button action="submit"> Créer nouveau topic </button>
             </form>
-        </div>
-        <?php Request();?>
+            <?php Request();?>
     </div>
 
 
