@@ -4,16 +4,13 @@ require_once('../classes/Database.php');
 session_start();
 
 
-$password = $_POST['hachek'] ;
+$newPassword = $_POST['ChangeP'] ;
+$newEmail= $_POST['ChangeE'];
 $user = $_SESSION['user'];
 //echo 'Change Mot de passe ';
 //print_r($_SESSION['user']);
 
-
-echo $password;
-print_r($user);
-
 $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net', '189826_admin1', '0651196362', 'baptistesevilla_projetweb');
-$databaseBaptiste->insertNewPassword($password);
-
+$databaseBaptiste->updatePassword($user->getEmail(), sha1($newPassword));
+$databaseBaptiste->updateEmail($user->getId(), $newEmail);
 ?>

@@ -250,6 +250,12 @@ class database
         mysqli_query($this->_dbLink, $query);
     }
 
+    function updateEmail($id, $newEmail)
+    {
+        $query = 'Update User SET Email = ' . '\'' . $newEmail . '\'' . 'WHERE IdUser =' . '\'' . $id . '\'';
+        mysqli_query($this->_dbLink, $query);
+    }
+
     function getLastMessages($idTopic){
         $queryOne = 'Select IdMessage from Messages where IdTopic =' . '\'' . $idTopic . '\'' . 'ORDER BY IdMessage DESC LIMIT 1';
         $array = array(

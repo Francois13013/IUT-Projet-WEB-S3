@@ -8,35 +8,31 @@ echo $_SESSION["IdUser"] . '<br><hr>';
 echo $_SESSION["Surname"] . '<br><hr>';
 echo $_SESSION["Email"] . '<br><hr>';
 echo $_SESSION["Password"] . '<br><hr>';
-echo $_SESSION["Status"] . '<br><hr>';
 
-?>
-<?php;
 if ($_SESSION["Status"] == 1)
-//        echo $_SESSION["Status"] . '<br><hr>';
-    echo '<a class="aligntext">' . "admin" . '</a>';
+
+    echo '<a class="aligntext">' . "admin" . '</a><br>';
 elseif ($_SESSION["Status"] == 2)
-    echo '<a class="aligntext">' . "utilisateur". '</a>';
+    echo '<a class="aligntext">' . "utilisateur". '</a><br>';
 ?>
 
-
 <?php
-echo 'Change Surname' . '<br>';
+echo 'Change Email:' . '<br>';
 ?>
-<input class="favorite styled" type="button" value="Change Surname">. <br>;
+
+<form method="post" action="../Controllers/controllerMyProfile.php">
+    <input class="favorite styled" type="text" name="ChangeE">
+    <input class="favorite styled" type="submit" value="action">
+
+</form>
 
 <?php
-echo 'Change Email' . '<br>';
-echo $_SESSION["Email"] . '<br><hr>';
-echo 'Change Password' . '<br>';
-echo $_SESSION["Password"] . '<br><hr>';
-
+echo 'Change Password:' . '<br>';
 
 ?>
 <form method="post" action="../Controllers/controllerMyProfile.php">
-    <label>zeub</label>
-    <input class="favorite styled" type="text" name="hachek">;
-    <input class="favorite styled" type="submit" value="action">;
+    <input class="favorite styled" type="text" name="ChangeP">
+    <input class="favorite styled" type="submit" value="action">
 
 </form>
 
