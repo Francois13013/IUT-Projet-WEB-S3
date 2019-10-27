@@ -41,7 +41,6 @@ function AddWords()
                         if ($database->getLastMessages($id)) {
                             $database->addContentMsg($database->getLastMessages($currentTopic->getIdTopic()), ' ' . $_POST['msg'], $_SESSION["IdUser"]);
                         } else {
-
                             $database->newMessage($id, $_SESSION["IdUser"]);
                             $lastNewMessage = $database->getLastMessages($currentTopic->getIdTopic());
                             $database->addContentMsg($lastNewMessage, $_POST['msg'], $_SESSION["IdUser"]);
@@ -58,7 +57,9 @@ function closeMessage(){
     $database = new database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
     $currentTopic = $database->getTopic(explode('/Topic/',$_SERVER['REQUEST_URI'])[1]);
     $lastid = $database->getLastMessages($currentTopic->getIdTopic());
+    if ($database->CheckIdUserOnMessage($lastid, $_SESSION["IdUser"]) == true) {
     $database->CloseMessage($lastid);
+    }
 }
 
 function closeTopic(){
