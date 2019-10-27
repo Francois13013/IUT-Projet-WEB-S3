@@ -45,7 +45,9 @@ session_start();
             <button action="submit">Envoyer</button>
         </form>
         <table>
-            <?php RequestMessages();?>
+            <?php
+            RequestMessages();?>
+
         </table>
     </div>
     <form id='MenuTopicIn' method="POST">

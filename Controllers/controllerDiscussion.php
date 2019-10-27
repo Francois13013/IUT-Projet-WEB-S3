@@ -67,10 +67,16 @@ function deleteTopic(){
 }
 
 function echoMenu(){
-    $html = '<input type="submit" name="Close" class="button" value="Fermer le message" />';
-    $html .= '<input type="submit" name="CloseDiscussion" class="button" value="Fermer la discussion" />';
-    $html .= '<input type="submit" name="RenameTopic" class="button" value="Renomer le topic" />';
-    $html .='<input type="submit" name="DeleteTopic" class="button" value="Supprimer le topic" />';
+
+    if($_SESSION['login'] == 'ok') {
+        $html = '<input type="submit" name="Close" class="button" value="Fermer le message" />';
+    }
+    if($_SESSION["Status"] == 1){
+        $html .= '<input type="submit" name="CloseDiscussion" class="button" value="Fermer la discussion" />';
+        $html .= '<input type="text" name="RenameTopicText"/>';
+        $html .= '<input type="submit" name="RenameTopic" class="button" value="Renomer le topic" />';
+        $html .= '<input type="submit" name="DeleteTopic" class="button" value="Supprimer le topic" />';
+    }
     echo $html;
 }
 ?>
