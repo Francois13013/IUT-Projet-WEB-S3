@@ -1,6 +1,6 @@
 function loggedMenu(Pseudo){
     var menu = document.querySelector('.userMenu');
-    menu.innerHTML = 'Bonjour, ' + Pseudo;
+    menu.innerHTML = '<a id="pseudologged"> Bonjour, ' + Pseudo + '</a>';
     var btn = document.createElement("BUTTON");
     btn.innerHTML = "Déconnexion ";
     var btn2 = document.createElement("BUTTON");

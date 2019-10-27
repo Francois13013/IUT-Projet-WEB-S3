@@ -259,13 +259,13 @@ html {
     text-decoration: none;
 }
 button {
-    background-color:lightcoral;
+    background-color: #E8A87C;
     border-radius: 4%;
     border-width: 0;
 
 }
 body {
-    background-color: #0b00ab;
+    background-color: #0080dc;
     position: relative;
     height:100%;
     /*overflow-y: scroll;*/
@@ -315,7 +315,13 @@ header img{
     justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
-    background: #ff9300;
+    background: #E27D60;
+    font-size: 30px;
+}
+
+.userMenu button{
+    height:14%;
+    font-size: 20px;
 }
 
 
@@ -329,11 +335,11 @@ footer{
     flex-direction: column;
     align-items: center;
     line-height: 1.6;
-    font-size: 30px;
+    font-size: 4vh;
 }
 
 footer a {
-    color:grey;
+    color:wheat;
 }
 
 #containerTopic {
@@ -355,7 +361,7 @@ footer a {
     display:flex;
     justify-content: center;
     width:50%;
-    font-size: 34px;
+    font-size: 4vh;
     text-align: center;
 }
 
@@ -381,11 +387,11 @@ footer a {
 }
 #createTopic input{
     width:45%;
-    font-size: 30px;
+    font-size: 1.8vh;
 }
 
 #containerInfo p {
-    font-size: 22px;
+    font-size: 3vh;
 }
 
 
@@ -450,12 +456,15 @@ footer a {
         margin-top: 3%;
         height:80%;
         width:65%;
+        border-left:solid;
+        border-left-width: 3px;
+        color: wheat;
     }
     .Statut, .NameTopic{
         font-size: 20px;
     }
     #containerInfo p {
-        font-size: 18px;
+        font-size: 1.8vh;
     }
 }
 
