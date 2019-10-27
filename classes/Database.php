@@ -244,17 +244,17 @@ class database
         $this->Error($queryThree);
     }
 
-    function updatePassword($email, $newPassword)
-    {
-        $query = 'Update User SET Password = ' . '\'' . $newPassword . '\'' . 'WHERE Email =' . '\'' . $email . '\'';
-        mysqli_query($this->_dbLink, $query);
-    }
-
-    function updateEmail($id, $newEmail)
-    {
-        $query = 'Update User SET Email = ' . '\'' . $newEmail . '\'' . 'WHERE IdUser =' . '\'' . $id . '\'';
-        mysqli_query($this->_dbLink, $query);
-    }
+//    function updatePassword($email, $newPassword)
+//    {
+//        $query = 'Update User SET Password = ' . '\'' . $newPassword . '\'' . 'WHERE Email =' . '\'' . $email . '\'';
+//        mysqli_query($this->_dbLink, $query);
+//    }
+//
+//    function updateEmail($id, $newEmail)
+//    {
+//        $query = 'Update User SET Email = ' . '\'' . $newEmail . '\'' . 'WHERE IdUser =' . '\'' . $id . '\'';
+//        mysqli_query($this->_dbLink, $query);
+//    }
 
     function getLastMessages($idTopic){
         $queryOne = 'Select IdMessage from Messages where IdTopic =' . '\'' . $idTopic . '\'' . 'ORDER BY IdMessage DESC LIMIT 1';
@@ -326,6 +326,12 @@ class database
         return false;
     }
 
+    function getNumberMessage($idTopic){
+        $query = 'Select count(IdMessage) from Messages where IdTopic =' . '\'' . $idTopic . '\'' ;
+        $row = mysqli_fetch_assoc(mysqli_query($this->getDbLink(), $query));
+        return $row['count(IdMessage)'];
+    }
+
 } // fin de la classe ===================================================================================================================================================
 
 //function shellSqlRequest($string)
@@ -382,7 +388,7 @@ class database
 
 
 
-/*
+
 //$databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net','189826_admin1','0651196362','baptistesevilla_projetweb');
 //
 //$testArray = [
@@ -397,24 +403,24 @@ class database
 //$databaseBaptiste->CheckError($query,$testArray);
 //$string2 = '';
 
-function shellSqlRequest($string)
-{
-    $arrayName = [];
-    $string2 = str_replace('Select', '', strstr($string, 'from', true));
-    for ($a = 1; $a <= (substr_count($string, ',') + 1); $a++) {
-        $tmp = NULL;
-        for ($t = 0; $t <= strlen($string2); $t++) {
-            $tmp .= $string2[$t];
-            $string2 = strstr($string2, $string2[(strpos($string2, ",") + 1)]);
-            print_r ($tmp);
-        }
-        echo '<br><hr>';
-
-//        echo $tmp . '<br><hr>';
-        array_push($arrayName, $tmp);
-//        echo $arrayName[4];
-    }
-}
+//function shellSqlRequest($string)
+//{
+//    $arrayName = [];
+//    $string2 = str_replace('Select', '', strstr($string, 'from', true));
+//    for ($a = 1; $a <= (substr_count($string, ',') + 1); $a++) {
+//        $tmp = NULL;
+//        for ($t = 0; $t <= strlen($string2); $t++) {
+//            $tmp .= $string2[$t];
+//            $string2 = strstr($string2, $string2[(strpos($string2, ",") + 1)]);
+//            print_r ($tmp);
+//        }
+//        echo '<br><hr>';
+//
+////        echo $tmp . '<br><hr>';
+//        array_push($arrayName, $tmp);
+////        echo $arrayName[4];
+//    }
+//}
 
 
     //            if($a==(substr_count($string2,',') + 1)) {
