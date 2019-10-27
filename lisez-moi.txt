@@ -1,0 +1,7 @@
+Nom de l'équipe:
+    - Florent Reymond
+    - Corentin Plée
+    - Baptiste Sevilla
+
+URL INDEX:
+    https://francois.alwaysdata.net/        ou           https://francois.alwaysdata.net/Index

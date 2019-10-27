@@ -28,7 +28,7 @@ function AddWords()
     $id = $currentTopic->getIdTopic();
     $messageToSend = $_POST['msg'];
     if($currentTopic->getStatut() != 0) {
-        if (isset($messageToSend) && preg_match("/[A-Za-z0-9]+/", $messageToSend) && count(explode(' ', $messageToSend)) == 2) {
+        if (isset($messageToSend) && preg_match("/[A-Za-z0-9]+/", $messageToSend) && count(explode(' ', $messageToSend)) <= 2) {
 //            $array = $database->requestIdUsersWritten($id);
 //            $arraytwo = explode(',',$array);
                 if ($database->getLastMessageStatut($id) == 0) {
