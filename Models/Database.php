@@ -139,7 +139,7 @@ class Database
                     $_SESSION[$array[$i]] = mysqli_fetch_assoc($dbResult)[$array[$i]];
                 }
                 $User = new User($_SESSION["Surname"], $_SESSION["Email"], $_SESSION["Password"], $_SESSION["IdUser"], $_SESSION["Status"]);
-                $User = $_SESSION['user'];
+                $_SESSION['user'] = $User;
                 unset($_SESSION['ProblemeLog']);
                 header('Location: /Index');
                 exit();
@@ -174,7 +174,7 @@ class Database
             \'' . $message->getNameUser() . '\',
             \'' . $message->getMessage() . '\',
             \'' . $message->getTime() . '\',
-            \'' . $message->getIdTopic() . '\',';
+            \'' . $message->getIdTopic() . '\'';
         if (mysqli_query($this->_dbLink, $query)) {
         } else {
             echo 'erreur' . mysqli_error($this->_dbLink);
@@ -216,7 +216,7 @@ class Database
         $query = 'Select IdMessage,Statut,Content from Messages where IdTopic = ' . '\'' . $id . '\'';
         $array = array(
             1 => "IdMessage", 2 => "Statut", 3 => "Content" );
-        $_SESSION['messagesArray' . $id] = array();
+        $_SESSION["messagesArray" . $id] = array();
         $returnedArray = $this->CheckError($query, $array);
         for ($i = 0; $i < count($this->CheckError($query, $array)); $i = $i + 3) {
             array_push($_SESSION['messagesArray' . $id], new Message($returnedArray[$i], $returnedArray[$i + 1], $returnedArray[$i + 2]));
@@ -242,17 +242,17 @@ class Database
         $this->Error($queryThree);
     }
 
-//    function updatePassword($email, $newPassword)
-//    {
-//        $query = 'Update User SET Password = ' . '\'' . $newPassword . '\'' . 'WHERE Email =' . '\'' . $email . '\'';
-//        mysqli_query($this->_dbLink, $query);
-//    }
-//
-//    function updateEmail($id, $newEmail)
-//    {
-//        $query = 'Update User SET Email = ' . '\'' . $newEmail . '\'' . 'WHERE IdUser =' . '\'' . $id . '\'';
-//        mysqli_query($this->_dbLink, $query);
-//    }
+    function updatePassword($email, $newPassword)
+    {
+        $query = 'Update User SET Password = ' . '\'' . $newPassword . '\'' . 'WHERE Email =' . '\'' . $email . '\'';
+        mysqli_query($this->_dbLink, $query);
+    }
+
+    function updateEmail($id, $newEmail)
+    {
+        $query = 'Update User SET Email = ' . '\'' . $newEmail . '\'' . 'WHERE IdUser =' . '\'' . $id . '\'';
+        mysqli_query($this->_dbLink, $query);
+    }
 
     function getLastMessages($idTopic){
         $queryOne = 'Select IdMessage from Messages where IdTopic =' . '\'' . $idTopic . '\'' . 'ORDER BY IdMessage DESC LIMIT 1';
