@@ -424,10 +424,12 @@ footer a {
     background-color: #E27D60;
 }
 #mainInfo *{
+    font-size: 21px;
+
     margin: 4%;
     display:flex;
     flex-direction: column;
-    width:60%;
+    width:100%;
     text-align: center;
     align-items: center;
 }
@@ -518,6 +520,20 @@ footer a {
     .userMenu label{
         font-size: 18px;
     }
+    #mainInfo *{
+        font-size: 24px;
+        margin:1%;
+        width:60%;
+
+    }
+    #mainInfo {
+        margin-top: 0;
+        height:85%;
+    }
+    #mainInfo h1{
+        font-size: 48px;
+    }
+
     /*.NameTopic{*/
     /*    width:67%;*/
     /*}*/
