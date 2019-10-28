@@ -1,10 +1,6 @@
 <?php
 require_once ('Models/RequireAll.php');
 
-//require_once('Models/Database.php');
-//require_once('classes/Router.php');
-//require_once('classes/Controller.php');
-
 $database = new Database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
 $database->getAllTopic();
 

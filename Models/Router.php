@@ -1,8 +1,6 @@
 <?php
 
 require_once ('RequireAll.php');
-//require_once('classes/Topic.php');
-
 
 session_start();
 

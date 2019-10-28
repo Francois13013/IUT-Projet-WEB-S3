@@ -1,7 +1,6 @@
 <?php
 require_once ('Models/RequireAll.php');
 
-//require_once('../classes/Database.php');
 session_start();
 
 function RandPassword(){

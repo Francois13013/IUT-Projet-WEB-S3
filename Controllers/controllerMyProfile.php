@@ -1,23 +1,6 @@
 <?php
 require_once ('Models/RequireAll.php');
 
-//require_once('../classes/User.php');
-//require_once('../classes/Database.php');
-
-
-//$newPassword = $_POST['ChangeP'] ;
-//$newEmail= $_POST['ChangeE'];
-//unset($_POST['ChangeP']);
-//unset($_POST['ChangeE']);
-
-//echo 'Change Mot de passe ';
-//print_r($_SESSION['user']);
-
-//print_r($user);
-
-
-
-
 function StatusToString(){
     if($_SESSION["Status"] == 1){
         return 'Admin';
