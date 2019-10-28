@@ -344,7 +344,7 @@ footer a {
 
 #containerTopic {
     height:55%;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 #mainIndex{
@@ -391,7 +391,7 @@ footer a {
 }
 
 #containerInfo p {
-    font-size: 3vh;
+    font-size: 20px;
 }
 
 #containerInfo,#containerTop{
@@ -403,6 +403,7 @@ footer a {
 }
 
 #containerInfo{
+    overflow-y:auto;
     height:60%;
 }
 #containerTop{
