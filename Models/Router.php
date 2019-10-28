@@ -1,6 +1,7 @@
 <?php
 
-require_once ('classes/Topics.php');
+require_once ('RequireAll.php');
+//require_once('classes/Topic.php');
 
 
 session_start();
@@ -53,7 +54,7 @@ class Router {
 
     public static function getAllTopicsRoutes()
     {
-        $database = new database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
+        $database = new Database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
         $database->getAllTopic();
         if(isset($_SESSION['topicArray'])){
             foreach ($_SESSION['topicArray'] as &$value) {

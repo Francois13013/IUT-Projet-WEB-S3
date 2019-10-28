@@ -1,6 +1,7 @@
 <?php
+require_once ('Models/RequireAll.php');
 
-require_once('../classes/Database.php');
+//require_once('../classes/Database.php');
 session_start();
 
 function RandPassword(){
@@ -12,7 +13,7 @@ function RandPassword(){
 }
 
 $email = $_POST['email'];
-$databaseBaptiste = new database('mysql-francois.alwaysdata.net', 'francois_project', '0621013579', 'francois_user');
+$databaseBaptiste = new Database('mysql-francois.alwaysdata.net', 'francois_project', '0621013579', 'francois_user');
 if ($databaseBaptiste->CheckEmail($email) == 1) {
     $newPass = RandPassword();
     mail($email, 'Changement de mot de passe', 'Voici votre nouveau mdp ' . $newPass);

@@ -1,7 +1,9 @@
 <?php
-require_once('classes/Router.php');
-require_once('classes/Controller.php');
-//require_once('classes/Topics.php');
+//require ('Models/Router.php');
+
+require ('Models/RequireAll.php');
+//require_once('classes/Router.php');
+//require_once('classes/Controller.php');
 
 
 Router::addTwoWay('/','/Index', function() {

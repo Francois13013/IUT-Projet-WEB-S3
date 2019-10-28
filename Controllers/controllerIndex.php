@@ -1,9 +1,11 @@
 <?php
-require_once ('classes/Database.php');
-require_once('classes/Router.php');
-require_once('classes/Controller.php');
+require_once ('Models/RequireAll.php');
 
-$database = new database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
+//require_once('Models/Database.php');
+//require_once('classes/Router.php');
+//require_once('classes/Controller.php');
+
+$database = new Database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
 $database->getAllTopic();
 
 function RequestTop(){
@@ -15,7 +17,7 @@ function RequestTop(){
 
 function controllerAddTopic()
 {
-    $database = new database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
+    $database = new Database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
     if ($database->GetNumberTopic() <= 10) {
         if (isset($_POST['nameTopic']) && !empty($_POST['nameTopic']) && !empty($_POST['nameTopic']) && $_POST) {
             $database->newTopic($_POST['nameTopic']);

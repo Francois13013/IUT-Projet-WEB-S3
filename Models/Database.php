@@ -1,9 +1,10 @@
 <?php
-require_once('Message.php');
-require_once('User.php');
-require_once('Topics.php');
+require_once ('RequireAll.php');
+//require_once('Message.php');
+//require_once('User.php');
+//require_once('Topic.php');
 
-class database
+class Database
 {
     private $_host;
     private $_user;
@@ -137,7 +138,7 @@ class database
                     $dbResult = $this->Error($query);
                     $_SESSION[$array[$i]] = mysqli_fetch_assoc($dbResult)[$array[$i]];
                 }
-                $User = new user($_SESSION["Surname"], $_SESSION["Email"], $_SESSION["Password"], $_SESSION["IdUser"], $_SESSION["Status"]);
+                $User = new User($_SESSION["Surname"], $_SESSION["Email"], $_SESSION["Password"], $_SESSION["IdUser"], $_SESSION["Status"]);
                 $User = $_SESSION['user'];
                 unset($_SESSION['ProblemeLog']);
                 header('Location: /Index');
@@ -187,7 +188,7 @@ class database
         $array = array(
             1 => "IdTopic",
             2 => "NameTopic",
-            3 => "Statut",
+            3 => "Statut"
         );
         $_SESSION['topicArray'] = array();
         $returnedArray = $this->CheckError($query, $array);
@@ -202,7 +203,7 @@ class database
         $array = array(
             1 => "IdTopic",
             2 => "NameTopic",
-            3 => "Statut",
+            3 => "Statut"
         );
         $returnedArray = $this->CheckError($query, $array);
         $topic = new Topic($returnedArray[0], $returnedArray[1], $returnedArray[2]);
@@ -214,10 +215,7 @@ class database
         session_start();
         $query = 'Select IdMessage,Statut,Content from Messages where IdTopic = ' . '\'' . $id . '\'';
         $array = array(
-            1 => "IdMessage",
-            2 => "Statut",
-            3 => "Content",
-        );
+            1 => "IdMessage", 2 => "Statut", 3 => "Content" );
         $_SESSION['messagesArray' . $id] = array();
         $returnedArray = $this->CheckError($query, $array);
         for ($i = 0; $i < count($this->CheckError($query, $array)); $i = $i + 3) {
@@ -229,7 +227,7 @@ class database
         $queryOne = 'Select Content,IdUsersCat from Messages where IdMessage = ' . '\'' . $id . '\'';
         $array = array(
             1 => "Content",
-            2 => "IdUsersCat",
+            2 => "IdUsersCat"
         );
 
         $returnedArray = $this->CheckError($queryOne, $array);
@@ -259,7 +257,7 @@ class database
     function getLastMessages($idTopic){
         $queryOne = 'Select IdMessage from Messages where IdTopic =' . '\'' . $idTopic . '\'' . 'ORDER BY IdMessage DESC LIMIT 1';
         $array = array(
-            1 => "IdMessage",
+            1 => "IdMessage"
         );
         return $this->CheckError($queryOne,$array)[0];
     }
@@ -309,7 +307,7 @@ class database
     {
         $query = 'Select IdUsersCat from Messages WHERE IdMessage =' . '\'' . $id . '\'';
         $array = array(
-            1 => "IdUsersCat",
+            1 => "IdUsersCat"
         );
         return $this->CheckError($query, $array)[0];
 //        return mysqli_fetch_assoc(mysqli_query($this->getDbLink(), $query));

@@ -1,4 +1,5 @@
 <?php
+//require_once ('Models/RequireAll.php');
 include_once ('Controllers/controllerDiscussion.php');
 session_start();
 

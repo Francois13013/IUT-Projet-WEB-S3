@@ -4,7 +4,7 @@ require_once('Database.php');
 
 session_start();
 
-class user {
+class User {
     private $_pseudo;
     private $_email = '';
     private $_password = '';
@@ -79,7 +79,7 @@ class user {
     }
 
     function EmailAlreadyExist(){
-        $databaseBaptiste = new database('mysql-francois.alwaysdata.net', 'francois_project', '0621013579', 'francois_user');
+        $databaseBaptiste = new Database('mysql-francois.alwaysdata.net', 'francois_project', '0621013579', 'francois_user');
         $query = 'Select Email from User Where Email = \'' . $this->_email . '\' ';
         if($databaseBaptiste->Comparator($query) == 1) {return false;}
         return true;
@@ -94,7 +94,7 @@ class user {
     }
 
     function PseudoAlreadyExist(){
-        $databaseBaptiste = new database('mysql-francois.alwaysdata.net', 'francois_project', '0621013579', 'francois_user');
+        $databaseBaptiste = new Database('mysql-francois.alwaysdata.net', 'francois_project', '0621013579', 'francois_user');
         $query = 'Select Surname from User Where Surname = \'' . $this->_pseudo . '\' ';
         if($databaseBaptiste->Comparator($query) == 1) {return false;}
         return true;

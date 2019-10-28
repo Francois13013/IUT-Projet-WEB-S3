@@ -5,3 +5,16 @@ Nom de l'équipe:
 
 URL INDEX:
     https://francois.alwaysdata.net/        ou           https://francois.alwaysdata.net/Index
+
+Compte Admin sur Freenote
+    Pseudo: Admin
+    Mot de passe: 123456789
+
+Compte Test sur Freenote
+    Pseudo:UserTest
+    Mot de passe: 123456789
+
+Compte PHP MY ADMIN:
+    Hôte: mysql-francois.alwaysdata.net
+    Utilisateur: francois_project
+    Mot de passe: 0621013579

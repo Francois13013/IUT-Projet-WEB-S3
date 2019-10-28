@@ -159,7 +159,7 @@ class Topic
     }
 
     function showTopic(){
-        $database = new database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
+        $database = new Database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
         $fullArray = $database->getAllTopic();
         print_r($fullArray);
 //        foreach($fullArray as &$value){

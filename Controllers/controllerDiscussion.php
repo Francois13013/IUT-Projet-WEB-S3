@@ -1,12 +1,13 @@
 <?php
-    require_once('classes/Database.php');
-    require_once('classes/Message.php');
-    require_once('Controllers/controllerDiscussion.php');
+require_once ('Models/RequireAll.php');
+//    require_once('classes/Database.php');
+//    require_once('classes/Message.php');
+//    require_once('Controllers/controllerDiscussion.php');
 
 session_start();
 
 function RequestMessages(){
-    $database = new database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
+    $database = new Database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
     $currentTopic = $database->getTopic(explode('/Topic/',$_SERVER['REQUEST_URI'])[1]);
 //    echo $database->getLastMessages($currentTopic->getIdTopic());
     $database->getAllMessages($currentTopic->getIdTopic());
@@ -23,7 +24,7 @@ function RequestMessages(){
 
 function AddWords()
 {
-    $database = new database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
+    $database = new Database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
     $currentTopic = $database->getTopic(explode('/Topic/', $_SERVER['REQUEST_URI'])[1]);
     $id = $currentTopic->getIdTopic();
     $messageToSend = $_POST['msg'];
@@ -54,7 +55,7 @@ function AddWords()
 }
 
 function closeMessage(){
-    $database = new database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
+    $database = new Database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
     $currentTopic = $database->getTopic(explode('/Topic/',$_SERVER['REQUEST_URI'])[1]);
     $lastid = $database->getLastMessages($currentTopic->getIdTopic());
     if ($database->CheckIdUserOnMessage($lastid, $_SESSION["IdUser"]) == true) {
@@ -63,13 +64,13 @@ function closeMessage(){
 }
 
 function closeTopic(){
-    $database = new database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
+    $database = new Database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
     $currentTopic = $database->getTopic(explode('/Topic/', $_SERVER['REQUEST_URI'])[1]);
     $database->closeTopic($currentTopic->getIdTopic());
 }
 
 function deleteTopic(){
-    $database = new database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
+    $database = new Database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
     $currentTopic = $database->getTopic(explode('/Topic/', $_SERVER['REQUEST_URI'])[1]);
     $database->deleteTopic($currentTopic->getIdTopic());
     echo "<script>window.location.href='/'</script>";
@@ -90,7 +91,7 @@ function echoMenu(){
 }
 
 function checknumbermsg(){
-    $database = new database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
+    $database = new Database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
     $currentTopic = $database->getTopic(explode('/Topic/', $_SERVER['REQUEST_URI'])[1]);
     if($database->getNumberMessage($currentTopic->getIdTopic()) >= 10){
         $database->closeTopic($currentTopic->getIdTopic());
