@@ -434,6 +434,10 @@ footer a {
     align-items: center;
 }
 
+#mainInfo div form button{
+    /*background-color: ;*/
+}
+
 #mainInfo div input,#mainInfo div form{
     width:90%;
 }
@@ -467,8 +471,11 @@ footer a {
         /*background-color: yellow;*/
         right:0;
         /*top:8.5%;*/
-        top:-26%;
+        top:-27%;
         border-radius: 26px;
+        border:solid;
+        border-color:#E8A87C;
+        border-width: 2px;
     }
     #userMenuOff{
         top:8.5%;
@@ -529,6 +536,9 @@ footer a {
     #mainInfo {
         margin-top: 0;
         height:85%;
+        width:55%;
+        margin-left:22.5%;
+        margin-right:22.5%;
     }
     #mainInfo h1{
         font-size: 48px;
