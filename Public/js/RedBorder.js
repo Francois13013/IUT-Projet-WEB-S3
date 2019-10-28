@@ -1,6 +1,6 @@
 function ErrorCall(errorname){
-    const tmp = errorname;
-    if(errorname == 'BadLog') {
+    let tmp = errorname;
+    if(errorname === 'BadLog') {
         if(window.innerWidth <= 1100) {
             document.querySelector('.menuphoneuser').classList.toggle("offmenu");
 
@@ -10,16 +10,16 @@ function ErrorCall(errorname){
         tmp = 'usernameinput';
         ErrorCall('passwordinput');
     }
-        if(errorname == 'PseudoExistant'){
+        if(errorname === 'PseudoExistant'){
         tmp = 'Surname';
         document.getElementById('labelPseudo').innerHTML = document.getElementById('labelPseudo').innerHTML + ' (Pseudo déjà pris)';
     }
-    if(errorname == 'EmailExistant'){
+    if(errorname === 'EmailExistant'){
         tmp = 'Email';
         document.getElementById('labelEmail').innerHTML = document.getElementById('labelEmail').innerHTML + ' (Email déjà incrite)';
     }
-    if(errorname == 'SecondPassword'){ tmp = 'RepeterMDP'; ErrorCall('Password');}
-    if(errorname == 'Pseudo'){
+    if(errorname === 'SecondPassword'){ tmp = 'RepeterMDP'; ErrorCall('Password');}
+    if(errorname === 'Pseudo'){
         tmp = 'Surname';
     }
     document.getElementById(tmp).style.borderWidth = '2px';

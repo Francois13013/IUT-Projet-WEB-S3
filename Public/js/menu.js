@@ -1,6 +1,6 @@
 logoElement = document.getElementById('logoUser');
 menuElement = document.querySelector('.userMenu');
-toggle = true;
+let toggle = true;
 
 logoElement.onclick = function(){
     if(toggle == true) {
