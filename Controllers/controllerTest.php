@@ -6,4 +6,4 @@ $database->getAllTopic();
 foreach($_SESSION['topicArray'] as &$value){
     echo '<div class = \'topicRow\'>' . $value->getNameTopics() . $value->getStatut() . '</div>';
 };
-?>
+

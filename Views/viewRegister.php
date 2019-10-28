@@ -1,14 +1,14 @@
 <form id="" action="/Controllers/controllerRegister.php" method="post">
-    <label id="pseudoLabel" for="pseudo">Pseudo</label>
+    <label id="pseudoLabel" for="pseudoInput">Pseudo</label>
     <input id="pseudoInput" class="pseudo" type="text" name="Pseudo">
-    <label id="emailLabel" for="email">Email</label>
+    <label id="emailLabel" for="emailInput">Email</label>
     <input id="emailInput" class="email" type="text" name="Email">
-    <label for="passwordLabel">Mot de passe</label>
+    <label for="passwordInput">Mot de passe</label>
     <input id="passwordInput" class="password" type="password" name="Password">
-    <label for="repeatPassword">Repeter Mot de passe</label>
+    <label for="twicePasswordInput">Repeter Mot de passe</label>
     <input id="twicePasswordInput" class="twicePassword" type="password" name="PasswordTwice">
     <input id="" class="" type="checkbox" name="checkbox" value="close">
-    <label href="/ConditionUtilisateur" for="checkbox">J'accepte ²les conditions d'utilisation</label>
+    <label for="checkbox">J'accepte ²les conditions d'utilisation</label>
 
     <input id="submitform" type="submit" value="submit">
 </form>

@@ -16,4 +16,3 @@ class Controller {
         echo '<h1>' . $errorNumber . '</h1>';
     }
 };
-?>

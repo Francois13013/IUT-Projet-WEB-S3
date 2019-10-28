@@ -43,4 +43,3 @@ Router::checkErrorUrl();
 //    include_once('footer.php');
 //});
 //$test->Launch();
-?>

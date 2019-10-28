@@ -51,4 +51,3 @@ function ChangeEmail(){
         $_SESSION['user'] = $user;
     }
 }
-?>

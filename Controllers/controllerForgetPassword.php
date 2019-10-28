@@ -50,4 +50,4 @@ exit();
 //
 //forgetPassword::sendMail();
 //
-//?>
+//

@@ -3,13 +3,13 @@ class Tag
 {
     private $_type;
     private $_html;
-    private $_id;
-    private $_class;
 
     /**
      * Tag constructor.
      * @param $type
      * @param string $content
+     * @param $id
+     * @param $class
      */
     function __construct($type, $content,$id,$class)
     {
@@ -53,4 +53,3 @@ class Tag
         echo $html;
     }
 }
-?>

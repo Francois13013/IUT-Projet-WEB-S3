@@ -3,4 +3,3 @@
 class Index extends Controller {
 }
 
-?>

@@ -10,8 +10,8 @@ logoElement.onclick = function(){
         menuElement.setAttribute("id", "");
         toggle=true;
     }
-}
+};
 
 document.getElementById('logoFreenote').onclick = function() {
     document.location.href='/';
-}
+};

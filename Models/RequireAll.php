@@ -67,4 +67,3 @@ function autoloadController($className)
 spl_autoload_register("autoloadModel");
 //spl_autoload_register("autoloadController");
 
-?>

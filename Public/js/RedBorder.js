@@ -1,5 +1,5 @@
 function ErrorCall(errorname){
-    var tmp = errorname;
+    const tmp = errorname;
     if(errorname == 'BadLog') {
         if(window.innerWidth <= 1100) {
             document.querySelector('.menuphoneuser').classList.toggle("offmenu");

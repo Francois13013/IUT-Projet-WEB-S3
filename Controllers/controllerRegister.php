@@ -1,5 +1,5 @@
 <?php
-require_once ('Models/RequireAll.php');
+require_once ('../Models/RequireAll.php');
 
 
             session_start();
@@ -26,4 +26,4 @@ require_once ('Models/RequireAll.php');
                 header( 'Location: /Register' ) ;
                 exit();
             }
-?>
+

@@ -116,9 +116,6 @@ class Database
 
     function Login(user $User)
     {
-        $array = array(
-            1 => "Password",
-        );
         $query = 'Select Password from User Where Surname = \'' . $User->getPseudo() . '\' ';
         $dbResult = $this->Error($query);
         if (mysqli_num_rows(mysqli_query($this->_dbLink, $query)) == 0) {
@@ -159,29 +156,12 @@ class Database
 
     function checkEmail($email)
     {
-        $array = array(
-            1 => "Email",
-        );
         $query = 'Select Email from User Where Email = \'' . $email . '\' ';
-        $dbResult = $this->Error($query);
+        $this->Error($query);
         if (mysqli_num_rows(mysqli_query($this->_dbLink, $query)) == 0) {
             return false;
         } else {
             return true;
-        }
-    }
-
-    function insertSqlMessage(Message $message)
-    {
-        $query = 'INSERT INTO message (idMessage,idUser,nameUser,message,time,idTopic) VALUES (\'' . $message->setIdMessage() . '\', 
-            \'' . $message->getIdUser() . '\', 
-            \'' . $message->getNameUser() . '\',
-            \'' . $message->getMessage() . '\',
-            \'' . $message->getTime() . '\',
-            \'' . $message->getIdTopic() . '\'';
-        if (mysqli_query($this->_dbLink, $query)) {
-        } else {
-            echo 'erreur' . mysqli_error($this->_dbLink);
         }
     }
 
@@ -326,4 +306,3 @@ class Database
     }
 
 } // fin de la classe ===================================================================================================================================================
-?>

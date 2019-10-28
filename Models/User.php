@@ -29,7 +29,6 @@ class User {
     function  setPassword($tmpPassword){ $this->_password = $tmpPassword;}
     function  setId($tmpId){ $this->_id = $tmpId;}
     function  setStatut($tmpStatut){ $this->_statut = $tmpStatut;}
-    function GetNewPassword(){}
     function checkEmailHost($email)
     {
         $array = array(
@@ -43,7 +42,6 @@ class User {
 
 //        if ( preg_match ( " /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ " , $email ) ) {
             $strstrEmail = strstr($email, '@');
-//            echo $strstrEmail;
             for ($i = 1; $i <= count($array); $i++) {
                 if ($strstrEmail == $array[$i]) {
                     return true;
@@ -53,9 +51,6 @@ class User {
                 }
 
             }
-//        } else {
-//            return false;
-//        }
     }
 
 
@@ -138,16 +133,4 @@ class User {
 
         return $return;
     }
-
-
-    function __toString()
-    {
-        $html = $this->getPseudo(). ' ';
-        $html .= $this->getEmail(). ' ';
-        $html .=$this->getPassword(). ' ';
-        $html .=$this->getId(). ' ';
-        $html .=$this->getStatut(). ' ';
-        return $html;
-    }
 }
-?>
