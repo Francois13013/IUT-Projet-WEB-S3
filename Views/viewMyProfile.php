@@ -7,8 +7,7 @@ require_once ('Controllers/controllerMyProfile.php');
 
 <div id="mainInfo">
     <h1>Vos Infos</h1>
-    <?php ShowInfo();
-    ?>
+    <?php ShowInfo(); ?>
     <div>
         <form method="post" onsubmit='<?php ChangeEmail();?>'>
             <label>Changer Adrs Mail</label>

@@ -410,6 +410,12 @@ footer a {
     height:40%;
 }
 
+#mainInfo{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+}
+
 
 @media only screen and (min-width: 1100px) {
     #midpage{
