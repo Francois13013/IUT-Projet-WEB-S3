@@ -2,7 +2,7 @@ logoElement = document.getElementById('logoUser');
 menuElement = document.querySelector('.userMenu');
 let toggle = true;
 
-logoElement.onclick = function(){
+logoElement.onclick = function () {
     if(toggle == true) {
         menuElement.setAttribute("id", "userMenuOff");
         toggle =false;
@@ -12,6 +12,6 @@ logoElement.onclick = function(){
     }
 };
 
-document.getElementById('logoFreenote').onclick = function() {
+document.getElementById('logoFreenote').onclick = function () {
     document.location.href='/';
 };

@@ -28,7 +28,7 @@ if (isset($_SESSION['Probleme'])) {
 }
 echo '<script type="text/javascript" src="../Public/js/RedBorder.js"></script>';
 
-if($count == true){
+if($count == true) {
     echo '<script type="text/javascript">' . 'ErrorCall(' . ' \'' . $bypass . '\' ' . ');' . '</script>';
 } else {
     for ($i = 0; $i < count($bypass); $i++) {

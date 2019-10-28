@@ -1,8 +1,9 @@
 <?php
-require_once ('Models/RequireAll.php');
+require_once 'Models/RequireAll.php';
 
-function StatusToString(){
-    if($_SESSION["Status"] == 1){
+function StatusToString()
+{
+    if($_SESSION["Status"] == 1) {
         return 'Admin';
     } else {
         return 'Utilisateur standard';
@@ -11,7 +12,8 @@ function StatusToString(){
 
 
 
-function ShowInfo(){
+function ShowInfo()
+{
 
     $html = '<div>';
     $html .= '<p>Pseudo</p>';
@@ -41,7 +43,8 @@ function ChangePassword()
 }
 
 
-function ChangeEmail(){
+function ChangeEmail()
+{
     $user = $_SESSION['user'];
     $databaseBaptiste = new Database('mysql-francois.alwaysdata.net', 'francois_project', '0621013579', 'francois_user');
     $newEmail = $_POST['ChangeEmail'];

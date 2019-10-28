@@ -1,6 +1,6 @@
 <?php
 
-require_once ('RequireAll.php');
+require_once 'RequireAll.php';
 
 session_start();
 
@@ -63,9 +63,11 @@ class Router
         $database->getAllTopic();
         if (isset($_SESSION['topicArray'])) {
             foreach ($_SESSION['topicArray'] as &$value) {
-                Router::add('/Topic/' . $value->getIdTopic(), function () {
-                    Controller::CreateStandardView('viewDiscussion');
-                });
+                Router::add(
+                    '/Topic/' . $value->getIdTopic(), function () {
+                        Controller::CreateStandardView('viewDiscussion');
+                    }
+                );
             }
         }
     }

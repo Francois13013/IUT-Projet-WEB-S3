@@ -6,6 +6,7 @@ class Tag
 
     /**
      * Tag constructor.
+     *
      * @param $type
      * @param string $content
      * @param $id
@@ -15,10 +16,13 @@ class Tag
     {
         $this->_type = $type;
         $this->_html = '<' . $type;
-        if($id != ""){ $this->_html .= ' id= "' . $id . '"'; }
-        if($class != ""){ $this->_html .= ' class= "' . $class . '"'; }
+        if($id != "") { $this->_html .= ' id= "' . $id . '"'; 
+        }
+        if($class != "") { $this->_html .= ' class= "' . $class . '"'; 
+        }
         $this->_html .= '>';
-        if(isset($content)){$this->_html .= $content;}
+        if(isset($content)) {$this->_html .= $content;
+        }
         $this->_html .= '</' . $type . '>';
     }
 

@@ -1,10 +1,11 @@
 <?php
-require_once ('Models/RequireAll.php');
+require_once 'Models/RequireAll.php';
 
 session_start();
 
-function RandPassword(){
-    $passgen = NULL;
+function RandPassword()
+{
+    $passgen = null;
     for($i = 1; $i<10; ++$i) {
         $passgen .= chr(rand(46, 125));
     }
@@ -16,12 +17,12 @@ $databaseBaptiste = new Database('mysql-francois.alwaysdata.net', 'francois_proj
 if ($databaseBaptiste->CheckEmail($email) == 1) {
     $newPass = RandPassword();
     mail($email, 'Changement de mot de passe', 'Voici votre nouveau mdp ' . $newPass);
-    $databaseBaptiste->updatePassword($email,sha1($newPass));
+    $databaseBaptiste->updatePassword($email, sha1($newPass));
 }
 //    if (isset($email)) {
 //        header('Location: /');
 $_SESSION['MailSend'] = "whynot";
-header( 'Location: /ForgetPassword' ) ;
+header('Location: /ForgetPassword');
 exit();
 //
 //require_once ('classes/Database.php');

@@ -1,14 +1,15 @@
 <?php
-require_once ('Models/RequireAll.php');
+require_once 'Models/RequireAll.php';
 
 session_start();
 
-$database = new Database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
-$currentTopic = $database->getTopic(explode('/Topic/',$_SERVER['REQUEST_URI'])[1]);
-define('currentIdTopic',$currentTopic->getIdTopic());
+$database = new Database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
+$currentTopic = $database->getTopic(explode('/Topic/', $_SERVER['REQUEST_URI'])[1]);
+define('currentIdTopic', $currentTopic->getIdTopic());
 
-function RequestMessages(){
-    $database = new Database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
+function RequestMessages()
+{
+    $database = new Database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
     $database->getAllMessages(currentIdTopic);
     $allMessageFromThisTopic = $_SESSION['messagesArray' . currentIdTopic];
     foreach($allMessageFromThisTopic as &$thisMessage){
@@ -29,8 +30,8 @@ function AddWords()
         $messageToSend = $_POST['msg'];
         if ($currentTopic->getStatut() != 0) {
             if (isset($messageToSend) && preg_match("/[A-Za-z0-9]+/", $messageToSend) && count(explode(' ', $messageToSend)) <= 2) {
-//            $array = $database->requestIdUsersWritten($id);
-//            $arraytwo = explode(',',$array);
+                //            $array = $database->requestIdUsersWritten($id);
+                //            $arraytwo = explode(',',$array);
                 if ($database->getLastMessageStatut(currentIdTopic) == 0) {
                     $database->newMessage(currentIdTopic, $_SESSION["IdUser"]);
                     $lastNewMessage = $database->getLastMessages(currentIdTopic);
@@ -55,34 +56,38 @@ function AddWords()
     return false;
 }
 
-function closeMessage(){
-    $database = new Database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
+function closeMessage()
+{
+    $database = new Database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
     $lastid = $database->getLastMessages(currentIdTopic);
     if ($database->CheckIdUserOnMessage($lastid, $_SESSION["IdUser"]) == true) {
-    $database->CloseMessage($lastid);
+        $database->CloseMessage($lastid);
     }
 }
 
-function closeTopic(){
+function closeTopic()
+{
     $database = new Database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
     $currentTopic = $database->getTopic(currentIdTopic);
     $database->closeTopic(currentIdTopic);
 }
 
-function deleteTopic(){
+function deleteTopic()
+{
     $database = new Database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
     $database->deleteTopic(currentIdTopic);
     echo "<script>window.location.href='/'</script>";
 }
 
-function echoMenu(){
+function echoMenu()
+{
 
     if($_SESSION['login'] == 'ok') {
         $html = '<div id="MenuUserDiscussion">';
         $html .= '<input type="submit" name="Close" class="button" value="Fermer le message" />';
         $html .= '</div>';
     }
-    if($_SESSION["Status"] == 1){
+    if($_SESSION["Status"] == 1) {
         $html .= '<div id="MenuAdminDiscussion">';
         $html .= '<input type="submit" name="CloseDiscussion" class="button" value="Fermer la discussion" />';
         $html .= '<input type="text" name="RenameTopicText"/>';
@@ -93,9 +98,10 @@ function echoMenu(){
     echo $html;
 }
 
-function checknumbermsg(){
+function checknumbermsg()
+{
     $database = new Database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
-    if($database->getNumberMessage(currentIdTopic) >= 40){                                                                                  // Limite de 40 messages
+    if($database->getNumberMessage(currentIdTopic) >= 40) {                                                                                  // Limite de 40 messages
         $database->closeTopic(currentIdTopic);
     }
 }

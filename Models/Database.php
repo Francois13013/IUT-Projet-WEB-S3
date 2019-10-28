@@ -1,5 +1,5 @@
 <?php
-require_once ('RequireAll.php');
+require_once 'RequireAll.php';
 
 class Database
 {
@@ -16,7 +16,8 @@ class Database
         $this->_dbLink = mysqli_connect($host, $user, $password)
         or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
         mysqli_select_db($this->_dbLink, $dbName)
-        or die('Erreur dans la sélection de la base : ' . mysqli_error($this->_dbLink)
+        or die(
+            'Erreur dans la sélection de la base : ' . mysqli_error($this->_dbLink)
         );
     }
 
@@ -24,7 +25,7 @@ class Database
     {
         $string2 = trim(str_ireplace('select', '', strstr($query, 'from', true)));
         $nameArray = explode(',', $string2);
-        $newArray = array(0 => Null);
+        $newArray = array(0 => null);
         foreach ($nameArray as &$value) {
             $newArray[] = $value;
         }
@@ -87,7 +88,7 @@ class Database
         $query = 'INSERT INTO User (Surname,Email,Password,Status) VALUES (\'' . $user->getPseudo() . '\',\'' . $user->getEmail() . '\',\'' . sha1($user->getPassword()) . '\',\'' . '2' . '\');';
         if (mysqli_query($this->_dbLink, $query)) {
             echo '<meta http-equiv="refresh" content="0;url=' . "/Thanks" . '" />';
-//            header('Location : /Index');
+            //            header('Location : /Index');
         } else {
             echo 'erreur' . mysqli_error($this->_dbLink);
         }
@@ -119,7 +120,7 @@ class Database
         $query = 'Select Password from User Where Surname = \'' . $User->getPseudo() . '\' ';
         $dbResult = $this->Error($query);
         if (mysqli_num_rows(mysqli_query($this->_dbLink, $query)) == 0) {
-//            echo 'Utilisateur Introuvable';
+            //            echo 'Utilisateur Introuvable';
             $_SESSION['ProblemeLog'] = 'BadLog';
             header('Location: /Index');
             exit();
@@ -146,7 +147,7 @@ class Database
                 header('Location: /Index');
                 exit();
             } else {
-//                echo 'mdp invalide';
+                //                echo 'mdp invalide';
                 $_SESSION['ProblemeLog'] = 'BadLog';
                 header('Location: /Index');
                 exit();
@@ -281,9 +282,9 @@ class Database
     {
         $query = 'Select IdUsersCat from Messages WHERE IdMessage =' . '\'' . $id . '\'';
         return $this->CheckError($query)[0];
-//        return mysqli_fetch_assoc(mysqli_query($this->getDbLink(), $query));
-//        return $row;
-//        return explode(',',$row['IdUsersCat']);
+        //        return mysqli_fetch_assoc(mysqli_query($this->getDbLink(), $query));
+        //        return $row;
+        //        return explode(',',$row['IdUsersCat']);
     }
 
     function CheckIdUserOnMessage($idMessage, $idUser)

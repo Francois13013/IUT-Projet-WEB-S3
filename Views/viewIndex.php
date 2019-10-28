@@ -1,4 +1,4 @@
-<?php require_once('Controllers/controllerIndex.php')?>
+<?php require_once 'Controllers/controllerIndex.php'?>
 
 <div id="mainIndex">
 <link rel="stylesheet" href="../Public/css/styleIndex.css">
@@ -16,7 +16,7 @@
             texte, comme Aldus PageMaker. </p>
          </div>
          <div class="container" id="containerTop">
-             <?php RequestTop();?>
+                <?php RequestTop();?>
          </div>
     </div>
     <div class="container" id="containerTopic">

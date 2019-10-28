@@ -1,10 +1,11 @@
 <?php
-require_once ('Models/RequireAll.php');
+require_once 'Models/RequireAll.php';
 
-$database = new Database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
+$database = new Database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
 $database->getAllTopic();
 
-function RequestTop(){
+function RequestTop()
+{
     $html = '<h1>#1 bla bla bla bla</h1>';
     $html .= '<h1>#2 bla bla bla bla</h1>';
     $html .= '<h1>#3 bla bla bla bla</h1>';

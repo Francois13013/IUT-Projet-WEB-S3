@@ -1,6 +1,6 @@
 <?php
 //require_once ('Models/RequireAll.php');
-include_once ('Controllers/controllerDiscussion.php');
+require_once 'Controllers/controllerDiscussion.php';
 session_start();
 
 //function addContentMsg($id,$newContent){
@@ -21,10 +21,10 @@ session_start();
 
 <div id="mainDiscussion">
     <?php
-//    $database = new database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
-//    $currentTopic = $database->getTopic(explode('/Topic/', $_SERVER['REQUEST_URI'])[1]);
-//    $id = $currentTopic->getIdTopic();
-//    print_r($database->getLastMessages($id));
+    //    $database = new database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
+    //    $currentTopic = $database->getTopic(explode('/Topic/', $_SERVER['REQUEST_URI'])[1]);
+    //    $id = $currentTopic->getIdTopic();
+    //    print_r($database->getLastMessages($id));
 
 
     checknumbermsg();

@@ -27,22 +27,22 @@
 function autoloadModel($className)
 {
     if(isset($className)) {
-//    echo $_SERVER['REQUEST_URI'];
-//    echo __DIR__ . '<br>';
+        //    echo $_SERVER['REQUEST_URI'];
+        //    echo __DIR__ . '<br>';
         $filename = 'Models/' . $className . '.php';
         $filename2 = __DIR__ . '/' . $className . '.php';
 
-//    $filename = str_replace('_', '/', $className).'.php';
-//    echo $className  . '<br>';
-//    echo $filename  . '<br>';
-//    echo $filename2  . '<br>';
-//    echo '<hr>';
-//    $filename2 = $filename
-//    $filename = "Models/" . $className . ".php";
+        //    $filename = str_replace('_', '/', $className).'.php';
+        //    echo $className  . '<br>';
+        //    echo $filename  . '<br>';
+        //    echo $filename2  . '<br>';
+        //    echo '<hr>';
+        //    $filename2 = $filename
+        //    $filename = "Models/" . $className . ".php";
         if (is_readable($filename)) {
-            require_once($filename);
+            include_once $filename;
         } else if (is_readable($filename2)) {
-            require_once($filename2);
+            include_once $filename2;
         }
     } else {
         return;
@@ -56,9 +56,9 @@ function autoloadController($className)
         $filename2 = __DIR__ . '/' . $className . '.php';
     }
     if (is_readable($filename)) {
-        require_once($filename);
+        include_once $filename;
     } else if (is_readable($filename2)) {
-        require_once($filename2);
+        include_once $filename2;
     } else {
         return;
     }

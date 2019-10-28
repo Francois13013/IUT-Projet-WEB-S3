@@ -1,5 +1,5 @@
 <?php
-require_once ('Controllers/controllerMyProfile.php');
+require_once 'Controllers/controllerMyProfile.php';
 
 
 ?>
