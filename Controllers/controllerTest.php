@@ -1,6 +1,5 @@
 <?php
 require_once ('Models/RequireAll.php');
-//$topic = new Topic('123','test azd','1');
 $database = new Database('mysql-francois.alwaysdata.net','francois_oui','0621013579','francois_project');
 $database->getAllTopic();
 

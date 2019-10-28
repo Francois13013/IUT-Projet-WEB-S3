@@ -2,7 +2,6 @@
 
 <div id="mainIndex">
 <link rel="stylesheet" href="../Public/css/styleIndex.css">
-<!--<h1>Bievenue sur l'accueil</h1>-->
     <div id='containerInfoTop'>
          <div class="container" id="containerInfo">
            <p>e depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser

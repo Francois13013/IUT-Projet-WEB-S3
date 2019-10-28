@@ -1,11 +1,3 @@
-// function translator(errorname){
-//     if(errorname == 'Password'){
-//         return 'Password';
-//     }
-// }
-//
-
-// alert('500');
 function ErrorCall(errorname){
     var tmp = errorname;
     if(errorname == 'BadLog') {
@@ -30,8 +22,6 @@ function ErrorCall(errorname){
     if(errorname == 'Pseudo'){
         tmp = 'Surname';
     }
-    // var bypass = translator(errorname);
     document.getElementById(tmp).style.borderWidth = '2px';
     document.getElementById(tmp).style.borderColor = 'Red';
-    // document.getElementById(errorname).style.borderColor = '';
 }

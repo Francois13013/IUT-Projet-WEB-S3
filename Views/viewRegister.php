@@ -20,14 +20,8 @@ if (isset($_SESSION['Probleme'])) {
         $bypass = array();
         $bypass = explode(',', $_SESSION['Probleme']);
         print_r($bypass);
-//        $count = count($bypass);
     } else {
         $bypass = array($_SESSION['Probleme']);
-//        $fruits = array (
-//            "fruits"  => array("a" => "orange", "b" => "banana", "c" => "apple"),
-//            "numbers" => array(1, 2, 3, 4, 5, 6),
-//            "holes"   => array("first", 5 => "second", "third")
-//        );
         print_r($bypass);
         $count = true;
     }
@@ -43,21 +37,3 @@ if($count == true){
 }
     unset($_SESSION['Probleme']);
 ?>
-
-
-<!--    <form id="singupform" action="/Controllers/controllerRegister.php" method="post">-->
-<!--        <a>FirstName</a>-->
-<!--        <input class="inputsingup" type="text" name="FirstName">-->
-<!--        <a>LastName</a>-->
-<!--        <input class="inputsingup" type="text" name="LastName">-->
-<!--        <a>Surname</a>-->
-<!--        <input class="inputsingup" type="text" name="Surname">-->
-<!--        <a>Email</a>-->
-<!--        <input class="inputsingup" type="text" name="Email">-->
-<!--        <a>Password</a>-->
-<!--        <input class="inputsingup" type="password" name="Password">-->
-<!--        <a>PasswordTwice</a>-->
-<!--        <input class="inputsingup" type="password" name="PasswordTwice">-->
-<!--        <input class="inputsingup" type="checkbox" name="checkbox" value="close">-->
-<!--        <input id="submitform" type="submit" value="submit">-->
-<!--    </form>-->

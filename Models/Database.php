@@ -165,7 +165,6 @@ class Database
         $query = 'Select Email from User Where Email = \'' . $email . '\' ';
         $dbResult = $this->Error($query);
         if (mysqli_num_rows(mysqli_query($this->_dbLink, $query)) == 0) {
-//            echo 'il y pas ton pseudo';
             return false;
         } else {
             return true;
