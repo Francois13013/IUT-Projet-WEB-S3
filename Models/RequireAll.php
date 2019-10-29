@@ -26,9 +26,9 @@ function autoloadModel($className)
         $filename = 'Models/' . $className . '.php';
         $filename2 = __DIR__ . '/' . $className . '.php';
         if (is_readable($filename)) {
-            require_once $filename;
+            include_once $filename;
         } else if (is_readable($filename2)) {
-            require_once $filename2;
+            include_once $filename2;
         }
     }
 }

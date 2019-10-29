@@ -13,7 +13,7 @@
  * @since      1.0.0
  */
 
-require_once ('RequireAll.php');
+require_once 'RequireAll.php';
 //require_once 'Database.php';
 
 session_start();

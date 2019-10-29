@@ -1,17 +1,16 @@
 <?php
 /**
- * Footer
- *
- * Main footer file for the theme.
+ * Lancement du site appel des routes.php et redirection
+ * (Page optionnel si on change le chemin standard du serveur sur Appache)
  *
  * PHP VERSION 7.2.22
  *
- * @category   JeSaisPas
- * @package    WordPress
- * @subpackage Mytheme
+ * @category   Index
+ * @package    Standard
+ * @subpackage Standard
  * @author     François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
  * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link       ****
+ * @link       *
  * @since      1.0.0
  */
 
