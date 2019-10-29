@@ -1,12 +1,33 @@
 <?php
+/**
+ * Footer
+ *
+ * Main footer file for the theme.
+ *
+ * PHP VERSION 7.1
+ *
+ * @category   JeSaisPas
+ * @package    WordPress
+ * @subpackage Mytheme
+ * @author     François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
+ * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
+ * @link       ****
+ * @since      1.0.0
+ */
+
 require_once 'Models/RequireAll.php';
 
 session_start();
 
-function RandPassword()
+/**
+ * Process any throw tags that this function comment has.
+ *
+ * @return string
+ */
+function randPassword()
 {
     $passgen = null;
-    for($i = 1; $i<10; ++$i) {
+    for ($i = 1; $i<10; ++$i) {
         $passgen .= chr(rand(46, 125));
     }
     return $passgen;
@@ -15,40 +36,10 @@ function RandPassword()
 $email = $_POST['email'];
 $databaseBaptiste = new Database('mysql-francois.alwaysdata.net', 'francois_project', '0621013579', 'francois_user');
 if ($databaseBaptiste->CheckEmail($email) == 1) {
-    $newPass = RandPassword();
+    $newPass = randPassword();
     mail($email, 'Changement de mot de passe', 'Voici votre nouveau mdp ' . $newPass);
     $databaseBaptiste->updatePassword($email, sha1($newPass));
 }
-//    if (isset($email)) {
-//        header('Location: /');
 $_SESSION['MailSend'] = "whynot";
 header('Location: /ForgetPassword');
 exit();
-//
-//require_once ('classes/Database.php');
-//
-//class forgetPassword extends Controller
-//{
-//    public static function sendMail (){
-//        session_start();
-//
-//        $email = $_POST['email'];
-//        $databaseBaptiste = new database('mysql-baptistesevilla.alwaysdata.net', '189826_admin1', '0651196362', 'baptistesevilla_projetweb');
-//        if ($databaseBaptiste->CheckEmail($email) == 1)
-//        {
-//            mail($email, 'Changement de mot de passe', 'Voici votre nouveau mdp '. sha1(rand(1000000, 100000000)));
-//            echo "email trouvé";
-//        }
-//
-//        else
-//            if (isset($email)) {
-//                header('Location: /index.php');
-//                exit();
-//            }
-//
-//    }
-//}
-//
-//forgetPassword::sendMail();
-//
-//

@@ -1,36 +1,50 @@
 <?php
-//require ('Models/Router.php');
+/**
+ * Footer
+ *
+ * Main footer file for the theme.
+ *
+ * PHP VERSION 7.1
+ *
+ * @category   JeSaisPas
+ * @package    WordPress
+ * @subpackage Mytheme
+ * @author     François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
+ * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
+ * @link       ****
+ * @since      1.0.0
+ */
 
 require 'Models/RequireAll.php';
 
 
 Router::addTwoWay(
     '/', '/Index', function () {
-        Controller::CreateStandardView('viewIndex');
+        Controller::createStandardView('viewIndex');
     }
 );
 
 Router::add(
     '/ForgetPassword', function () {
-        Controller::CreateStandardView('viewForgetPassword');
+        Controller::createStandardView('viewForgetPassword');
     }
 );
 
 Router::addLoggedWay(
     '/MyProfile', function () {
-        Controller::CreateStandardView('viewMyProfile');
+        Controller::createStandardView('viewMyProfile');
     }
 );
 
 Router::addNoLoggedWay(
     '/Register', function () {
-        Controller::CreateStandardView('viewRegister');
+        Controller::createStandardView('viewRegister');
     }
 );
 
 Router::add(
     '/Thanks', function () {
-        Controller::CreateStandardView('viewThanks');
+        Controller::createStandardView('viewThanks');
     }
 );
 
@@ -42,7 +56,7 @@ Router::add(
 
 Router::add(
     '/Contact', function () {
-        Controller::CreateView('viewContact');
+        Controller::createView('viewContact');
     }
 );
 

@@ -1,3 +1,5 @@
+
+
 </div>
 <link rel="stylesheet" href="../../Public/css/stylefooter.css">
     <footer id="footer">
@@ -10,12 +12,28 @@
 
 <script src="../../Public/js/logged.js"></script>
 <?php
-if($_SESSION['login'] == 'ok') {
+/**
+ * Footer
+ *
+ * Main footer file for the theme.
+ *
+ * PHP VERSION 7.1
+ *
+ * @category   JeSaisPas
+ * @package    WordPress
+ * @subpackage Mytheme
+ * @author     François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
+ * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
+ * @link       ****
+ * @since      1.0.0
+ */
+
+if ($_SESSION['login'] == 'ok') {
     echo '<script type="text/javascript">' . 'loggedMenu('.' \''. $_SESSION["Surname"] .'\' '.');'     . '</script>';
 }
 echo $_SESSION['ProblemeLog'];
 echo '<script type="text/javascript" src="../../Public/js/RedBorder.js"></script>';
-if(isset($_SESSION['ProblemeLog']) && $_SESSION['ProblemeLog'] = 'BadLog') {
+if (isset($_SESSION['ProblemeLog']) && $_SESSION['ProblemeLog'] = 'BadLog') {
     echo '<script type="text/javascript">' . 'ErrorCall(' . ' \'' . $_SESSION['ProblemeLog'] . '\' ' . ');' . '</script>';
 }
 unset($_SESSION['ProblemeLog']);

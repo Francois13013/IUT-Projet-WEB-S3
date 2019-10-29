@@ -18,14 +18,31 @@ class Topic
         $this->setStatut($_statut);
     }
 
+    /**
+     * Description function
+     *
+     * @return mixed
+     */
     function getIdTopic()
     {
         return $this->_idTopics;
     }
+
+    /**
+     * Description function
+     *
+     * @return mixed
+     */
     function getNameTopics()
     {
         return $this->_nameTopics;
     }
+
+    /**
+     * Description function
+     *
+     * @return mixed
+     */
     function getStatut()
     {
         return $this->_statut;

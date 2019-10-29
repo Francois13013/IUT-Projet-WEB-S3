@@ -22,5 +22,3 @@
     </div>
     <input id="subb" type="submit" value="Send message">
 </form>
-<?php
-?>

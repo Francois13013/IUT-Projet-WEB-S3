@@ -1,3 +1,22 @@
+<?php
+/**
+ * Footer
+ *
+ * Main footer file for the theme.
+ *
+ * PHP VERSION 7.1
+ *
+ * @category   JeSaisPas
+ * @package    WordPress
+ * @subpackage Mytheme
+ * @author     François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
+ * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
+ * @link       ****
+ * @since      1.0.0
+ */
+?>
+
+
 <form id="" action="/Controllers/controllerRegister.php" method="post">
     <label id="pseudoLabel" for="pseudoInput">Pseudo</label>
     <input id="pseudoInput" class="pseudo" type="text" name="Pseudo">
@@ -28,7 +47,7 @@ if (isset($_SESSION['Probleme'])) {
 }
 echo '<script type="text/javascript" src="../Public/js/RedBorder.js"></script>';
 
-if($count == true) {
+if ($count == true) {
     echo '<script type="text/javascript">' . 'ErrorCall(' . ' \'' . $bypass . '\' ' . ');' . '</script>';
 } else {
     for ($i = 0; $i < count($bypass); $i++) {

@@ -16,21 +16,34 @@ class Tag
     {
         $this->_type = $type;
         $this->_html = '<' . $type;
-        if($id != "") { $this->_html .= ' id= "' . $id . '"'; 
+        if ($id != "") {
+            $this->_html .= ' id= "' . $id . '"';
         }
-        if($class != "") { $this->_html .= ' class= "' . $class . '"'; 
+        if ($class != "") {
+            $this->_html .= ' class= "' . $class . '"';
         }
         $this->_html .= '>';
-        if(isset($content)) {$this->_html .= $content;
+        if (isset($content)) {
+            $this->_html .= $content;
         }
         $this->_html .= '</' . $type . '>';
     }
 
+    /**
+     * Description function
+     *
+     * @return mixed
+     */
     function getType()
     {
         return $this->_type;
     }
 
+    /**
+     * Description function
+     *
+     * @return mixed
+     */
     function getHTML()
     {
         return $this->_html;
@@ -41,17 +54,21 @@ class Tag
         return $this->_html;
     }
 
-    function CreateInput($name,$value,$type,$textadd)
+    function createInput($name, $value, $type, $textadd)
     {
         $html = '<input ';
-        if($name!='') { $html .= 'name="' . $name . '"';
+        if ($name!='') {
+            $html .= 'name="' . $name . '"';
         }
-        if($type!='') { $html .= 'type="' . $type . '"';
+        if ($type!='') {
+            $html .= 'type="' . $type . '"';
         }
-        if($value!='') { $html .= 'value="' . $value . '"';
+        if ($value!='') {
+            $html .= 'value="' . $value . '"';
         }
         $html .= '>'.$textadd;
-        if($type!='hidden') { $html .= '<br>';
+        if ($type!='hidden') {
+            $html .= '<br>';
         }
         $html .= PHP_EOL;
         echo $html;

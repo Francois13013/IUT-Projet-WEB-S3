@@ -1,4 +1,5 @@
-function loggedMenu(Pseudo){
+function loggedMenu(Pseudo)
+{
     const menu = document.querySelector('.userMenu');
     menu.innerHTML = '<a id="pseudologged"> Bonjour, ' + Pseudo + '</a>';
     const btn = document.createElement("BUTTON");

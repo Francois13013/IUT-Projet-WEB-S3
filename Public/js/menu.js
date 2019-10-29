@@ -3,7 +3,7 @@ menuElement = document.querySelector('.userMenu');
 let toggle = true;
 
 logoElement.onclick = function () {
-    if(toggle == true) {
+    if (toggle == true) {
         menuElement.setAttribute("id", "userMenuOff");
         toggle =false;
     } else {

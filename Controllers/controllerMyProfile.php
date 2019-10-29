@@ -1,9 +1,30 @@
 <?php
+/**
+ * Footer
+ *
+ * Main footer file for the theme.
+ *
+ * PHP VERSION 7.1
+ *
+ * @category   JeSaisPas
+ * @package    WordPress
+ * @subpackage Mytheme
+ * @author     François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
+ * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
+ * @link       ****
+ * @since      1.0.0
+ */
+
 require_once 'Models/RequireAll.php';
 
-function StatusToString()
+/**
+ * Process any throw tags that this function comment has.
+ *
+ * @return string
+ */
+function stautsToString()
 {
-    if($_SESSION["Status"] == 1) {
+    if ($_SESSION["Status"] == 1) {
         return 'Admin';
     } else {
         return 'Utilisateur standard';
@@ -11,8 +32,12 @@ function StatusToString()
 }
 
 
-
-function ShowInfo()
+/**
+ * Process any throw tags that this function comment has.
+ *
+ * @return void
+ */
+function showInfo()
 {
 
     $html = '<div>';
@@ -25,12 +50,17 @@ function ShowInfo()
     $html .= '</div>';
     $html .= '<div>';
     $html .= '<p>Status</p>';
-    $html .= '<p>' . StatusToString() . '</p>';
+    $html .= '<p>' . stautsToString() . '</p>';
     $html .= '</div>';
     echo $html;
 }
 
-function ChangePassword()
+/**
+ * Process any throw tags that this function comment has.
+ *
+ * @return void
+ */
+function changePassword()
 {
     $user = $_SESSION['user'];
     $databaseBaptiste = new Database('mysql-francois.alwaysdata.net', 'francois_project', '0621013579', 'francois_user');
@@ -42,8 +72,12 @@ function ChangePassword()
     }
 }
 
-
-function ChangeEmail()
+/**
+ * Process any throw tags that this function comment has.
+ *
+ * @return void
+ */
+function changeEmail()
 {
     $user = $_SESSION['user'];
     $databaseBaptiste = new Database('mysql-francois.alwaysdata.net', 'francois_project', '0621013579', 'francois_user');

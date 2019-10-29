@@ -1,4 +1,21 @@
 <?php
+
+/**
+ * Footer
+ *
+ * Main footer file for the theme.
+ *
+ * PHP VERSION 7.1
+ *
+ * @category   JeSaisPas
+ * @package    WordPress
+ * @subpackage Mytheme
+ * @author     François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
+ * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
+ * @link       ****
+ * @since      1.0.0
+ */
+
 require_once 'Controllers/controllerMyProfile.php';
 
 
@@ -7,14 +24,14 @@ require_once 'Controllers/controllerMyProfile.php';
 
 <div id="mainInfo">
     <h1>Vos Infos</h1>
-    <?php ShowInfo(); ?>
+    <?php showInfo(); ?>
     <div>
-        <form method="post" onsubmit='<?php ChangeEmail();?>'>
+        <form method="post" onsubmit='<?php changeEmail();?>'>
             <label>Changer Adrs Mail</label>
             <input name="ChangeEmail" type="text">
             <button type="submit" >Changer</button>
         </form>
-        <form method="post" onsubmit='<?php ChangePassword();?>'>
+        <form method="post" onsubmit='<?php changePassword();?>'>
             <label>Changer Mot de passe</label>
             <input name="ChangePassword" type="text">
             <button type="submit" >Changer</button>
