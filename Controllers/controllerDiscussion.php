@@ -1,17 +1,17 @@
 <?php
 /**
- * Footer
+ * Controller de la view Discussion
+ * Elle met en relation les boutons de la view avec les fonctions de la classe
+ * database pour traiter les informations
  *
- * Main footer file for the theme.
+ * PHP VERSION 7.2.22
  *
- * PHP VERSION 7.1
- *
- * @category   JeSaisPas
- * @package    WordPress
- * @subpackage Mytheme
+ * @category   Controller
+ * @package    Standard
+ * @subpackage Standard
  * @author     François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
  * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link       ****
+ * @link       *
  * @since      1.0.0
  */
 
@@ -32,7 +32,7 @@ $currentTopic = $database->getTopic(
 define('CURRENTIDTOPIC', $currentTopic->getIdTopic());
 
 /**
- * Process any throw tags that this function comment has.
+ * Récupère l'ensemble des messages de la base de donnée et les affiche
  *
  * @return void
  */
@@ -57,7 +57,10 @@ function requestMessage()
 }
 
 /**
- * Process any throw tags that this function comment has.
+ * Verifie si les conditions de rajout de mot son valide
+ * Puis concatene le texte mis en input dans la base de donnée
+ * avec la partie de message déjà existant
+ * Si c'est le premier message d'un topic en crée un
  *
  * @return void
  */
@@ -106,7 +109,8 @@ function addWords()
 }
 
 /**
- * Process any throw tags that this function comment has.
+ * Recupere l'id du dernier message
+ * et marque le status du dernier message sur "Fermé" de la discussion
  *
  * @return void
  */
@@ -125,7 +129,8 @@ function closeMessage()
 }
 
 /**
- * Process any throw tags that this function comment has.
+ * Selectionne la base de donnée
+ * et marque le status du topic courant sur "Fermé"
  *
  * @return void
  */
@@ -137,12 +142,13 @@ function closeTopic()
         '0621013579',
         'francois_project'
     );
-    $currentTopic = $database->getTopic(CURRENTIDTOPIC);
     $database->closeTopic(CURRENTIDTOPIC);
 }
 
 /**
- * Process any throw tags that this function comment has.
+ * Selectionne la base de donnée
+ * et supprime le topic courant
+ * Renvoie sur l'accueil
  *
  * @return void
  */
@@ -159,7 +165,7 @@ function deleteTopic()
 }
 
 /**
- * Process any throw tags that this function comment has.
+ * Affiche le menu correspondant au status de l'utilisateur
  *
  * @return void
  */
@@ -187,7 +193,8 @@ function echoMenu()
 }
 
 /**
- * Process any throw tags that this function comment has.
+ * Verifie le nombre de message dans un topic et fixe une limite
+ * en cas de limite atteinte cela ferme le topic.
  *
  * @return void
  */

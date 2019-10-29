@@ -1,38 +1,35 @@
 <?php
 /**
- * Footer
+ * Fichier qui permet de gerer les controllers du site.
+ * Avec des fonctions des différents types de vues
  *
- * Main footer file for the theme.
+ * PHP VERSION 7.2.22
  *
- * PHP VERSION 7.1
- *
- * @category   JeSaisPas
- * @package    WordPress
- * @subpackage Mytheme
+ * @category   Models
+ * @package    Standard
+ * @subpackage Standard
  * @author     François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
  * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link       ****
+ * @link       *
  * @since      1.0.0
  */
 
 /**
- *  Description de la classe.
- *
  * Class Controller
  *
- * @category Test
- * @package  Test
- * @author   Test <test@test.com>
+ * @category MVC
+ * @package  MVC
+ * @author   François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link     Test
+ * @link     *
  */
 class Controller
 {
 
     /**
-     * Bla bla fonction.
+     * Fonction qui crée une vue sans autre ajout
      *
-     * @param $nameView Voici une descripption du param
+     * @param $nameView Nom de la vue de facto du fichier
      *
      * @return void;
      */
@@ -43,9 +40,9 @@ class Controller
 
 
     /**
-     * Bla bla fonction.
+     * Fonction qui crée une vue dîtes standard avec Header et Footer
      *
-     * @param $nameView Voici une descripption du param
+     * @param $nameView Nom de la vue de facto du fichier
      *
      * @return void;
      */

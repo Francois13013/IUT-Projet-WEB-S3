@@ -1,17 +1,16 @@
 <?php
 /**
- * Footer
+ * Controller de la view Index
+ * Recupère les Topics
  *
- * Main footer file for the theme.
+ * PHP VERSION 7.2.22
  *
- * PHP VERSION 7.1
- *
- * @category   JeSaisPas
- * @package    WordPress
- * @subpackage Mytheme
+ * @category   Controller
+ * @package    Standard
+ * @subpackage Standard
  * @author     François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
  * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link       ****
+ * @link       *
  * @since      1.0.0
  */
 
@@ -26,7 +25,7 @@ $database = new Database(
 $database->getAllTopic();
 
 /**
- * Process any throw tags that this function comment has.
+ * Affiche les topics où il y a le plus de message
  *
  * @return void
  */
@@ -39,7 +38,8 @@ function requestTop()
 }
 
 /**
- * Process any throw tags that this function comment has.
+ * Met en place un nombre max de topic
+ * Et ajoute en un si la condition est respecté
  *
  * @return void
  */
@@ -64,7 +64,7 @@ function controllerAddTopic()
 }
 
 /**
- * Process any throw tags that this function comment has.
+ * Recupère les topics et les affiches
  *
  * @return void
  */

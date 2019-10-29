@@ -1,32 +1,29 @@
 <?php
 /**
- * Footer
+ * Fichier qui permet de gerer les base de donnée du site.
+ * Element central du site
  *
- * Main footer file for the theme.
+ * PHP VERSION 7.2.22
  *
- * PHP VERSION 7.1
- *
- * @category   JeSaisPas
- * @package    WordPress
- * @subpackage Mytheme
+ * @category   Models
+ * @package    Standard
+ * @subpackage Standard
  * @author     François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
  * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link       ****
+ * @link       *
  * @since      1.0.0
  */
 
 require_once 'RequireAll.php';
 
 /**
- *  Description de la classe.
- *
  * Class Database
  *
- * @category Test
- * @package  Test
- * @author   Test <test@test.com>
+ * @category MVC
+ * @package  MVC
+ * @author   François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link     Test
+ * @link     *
  */
 class Database
 {
@@ -38,10 +35,10 @@ class Database
     /**
      * Database constructor.
      *
-     * @param $host     Description Param
-     * @param $user     Description Param
-     * @param $password Description Param
-     * @param $dbName   Description Param
+     * @param $host     Adresse de l'hote
+     * @param $user     Nom d'utilisateur de la bd
+     * @param $password Mot de passe
+     * @param $dbName   Nom de la table dans la bd
      */
     function __construct($host, $user, $password, $dbName)
     {
@@ -57,11 +54,11 @@ class Database
     }
 
     /**
-     * Description function
+     * Verifie la requete sql l'execute
      *
-     * @param $query description param
+     * @param $query Requête a executer
      *
-     * @return array
+     * @return array Resultat(s) de la requête
      */
     function checkError($query)
     {
@@ -107,11 +104,11 @@ class Database
 
 
     /**
-     * Description function
+     * Verifie si la requête renvoie une donnée ou pas
      *
-     * @param $query description param
+     * @param $query Requête a executer
      *
-     * @return void
+     * @return bool
      */
     function comparator($query)
     {
@@ -141,9 +138,9 @@ class Database
 
 
     /**
-     * Description function
+     * Ajout une instance d'user en base de donnée
      *
-     * @param User $user description param
+     * @param User $user Utilisateur à ajouter
      *
      * @return void
      */
@@ -163,9 +160,9 @@ class Database
     }
 
     /**
-     * Description function
+     * Verifie la requete l'execute et renvoie une donnée simple
      *
-     * @param $query description param
+     * @param $query Requête a executer
      *
      * @return bool|mysqli_result
      */
@@ -191,9 +188,12 @@ class Database
     }
 
     /**
-     * Description function
+     * Verifie dans la base de donnée un utilisateur qui souhaite se connecter
+     * en le comparant grâce à ses identifiants
+     * si la connection reussi place dans les variables $_SESSION les "bonnes"
+     * valeurs
      *
-     * @param user $User description param
+     * @param user $User Une instance d'un utilisateur qui souhaite se connecter
      *
      * @return void
      */
@@ -251,11 +251,11 @@ class Database
     }
 
     /**
-     * Description function
+     * Verifie si l'email est déjà existant
      *
-     * @param $email description param
+     * @param $email Email à vérifier
      *
-     * @return void
+     * @return bool
      */
     function checkEmail($email)
     {
@@ -269,7 +269,8 @@ class Database
     }
 
     /**
-     * Description function
+     * Recupere les topics dans la bd les instancies et les places dans une varible
+     * $_SESSION
      *
      * @return void
      */
@@ -292,11 +293,11 @@ class Database
     }
 
     /**
-     * Description function
+     * Recupère un objet topic en fonction d'un Id depuis la base de donnée
      *
      * @param $id description param
      *
-     * @return void
+     * @return Topic
      */
     function getTopic($id)
     {
@@ -308,9 +309,10 @@ class Database
     }
 
     /**
-     * Description function
+     * Instancies les objet messages d'un topic depuis la base de donnée
+     * Pour les ajouter dans une variable $_SESSION
      *
-     * @param $id description param
+     * @param $id Id du Topic
      *
      * @return void
      */
@@ -334,11 +336,14 @@ class Database
     }
 
     /**
-     * Description function
+     * Récupère le contenu d'un message par son Id le concatene avec le texte à
+     * ajouter
+     * Puis pour tracer l'utilisateur ajoute l'id user de la personne qui realise
+     * l'opération
      *
-     * @param $id         description param
-     * @param $newContent description param
-     * @param $idUser     description param
+     * @param $id         Id du Message
+     * @param $newContent Le contenu à ajouter
+     * @param $idUser     L'id de l'utilisateur qui relaise l'action
      *
      * @return void
      */
@@ -363,10 +368,10 @@ class Database
     }
 
     /**
-     * Description function
+     * Met a jour le mot de passe dans la base de donnée
      *
-     * @param $email       description param
-     * @param $newPassword description param
+     * @param $email       Email de l'utilisateur
+     * @param $newPassword Nouveau mot de passe
      *
      * @return void
      */
@@ -379,10 +384,10 @@ class Database
     }
 
     /**
-     * Description function
+     * Met a jour l'adresse email dans la base de donnée
      *
-     * @param $id       desc param
-     * @param $newEmail desc param
+     * @param $id       Id de l'utilisateur
+     * @param $newEmail Nouvelle adresse mail
      *
      * @return void
      */
@@ -395,11 +400,11 @@ class Database
     }
 
     /**
-     * Description function
+     * Obtient l'id du dernier message du Topic
      *
-     * @param $idTopic desc param
+     * @param $idTopic Id du topic
      *
-     * @return void
+     * @return Id
      */
     function getLastMessages($idTopic)
     {
@@ -410,10 +415,10 @@ class Database
     }
 
     /**
-     * Description function
+     * Ajoute un nouveau message
      *
-     * @param $idTopic desc param
-     * @param $idUser  desc param
+     * @param $idTopic Id du topic
+     * @param $idUser  Id de utilisateur qui realise l'operation
      *
      * @return void
      */
@@ -425,9 +430,9 @@ class Database
     }
 
     /**
-     * Description function
+     * Ajoute un topic dans la bd
      *
-     * @param $nameTopic desc param
+     * @param $nameTopic Nom du topic
      *
      * @return void
      */
@@ -438,7 +443,7 @@ class Database
     }
 
     /**
-     * Description function
+     * Récupère l'attribut privé DbLink de l'objet courant
      *
      * @return false|mysqli
      */
@@ -448,9 +453,9 @@ class Database
     }
 
     /**
-     * Description function
+     * Marque le status d'un message à ferme dans la base de donnée
      *
-     * @param $id desc param
+     * @param $id Id du message
      *
      * @return void
      */
@@ -462,7 +467,7 @@ class Database
     }
 
     /**
-     * Description function
+     * Récupère le nombre de topic en cours
      *
      * @return mixed
      */
@@ -474,9 +479,9 @@ class Database
     }
 
     /**
-     * Description function
+     * Obtient le status du dernier message d'un topic
      *
-     * @param $idTopic Description
+     * @param $idTopic Id Topic
      *
      * @return mixed
      */
@@ -489,9 +494,9 @@ class Database
     }
 
     /**
-     * Description function
+     * Met le status d'un topic à ferme dans la bd
      *
-     * @param $id Description
+     * @param $id Id du topic
      *
      * @return void
      */
@@ -503,9 +508,9 @@ class Database
     }
 
     /**
-     * Description function
+     * Supprime le topic par son id
      *
-     * @param $id Description
+     * @param $id Id Topic
      *
      * @return void
      */
@@ -516,9 +521,10 @@ class Database
     }
 
     /**
-     * Description function
+     * Récupère la liste des utilisateurs qui ont écrit sur un message grâce à son
+     * Id
      *
-     * @param $id Description
+     * @param $id Id Message
      *
      * @return void
      */
@@ -530,10 +536,10 @@ class Database
     }
 
     /**
-     * Description function
+     * Verifie si utilisateur à écrit sur un message via son ID
      *
-     * @param $idMessage Description
-     * @param $idUser    Description
+     * @param $idMessage Id du message
+     * @param $idUser    Id de l'utilisateur
      *
      * @return bool
      */
@@ -550,11 +556,11 @@ class Database
     }
 
     /**
-     * Description function
+     * Récupère le nombre de message d'un topic
      *
-     * @param $idTopic Description
+     * @param $idTopic Id Topic
      *
-     * @return mixed
+     * @return Int
      */
     function getNumberMessage($idTopic)
     {

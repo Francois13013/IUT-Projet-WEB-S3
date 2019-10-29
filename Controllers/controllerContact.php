@@ -4,7 +4,7 @@
  *
  * Main footer file for the theme.
  *
- * PHP VERSION 7.1
+ * PHP VERSION 7.2.22
  *
  * @category   JeSaisPas
  * @package    WordPress

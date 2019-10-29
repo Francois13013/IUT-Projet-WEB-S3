@@ -1,24 +1,25 @@
 <?php
 /**
- * Footer
+ * Controller de la view MyProfile
+ * Fait le lien entre les boutons et la base de donnée et traite
+ * les informations mis en "POST"
  *
- * Main footer file for the theme.
+ * PHP VERSION 7.2.22
  *
- * PHP VERSION 7.1
- *
- * @category   JeSaisPas
- * @package    WordPress
- * @subpackage Mytheme
+ * @category   Controller
+ * @package    Standard
+ * @subpackage Standard
  * @author     François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
+ * @author     Florent Reymond <Florent.Raymond@etu.univ-amu.fr>
  * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link       ****
+ * @link       *
  * @since      1.0.0
  */
 
 require_once 'Models/RequireAll.php';
 
 /**
- * Process any throw tags that this function comment has.
+ * Convertir le status en écriture compréhensible par l'utilisateur
  *
  * @return string
  */
@@ -33,7 +34,7 @@ function stautsToString()
 
 
 /**
- * Process any throw tags that this function comment has.
+ * Affiche les informations de la personne connecté
  *
  * @return void
  */
@@ -56,7 +57,8 @@ function showInfo()
 }
 
 /**
- * Process any throw tags that this function comment has.
+ * Traite les informations du formulaire et appel un changement de mot de passe
+ * si le nouveau mot de passe correspond au critère de sécurité
  *
  * @return void
  */
@@ -78,7 +80,8 @@ function changePassword()
 }
 
 /**
- * Process any throw tags that this function comment has.
+ * Traite les informations du formulaire et appel un changement adresse mail
+ * si le nouveau mot de passe correspond au critère attendu
  *
  * @return void
  */

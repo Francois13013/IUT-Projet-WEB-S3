@@ -4,7 +4,7 @@
  *
  * Main footer file for the theme.
  *
- * PHP VERSION 7.1
+ * PHP VERSION 7.2.22
  *
  * @category   JeSaisPas
  * @package    WordPress
@@ -27,8 +27,8 @@
     <label for="twicePasswordInput">Repeter Mot de passe</label>
     <input id="twicePasswordInput"
            class="twicePassword" type="password" name="PasswordTwice">
-    <input id="" class="" type="checkbox" name="checkbox" value="close">
-    <label for="checkbox">J'accepte ²les conditions d'utilisation</label>
+    <input id="checkbox" class="" type="checkbox" name="checkbox" value="close">
+    <label for="checkbox">J'accepte les conditions d'utilisation</label>
 
     <input id="submitform" type="submit" value="submit">
 </form>

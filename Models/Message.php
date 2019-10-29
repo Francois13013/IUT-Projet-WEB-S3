@@ -1,17 +1,15 @@
 <?php
 /**
- * Footer
+ * Creation des objets messages
  *
- * Main footer file for the theme.
+ * PHP VERSION 7.2.22
  *
- * PHP VERSION 7.1
- *
- * @category   JeSaisPas
- * @package    WordPress
- * @subpackage Mytheme
+ * @category   Models
+ * @package    Standard
+ * @subpackage Standard
  * @author     François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
  * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link       ****
+ * @link       *
  * @since      1.0.0
  */
 
@@ -19,15 +17,13 @@
 //require_once ('Models/RequireAll.php');
 
 /**
- *  Description de la classe.
- *
  * Class Message
  *
- * @category Test
- * @package  Test
- * @author   Test <test@test.com>
+ * @category MVC
+ * @package  MVC
+ * @author   François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link     Test
+ * @link     *
  */
 class Message
 {
@@ -39,9 +35,9 @@ class Message
     /**
      * Message constructor.
      *
-     * @param $id      Description Param
-     * @param $statut  Description Param
-     * @param $content Description Param
+     * @param $id      Id du message
+     * @param $statut  Status du message
+     * @param $content Son contenu
      *
      * @return void
      */
@@ -53,9 +49,9 @@ class Message
     }
 
     /**
-     * Description function
+     * Attribut une valeur à la variable d'instance idMessage
      *
-     * @param $tmp description param
+     * @param $tmp Valeur temporaire à attribuer
      *
      * @return void
      */
@@ -65,9 +61,9 @@ class Message
     }
 
     /**
-     * Description function
+     * Attribut une valeur à la variable d'instance statut
      *
-     * @param $tmp description param
+     * @param $tmp Valeur temporaire à attribuer
      *
      * @return void
      */
@@ -77,9 +73,9 @@ class Message
     }
 
     /**
-     * Description function
+     * Attribut une valeur à la variable d'instance content
      *
-     * @param $tmp description param
+     * @param $tmp Valeur temporaire à attribuer
      *
      * @return void
      */
@@ -90,9 +86,9 @@ class Message
 
 
     /**
-     * Description function
+     * Récupère la variable d'instance privée idMessage
      *
-     * @return mixed
+     * @return idMessage
      */
     function getIdMessage()
     {
@@ -100,9 +96,9 @@ class Message
     }
 
     /**
-     * Description function
+     * Récupère la variable d'instance privée statut
      *
-     * @return mixed
+     * @return statut
      */
     function getstatut()
     {
@@ -110,9 +106,9 @@ class Message
     }
 
     /**
-     * Description function
+     * Récupère la variable d'instance privée content
      *
-     * @return mixed
+     * @return content
      */
     function getcontent()
     {
