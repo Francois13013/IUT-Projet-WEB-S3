@@ -138,32 +138,39 @@ function closeMessage()
  */
 function closeTopic()
 {
-    $database = new Database(
-        'mysql-francois.alwaysdata.net',
-        'francois_oui',
-        '0621013579',
-        'francois_project'
-    );
-    $database->closeTopic(CURRENTIDTOPIC);
+    if ($_SESSION['login'] == 'ok' && $_SESSION["Status"] == 1) {
+        $database = new Database(
+            'mysql-francois.alwaysdata.net',
+            'francois_oui',
+            '0621013579',
+            'francois_project'
+        );
+        $database->closeTopic(CURRENTIDTOPIC);
+    }
 }
 
 /**
  * Selectionne la base de donnée
  * et supprime le topic courant
+ * ainsi que les messages du topic
  * Renvoie sur l'accueil
  *
  * @return void
  */
 function deleteTopic()
 {
-    $database = new Database(
-        'mysql-francois.alwaysdata.net',
-        'francois_oui',
-        '0621013579',
-        'francois_project'
-    );
-    $database->deleteTopic(CURRENTIDTOPIC);
-    echo "<script>window.location.href='/'</script>";
+    if ($_SESSION['login'] == 'ok' && $_SESSION["Status"] == 1) {
+
+        $database = new Database(
+            'mysql-francois.alwaysdata.net',
+            'francois_oui',
+            '0621013579',
+            'francois_project'
+        );
+        $database->insteadOfTrigger(CURRENTIDTOPIC);
+        $database->deleteTopic(CURRENTIDTOPIC);
+        echo "<script>window.location.href='/'</script>";
+    }
 }
 
 /**

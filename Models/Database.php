@@ -212,7 +212,7 @@ class Database
                 $User->getPassword()
             )
             ) {
-//                session_start();
+                //                session_start();
                 $_SESSION["login"] = 'ok';
 
                 $array = array(
@@ -276,6 +276,9 @@ class Database
      */
     function getAllTopic()
     {
+        if (!isset($_SESSION)) {
+            session_start();
+        }
         $query = 'Select IdTopic,NameTopic,Statut from Topics';
         $_SESSION['topicArray'] = array();
         $returnedArray = $this->checkError($query);
@@ -317,6 +320,9 @@ class Database
      */
     function getAllMessages($id)
     {
+        if (!isset($_SESSION)) {
+            session_start();
+        }
         $query = 'Select IdMessage,Statut,Content from Messages where IdTopic = ' .
             '\'' . $id . '\'';
         $array = array(1 => "IdMessage", 2 => "Statut", 3 => "Content");
@@ -583,4 +589,19 @@ class Database
         return $row['count(IdMessage)'];
     }
 
+    /**
+     *  Remplacement d'un trigger lors de la suppression d'un topic
+     * pour supprimer tous les messages du topic
+     *
+     * @param $idTopic Id du topic
+     *
+     * @return void
+     */
+    function insteadOfTrigger($idTopic)
+    {
+        $query = 'Delete FROM Messages where Messages.IdTopic =' . '\''
+            . $idTopic . '\'';
+        mysqli_query($this->getDbLink(), $query);
+    }
+    
 } // fin de la classe

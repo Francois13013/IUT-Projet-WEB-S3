@@ -22,7 +22,7 @@ $username = $_POST['Pseudo'] ;
 $password = $_POST['Password'] ;
 $secondPassword = $_POST['PasswordTwice'] ;
 $email = $_POST['Email'] ;
-$database = new Database(
+$databaseBaptiste = new Database(
     'mysql-francois.alwaysdata.net',
     'francois_project',
     '0621013579',
