@@ -51,7 +51,7 @@ function controllerAddTopic()
         '0621013579',
         'francois_project'
     );
-    if ($database->getNumberTopic() <= 10) {
+    if ($database->getNumberTopic() <= 5) {
         if (isset($_POST['nameTopic']) && !empty($_POST['nameTopic'])
             && !empty($_POST['nameTopic']) && $_POST
         ) {

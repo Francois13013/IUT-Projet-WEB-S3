@@ -35,14 +35,12 @@
 
 
 <?php
+$bypass = array();
 if (isset($_SESSION['Probleme'])) {
     if (strpos($_SESSION['Probleme'], ',') > 1) {
-        $bypass = array();
         $bypass = explode(',', $_SESSION['Probleme']);
-        print_r($bypass);
     } else {
         $bypass = array($_SESSION['Probleme']);
-        print_r($bypass);
         $count = true;
     }
 }

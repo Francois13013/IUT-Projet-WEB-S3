@@ -212,7 +212,7 @@ class Database
                 $User->getPassword()
             )
             ) {
-                session_start();
+//                session_start();
                 $_SESSION["login"] = 'ok';
 
                 $array = array(
@@ -425,7 +425,7 @@ class Database
     {
         $queryOne = 'Insert INTO Messages (IdTopic,IdUsersCat) VALUES
             ("' . $idTopic . '"' . ',"' . $idUser . '")';
-//        $this->error($queryOne);
+        //        $this->error($queryOne);
         mysqli_query($this->_dbLink, $queryOne);
     }
 
@@ -473,7 +473,7 @@ class Database
      */
     function getNumberTopic()
     {
-        $query = 'Select count(IdTopic) from Topics';
+        $query = 'Select count(IdTopic) from Topics WHERE Statut = "1"';
         $row = mysqli_fetch_assoc(mysqli_query($this->getDbLink(), $query));
         return $row['count(IdTopic)'];
     }

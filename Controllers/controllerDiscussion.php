@@ -31,7 +31,7 @@ $currentTopic = $database->getTopic(
 );
 define('CURRENTIDTOPIC', $currentTopic->getIdTopic());
 
-define('LIMITMSGPERTOPIC','10'); //Limite de message par topic
+define('LIMITMSGPERTOPIC', '10'); //Limite de message par topic
 
 /**
  * Récupère l'ensemble des messages de la base de donnée et les affiche
