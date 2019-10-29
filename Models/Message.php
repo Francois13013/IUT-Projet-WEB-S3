@@ -114,6 +114,5 @@ class Message
     {
         return  $this->_content;
     }
-
 }
 
