@@ -19,6 +19,17 @@ require_once 'Database.php';
 
 session_start();
 
+/**
+ *  Description de la classe.
+ *
+ * Class Database
+ *
+ * @category Test
+ * @package  Test
+ * @author   Test <test@test.com>
+ * @license  https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
+ * @link     Test
+ */
 class User
 {
     private $_pseudo;
@@ -26,6 +37,18 @@ class User
     private $_password = '';
     private $_id = '';
     private $_statut = '';
+
+    /**
+     * User constructor.
+     *
+     * @param $pseudo    Description param
+     * @param $_email    Description param
+     * @param $_password Description param
+     * @param $_id       Description param
+     * @param $_statut   Description param
+     *
+     * @return void
+     */
     function __construct($pseudo,$_email,$_password,$_id,$_statut)
     {
         $this->setPseudo($pseudo);
@@ -86,26 +109,73 @@ class User
         return $this->_statut;
     }
 
-    function setPseudo($tmpSurname)
+    /**
+     * Description fonction
+     *
+     * @param $tmp Description param
+     *
+     * @return void
+     */
+    function setPseudo($tmp)
     {
-        $this->_pseudo = $tmpSurname;
+        $this->_pseudo = $tmp;
     }
-    function setEmail($tmpEmail)
+
+    /**
+     * Description fonction
+     *
+     * @param $tmp Description param
+     *
+     * @return void
+     */
+    function setEmail($tmp)
     {
-        $this->_email = $tmpEmail;
+        $this->_email = $tmp;
     }
-    function setPassword($tmpPassword)
+
+    /**
+     * Description fonction
+     *
+     * @param $tmp Description param
+     *
+     * @return void
+     */
+    function setPassword($tmp)
     {
-        $this->_password = $tmpPassword;
+        $this->_password = $tmp;
     }
-    function setId($tmpId)
+
+    /**
+     * Description fonction
+     *
+     * @param $tmp Description param
+     *
+     * @return void
+     */
+    function setId($tmp)
     {
-        $this->_id = $tmpId;
+        $this->_id = $tmp;
     }
-    function setStatut($tmpStatut)
+
+    /**
+     * Description fonction
+     *
+     * @param $tmp Description param
+     *
+     * @return void
+     */
+    function setStatut($tmp)
     {
-        $this->_statut = $tmpStatut;
+        $this->_statut = $tmp;
     }
+
+    /**
+     * Description fonction
+     *
+     * @param $email Description param
+     *
+     * @return bool
+     */
     function checkEmailHost($email)
     {
         $array = array(
@@ -117,7 +187,10 @@ class User
             "6" => "@univ-amu.fr",
         );
 
-        //        if ( preg_match ( " /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ " , $email ) ) {
+        //preg_match( " /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)
+        //*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)
+        //*\.[a-zA-Z]{2,4}$/ " , $email ) ) {
+
             $strstrEmail = strstr($email, '@');
         for ($i = 1; $i <= count($array); $i++) {
             if ($strstrEmail == $array[$i]) {
@@ -131,7 +204,11 @@ class User
     }
 
 
-
+    /**
+     * Description fonction
+     *
+     * @return bool
+     */
     function checkPassword()
     {
         if (strlen($this->_password) < 8 || strlen($this->_password)>16) {
@@ -141,9 +218,17 @@ class User
         }
     }
 
+    /**
+     * Description fonction
+     *
+     * @return bool
+     */
     function checkEmail()
     {
-        if (preg_match("/^([\w-\.]+)@((?:[\w]+\.)+)([a-zA-Z]{2,4})/i", $this->getEmail()) == true
+        if (preg_match(
+            "/^([\w-\.]+)@((?:[\w]+\.)+)([a-zA-Z]{2,4})/i",
+            $this->getEmail()
+        ) == true
             && $this->checkEmailHost($this->getEmail()) == true
             && strlen($this->_email) < 32
         ) {
@@ -153,9 +238,19 @@ class User
         }
     }
 
+    /**
+     * Description fonction
+     *
+     * @return bool
+     */
     function emailAlreadyExist()
     {
-        $databaseBaptiste = new Database('mysql-francois.alwaysdata.net', 'francois_project', '0621013579', 'francois_user');
+        $databaseBaptiste = new Database(
+            'mysql-francois.alwaysdata.net',
+            'francois_project',
+            '0621013579',
+            'francois_user'
+        );
         $query = 'Select Email from User Where Email = \'' . $this->_email . '\' ';
         if ($databaseBaptiste->comparator($query) == 1) {
             return false;
@@ -163,6 +258,11 @@ class User
         return true;
     }
 
+    /**
+     * Description fonction
+     *
+     * @return bool
+     */
     function checkPseudo()
     {
         if (strlen($this->_pseudo) < 3 || strlen($this->_pseudo)>16) {
@@ -172,16 +272,32 @@ class User
         }
     }
 
+    /**
+     * Description fonction
+     *
+     * @return bool
+     */
     function pseudoAlreadyExist()
     {
-        $databaseBaptiste = new Database('mysql-francois.alwaysdata.net', 'francois_project', '0621013579', 'francois_user');
-        $query = 'Select Surname from User Where Surname = \'' . $this->_pseudo . '\' ';
+        $databaseBaptiste = new Database(
+            'mysql-francois.alwaysdata.net',
+            'francois_project',
+            '0621013579',
+            'francois_user'
+        );
+        $query = 'Select Surname from User Where Surname = \''
+            . $this->_pseudo . '\' ';
         if ($databaseBaptiste->comparator($query) == 1) {
             return false;
         }
         return true;
     }
 
+    /**
+     * Description fonction
+     *
+     * @return bool
+     */
     function checkUser()
     {
         session_start();
@@ -231,13 +347,6 @@ class User
             }
             $return = false;
         }
-
-        //        if(strpos($this->_email,'@') == 0){return false;}
-
-        //        echo $this . '<br><hr>';
-        //        if($this->checkEmailHost($this->getEmail()) == false) {return false;} /* || '@yahoo.fr' || '@laposte.net'*/
-        //        if() {return false;}
-        //        echo $this . '<br><hr>';
 
         return $return;
     }

@@ -1,3 +1,4 @@
+<?php ?>
 <head>
     <link rel="stylesheet" href="./../Public/css/styleContact.css">
 </head>
@@ -18,7 +19,8 @@
     </select>
     <div class="containerContact" id="text">
         <label for="response">Your Message</label>
-        <textarea name="response" id="response" class="u-full-width area-style"></textarea>
+        <textarea name="response"
+                  id="response" class="u-full-width area-style"></textarea>
     </div>
     <input id="subb" type="submit" value="Send message">
 </form>

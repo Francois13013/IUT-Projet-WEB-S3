@@ -34,10 +34,19 @@ function randPassword()
 }
 
 $email = $_POST['email'];
-$databaseBaptiste = new Database('mysql-francois.alwaysdata.net', 'francois_project', '0621013579', 'francois_user');
+$databaseBaptiste = new Database(
+    'mysql-francois.alwaysdata.net',
+    'francois_project',
+    '0621013579',
+    'francois_user'
+);
 if ($databaseBaptiste->CheckEmail($email) == 1) {
     $newPass = randPassword();
-    mail($email, 'Changement de mot de passe', 'Voici votre nouveau mdp ' . $newPass);
+    mail(
+        $email,
+        'Changement de mot de passe',
+        'Voici votre nouveau mdp ' . $newPass
+    );
     $databaseBaptiste->updatePassword($email, sha1($newPass));
 }
 $_SESSION['MailSend'] = "whynot";

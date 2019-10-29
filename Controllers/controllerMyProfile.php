@@ -63,7 +63,12 @@ function showInfo()
 function changePassword()
 {
     $user = $_SESSION['user'];
-    $databaseBaptiste = new Database('mysql-francois.alwaysdata.net', 'francois_project', '0621013579', 'francois_user');
+    $databaseBaptiste = new Database(
+        'mysql-francois.alwaysdata.net',
+        'francois_project',
+        '0621013579',
+        'francois_user'
+    );
     $newPassword = $_POST['ChangePassword'];
     $user->setPassword($newPassword);
     if ($user->CheckPassword() == true) {
@@ -80,7 +85,12 @@ function changePassword()
 function changeEmail()
 {
     $user = $_SESSION['user'];
-    $databaseBaptiste = new Database('mysql-francois.alwaysdata.net', 'francois_project', '0621013579', 'francois_user');
+    $databaseBaptiste = new Database(
+        'mysql-francois.alwaysdata.net',
+        'francois_project',
+        '0621013579',
+        'francois_user'
+    );
     $newEmail = $_POST['ChangeEmail'];
     $user->setEmail($newEmail);
     if ($user->CheckEmail() == true || $user->CheckEmailHost($newEmail) == true) {

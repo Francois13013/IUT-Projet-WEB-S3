@@ -1,3 +1,4 @@
+<?php ?>
 <div id="FindUser">
     <p>Rechercher par</p>
     <div>

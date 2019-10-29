@@ -17,7 +17,6 @@
 
 
 //require_once ('Models/RequireAll.php');
-//require_once('Tag.php');
 
 /**
  *  Description de la classe.

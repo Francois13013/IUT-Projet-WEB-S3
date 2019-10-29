@@ -21,7 +21,14 @@ $username = $_POST['Pseudo'] ;
 $password = $_POST['Password'] ;
 $secondPassword = $_POST['PasswordTwice'] ;
 $email = $_POST['Email'] ;
-$databaseBaptiste = new Database('mysql-francois.alwaysdata.net', 'francois_project', '0621013579', 'francois_user');
+$database = new Database(
+    'mysql-francois.alwaysdata.net',
+    'francois_project',
+    '0621013579',
+    'francois_user'
+);
+
+
 $user = new User($username, $email, $password, '', '');
 if ($secondPassword == $password) {
     if ($user->checkUser() == true) {

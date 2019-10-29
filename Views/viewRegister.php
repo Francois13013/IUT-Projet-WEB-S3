@@ -25,7 +25,8 @@
     <label for="passwordInput">Mot de passe</label>
     <input id="passwordInput" class="password" type="password" name="Password">
     <label for="twicePasswordInput">Repeter Mot de passe</label>
-    <input id="twicePasswordInput" class="twicePassword" type="password" name="PasswordTwice">
+    <input id="twicePasswordInput"
+           class="twicePassword" type="password" name="PasswordTwice">
     <input id="" class="" type="checkbox" name="checkbox" value="close">
     <label for="checkbox">J'accepte ²les conditions d'utilisation</label>
 
@@ -48,10 +49,14 @@ if (isset($_SESSION['Probleme'])) {
 echo '<script type="text/javascript" src="../Public/js/RedBorder.js"></script>';
 
 if ($count == true) {
-    echo '<script type="text/javascript">' . 'ErrorCall(' . ' \'' . $bypass . '\' ' . ');' . '</script>';
+    echo '<script type="text/javascript">'
+        . 'ErrorCall(' . ' \'' . $bypass . '\' ' . ');'
+        . '</script>';
 } else {
     for ($i = 0; $i < count($bypass); $i++) {
-        echo '<script type="text/javascript">' . 'ErrorCall(' . ' \'' . $bypass[$i] . '\' ' . ');' . '</script>';
+        echo '<script type="text/javascript">'
+            . 'ErrorCall(' . ' \'' . $bypass[$i] . '\' ' . ');'
+            . '</script>';
     }
 }
     unset($_SESSION['Probleme']);

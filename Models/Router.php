@@ -46,7 +46,11 @@ class Router
     {
         if (isset($_SERVER['HTTPS'])) {
         } else {
-            echo '<meta http-equiv="refresh" content="0;url=' . "Https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '" />';
+            echo '<meta http-equiv="refresh" content="0;url='
+                . "Https://"
+                . $_SERVER['HTTP_HOST']
+                . $_SERVER['REQUEST_URI']
+                . '" />';
         }
     }
 
@@ -131,7 +135,12 @@ class Router
      */
     public static function getAllTopicsRoutes()
     {
-        $database = new Database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
+        $database = new Database(
+            'mysql-francois.alwaysdata.net',
+            'francois_oui',
+            '0621013579',
+            'francois_project'
+        );
         $database->getAllTopic();
         if (isset($_SESSION['topicArray'])) {
             foreach ($_SESSION['topicArray'] as &$value) {

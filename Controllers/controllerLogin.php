@@ -26,7 +26,12 @@ if (isset($_POST['username'], $_POST['password'])) {
     unset($_POST['password']);
 }
 
-$databaseBaptiste = new Database('mysql-francois.alwaysdata.net', 'francois_project', '0621013579', 'francois_user');
+$databaseBaptiste = new Database(
+    'mysql-francois.alwaysdata.net',
+    'francois_project',
+    '0621013579',
+    'francois_user'
+);
 $user = new User($username, '', $password, '', '');
 $databaseBaptiste->login($user);
 

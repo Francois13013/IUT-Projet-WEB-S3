@@ -17,7 +17,12 @@
 
 require_once 'Models/RequireAll.php';
 
-$database = new Database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
+$database = new Database(
+    'mysql-francois.alwaysdata.net',
+    'francois_oui',
+    '0621013579',
+    'francois_project'
+);
 $database->getAllTopic();
 
 /**
@@ -40,9 +45,16 @@ function requestTop()
  */
 function controllerAddTopic()
 {
-    $database = new Database('mysql-francois.alwaysdata.net', 'francois_oui', '0621013579', 'francois_project');
+    $database = new Database(
+        'mysql-francois.alwaysdata.net',
+        'francois_oui',
+        '0621013579',
+        'francois_project'
+    );
     if ($database->getNumberTopic() <= 10) {
-        if (isset($_POST['nameTopic']) && !empty($_POST['nameTopic']) && !empty($_POST['nameTopic']) && $_POST) {
+        if (isset($_POST['nameTopic']) && !empty($_POST['nameTopic'])
+            && !empty($_POST['nameTopic']) && $_POST
+        ) {
             $database->newTopic($_POST['nameTopic']);
             unset($_POST['nameTopic']);
             header("Refresh:0");
@@ -60,14 +72,14 @@ function request()
 {
 
     foreach ($_SESSION['topicArray'] as &$value) {
-        $onclick = 'onClick=' . 'location.href="/Topic/' . $value->getIdTopic() . '";';
+        $onclk = 'onClick=' . 'location.href="/Topic/' . $value->getIdTopic() . '";';
         if ($value->getStatut() == 1) {
             $txt = 'ouvert';
         } else {
             $txt = 'Fermée';
         }
 
-        echo '<div class = \'topicRow\' ' . $onclick . '>' .
+        echo '<div class = \'topicRow\' ' . $onclk . '>' .
             '<p class=\'NameTopic\'>' . $value->getNameTopics() . '</p>' .
             '<p class=\'Statut\'>' . $txt . '</p>' .
             '</div>';
