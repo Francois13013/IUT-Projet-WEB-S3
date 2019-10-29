@@ -276,7 +276,6 @@ class Database
      */
     function getAllTopic()
     {
-        session_start();
         $query = 'Select IdTopic,NameTopic,Statut from Topics';
         $_SESSION['topicArray'] = array();
         $returnedArray = $this->checkError($query);
@@ -424,9 +423,10 @@ class Database
      */
     function newMessage($idTopic, $idUser)
     {
-        $queryOne = 'Insert INTO Messages (IdTopic,IdUsersCat) VALUES 
+        $queryOne = 'Insert INTO Messages (IdTopic,IdUsersCat) VALUES
             ("' . $idTopic . '"' . ',"' . $idUser . '")';
-        $this->error($queryOne);
+//        $this->error($queryOne);
+        mysqli_query($this->_dbLink, $queryOne);
     }
 
     /**

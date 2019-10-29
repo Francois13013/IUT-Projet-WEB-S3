@@ -17,6 +17,7 @@
 
 require_once 'Controllers/controllerDiscussion.php';
 session_start();
+
 ?>
 
 <div id="mainDiscussion">

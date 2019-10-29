@@ -31,6 +31,8 @@ $currentTopic = $database->getTopic(
 );
 define('CURRENTIDTOPIC', $currentTopic->getIdTopic());
 
+define('LIMITMSGPERTOPIC','10'); //Limite de message par topic
+
 /**
  * Récupère l'ensemble des messages de la base de donnée et les affiche
  *
@@ -206,7 +208,7 @@ function checknumbermsg()
         '0621013579',
         'francois_project'
     );
-    if ($database->getNumberMessage(CURRENTIDTOPIC) >= 40) {
+    if ($database->getNumberMessage(CURRENTIDTOPIC) >= LIMITMSGPERTOPIC) {
         // Limite de 40 messages
         $database->closeTopic(CURRENTIDTOPIC);
     }
