@@ -24,6 +24,9 @@ $database = new Database(
 );
 $database->getAllTopic();
 
+define('OPENTOPICLIMIT','10'); //Limite de topic ouvert en même temps
+define('TOPICLIMIT','20'); //Limite globale du nombre de topic ouvert ou fermé
+
 /**
  * Affiche les topics où il y a le plus de message
  *
@@ -51,7 +54,8 @@ function controllerAddTopic()
         '0621013579',
         'francois_project'
     );
-    if ($database->getNumberTopic() <= 5) {
+    if ($database->getNumberTopicOpen() <= OPENTOPICLIMIT
+        && $database->getNumberTopic() <= TOPICLIMIT) {
         if (isset($_POST['nameTopic']) && !empty($_POST['nameTopic'])
             && !empty($_POST['nameTopic']) && $_POST
         ) {

@@ -467,16 +467,29 @@ class Database
     }
 
     /**
-     * Récupère le nombre de topic en cours
+     * Récupère le nombre de topic en cours ouvert
      *
      * @return mixed
      */
-    function getNumberTopic()
+    function getNumberTopicOpen()
     {
         $query = 'Select count(IdTopic) from Topics WHERE Statut = "1"';
         $row = mysqli_fetch_assoc(mysqli_query($this->getDbLink(), $query));
         return $row['count(IdTopic)'];
     }
+
+    /**
+     * Récupère le nombre de topic sur la base de donnée
+     *
+     * @return mixed
+     */
+    function getNumberTopic()
+    {
+        $query = 'Select count(IdTopic) from Topics';
+        $row = mysqli_fetch_assoc(mysqli_query($this->getDbLink(), $query));
+        return $row['count(IdTopic)'];
+    }
+
 
     /**
      * Obtient le status du dernier message d'un topic
