@@ -1,34 +1,31 @@
 <?php
 /**
- * Footer
- *
- * Main footer file for the theme.
+ * Traitement des utilisateurs
  *
  * PHP VERSION 7.2.22
  *
- * @category   JeSaisPas
- * @package    WordPress
- * @subpackage Mytheme
+ * @category   Models
+ * @package    Standard
+ * @subpackage Standard
  * @author     François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
  * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link       ****
+ * @link       *
  * @since      1.0.0
  */
 
-require_once 'Database.php';
+require_once ('RequireAll.php');
+//require_once 'Database.php';
 
 session_start();
 
 /**
- *  Description de la classe.
+ * Class User
  *
- * Class Database
- *
- * @category Test
- * @package  Test
- * @author   Test <test@test.com>
+ * @category MVC
+ * @package  MVC
+ * @author   François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link     Test
+ * @link     *
  */
 class User
 {
@@ -41,11 +38,11 @@ class User
     /**
      * User constructor.
      *
-     * @param $pseudo    Description param
-     * @param $_email    Description param
-     * @param $_password Description param
-     * @param $_id       Description param
-     * @param $_statut   Description param
+     * @param $pseudo    Pseudo de l'utilisateur
+     * @param $_email    Email de l'utilisateur
+     * @param $_password Mot de passe de l'utilisateur
+     * @param $_id       Id de l'utilisateur
+     * @param $_statut   Status de l'utilisateur
      *
      * @return void
      */
@@ -60,9 +57,9 @@ class User
 
 
     /**
-     * Description function
+     * Récupère la variable d'instance privée pseudo
      *
-     * @return mixed
+     * @return pseudo
      */
     function getPseudo()
     {
@@ -70,9 +67,9 @@ class User
     }
 
     /**
-     * Description function
+     * Récupère la variable d'instance privée email
      *
-     * @return mixed
+     * @return email
      */
     function getEmail()
     {
@@ -80,9 +77,9 @@ class User
     }
 
     /**
-     * Description function
+     * Récupère la variable d'instance privée password
      *
-     * @return mixed
+     * @return password
      */
     function getPassword()
     {
@@ -90,9 +87,9 @@ class User
     }
 
     /**
-     * Description function
+     * Récupère la variable d'instance privée Id
      *
-     * @return mixed
+     * @return Id
      */
     function getId()
     {
@@ -100,9 +97,9 @@ class User
     }
 
     /**
-     * Description function
+     * Récupère la variable d'instance privée statut
      *
-     * @return mixed
+     * @return statut
      */
     function getStatut()
     {
@@ -110,9 +107,9 @@ class User
     }
 
     /**
-     * Description fonction
+     * Attribut une nouvelle valeur a pseudo
      *
-     * @param $tmp Description param
+     * @param $tmp Valeur du pseudo
      *
      * @return void
      */
@@ -122,9 +119,9 @@ class User
     }
 
     /**
-     * Description fonction
+     * Attribut une nouvelle valeur a email
      *
-     * @param $tmp Description param
+     * @param $tmp Valeur de l'email
      *
      * @return void
      */
@@ -134,9 +131,9 @@ class User
     }
 
     /**
-     * Description fonction
+     * Attribut une nouvelle valeur a Password
      *
-     * @param $tmp Description param
+     * @param $tmp Valeur du Password
      *
      * @return void
      */
@@ -146,9 +143,9 @@ class User
     }
 
     /**
-     * Description fonction
+     * Attribut une nouvelle valeur a Id
      *
-     * @param $tmp Description param
+     * @param $tmp Valeur de l'Id
      *
      * @return void
      */
@@ -158,9 +155,9 @@ class User
     }
 
     /**
-     * Description fonction
+     * Attribut une nouvelle valeur a Statut
      *
-     * @param $tmp Description param
+     * @param $tmp Valeur du Statut
      *
      * @return void
      */
@@ -170,9 +167,9 @@ class User
     }
 
     /**
-     * Description fonction
+     * Verifie si l'hebergeur de l'email est "connu"
      *
-     * @param $email Description param
+     * @param $email Email à vérifier
      *
      * @return bool
      */
@@ -205,7 +202,7 @@ class User
 
 
     /**
-     * Description fonction
+     * Vérifie si le mot de passe est entre 8 et 16 charactères
      *
      * @return bool
      */
@@ -219,7 +216,7 @@ class User
     }
 
     /**
-     * Description fonction
+     * Vérifie la forme de la string si elle correspond bien à une adresse mail
      *
      * @return bool
      */
@@ -239,7 +236,7 @@ class User
     }
 
     /**
-     * Description fonction
+     * Verifie si l'adresse Mail existe déjà dans la base de donnée
      *
      * @return bool
      */
@@ -259,7 +256,7 @@ class User
     }
 
     /**
-     * Description fonction
+     * Verifie si le pseudo est entre 3 et 16 charatères
      *
      * @return bool
      */
@@ -273,7 +270,7 @@ class User
     }
 
     /**
-     * Description fonction
+     * Verifie si le pseudo existe déjà dans la base de donnée
      *
      * @return bool
      */
@@ -294,7 +291,7 @@ class User
     }
 
     /**
-     * Description fonction
+     * Verifie l'utilisateur en appelant toute les verifications (pseudo,mail...)
      *
      * @return bool
      */

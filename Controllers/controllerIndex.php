@@ -81,14 +81,14 @@ function request()
 
     foreach ($_SESSION['topicArray'] as &$value) {
         $onclk = 'onClick=' . 'location.href="/Topic/' . $value->getIdTopic() . '";';
-        if ($value->getStatut() == 1) {
+        if ($value->getStatus() == 1) {
             $txt = 'ouvert';
         } else {
             $txt = 'Fermée';
         }
 
         echo '<div class = \'topicRow\' ' . $onclk . '>' .
-            '<p class=\'NameTopic\'>' . $value->getNameTopics() . '</p>' .
+            '<p class=\'NameTopic\'>' . $value->getNameTopic() . '</p>' .
             '<p class=\'Statut\'>' . $txt . '</p>' .
             '</div>';
     }

@@ -1,141 +1,117 @@
 <?php
 /**
- * Footer
- *
- * Main footer file for the theme.
+ * Manipulation des Topics
  *
  * PHP VERSION 7.2.22
  *
- * @category   JeSaisPas
- * @package    WordPress
- * @subpackage Mytheme
+ * @category   Models
+ * @package    Standard
+ * @subpackage Standard
  * @author     François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
  * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link       ****
+ * @link       *
  * @since      1.0.0
  */
 
-
-require_once 'Database.php';
-require_once 'User.php';
+require_once ('RequireAll.php');
+//require_once 'Database.php';
+//require_once 'User.php';
 
 /**
- *  Description de la classe.
+ * Class Topic
  *
- * Class Database
- *
- * @category Test
- * @package  Test
- * @author   Test <test@test.com>
+ * @category MVC
+ * @package  MVC
+ * @author   François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link     Test
+ * @link     *
  */
 class Topic
 {
-
-    //passer la class topics en mvc avec Controller de topics qui call et
-    // rewrite l'appche.
-
-    private $_idTopics = '';
-    private $_nameTopics = '';
-    private $_statut = '';
+    private $_idTopic = '';
+    private $_nameTopic = '';
+    private $_status = '';
 
     /**
      * Topic constructor.
      *
-     * @param $_idTopics   Description param
-     * @param $_nameTopics Description param
-     * @param $_statut     Description param
+     * @param $_idTopics   Id du Topic
+     * @param $_nameTopics Nom du Topic
+     * @param $_status     Status (ouvert ou fermé)
      *
      * @return void
      */
-    function __construct($_idTopics, $_nameTopics, $_statut)
+    function __construct($_idTopics, $_nameTopics, $_status)
     {
-        $this->setIdTopics($_idTopics);
-        $this->setNameTopics($_nameTopics);
-        $this->setStatut($_statut);
+        $this->setIdTopic($_idTopics);
+        $this->setNameTopic($_nameTopics);
+        $this->setStatus($_status);
     }
 
     /**
-     * Description function
+     * Récupère la variable d'instance privée idTopics
      *
-     * @return mixed
+     * @return idTopics
      */
     function getIdTopic()
     {
-        return $this->_idTopics;
+        return $this->_idTopic;
     }
 
     /**
-     * Description function
+     * Récupère la variable d'instance privée nameTopic
      *
-     * @return mixed
+     * @return nameTopic
      */
-    function getNameTopics()
+    function getNameTopic()
     {
-        return $this->_nameTopics;
+        return $this->_nameTopic;
     }
 
     /**
-     * Description function
+     * Récupère la variable d'instance privée status
      *
-     * @return mixed
+     * @return status
      */
-    function getStatut()
+    function getStatus()
     {
-        return $this->_statut;
+        return $this->_status;
     }
 
 
     /**
-     * Description fonction
+     * Attribut une nouvelle valeur a idTopic
      *
-     * @param $tmp Description Param
+     * @param $tmp Valeur de l'Id Topic
      *
      * @return void
      */
-    function setIdTopics($tmp)
+    function setIdTopic($tmp)
     {
-        $this->_idTopics = $tmp;
+        $this->_idTopic = $tmp;
     }
 
     /**
-     * Description fonction
+     * Attribut une nouvelle valeur a nameTopic
      *
-     * @param $tmp Description Param
+     * @param $tmp Valeur de nameTopic
      *
      * @return void
      */
-    function setNameTopics($tmp)
+    function setNameTopic($tmp)
     {
-        $this->_nameTopics = $tmp;
+        $this->_nameTopic = $tmp;
     }
 
     /**
-     * Description fonction
+     * Attribut une nouvelle valeur a status
      *
-     * @param $tmp Description Param
+     * @param $tmp Valeur de status
      *
      * @return void
      */
-    function setStatut($tmp)
+    function setStatus($tmp)
     {
-        $this->_statut = $tmp;
+        $this->_status = $tmp;
     }
-}
-
-/**
- * Description fonction
- *
- * @return void
- */
-function showTopic()
-{
-    $database = new Database(
-        'mysql-francois.alwaysdata.net',
-        'francois_oui',
-        '0621013579',
-        'francois_project'
-    );
-    $database->getAllTopic();
-}
+}// Fin de classe

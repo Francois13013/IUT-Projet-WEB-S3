@@ -1,17 +1,16 @@
 <?php
 /**
- * Footer
- *
- * Main footer file for the theme.
+ * Mis en place du Router du site
+ * Pour adresser les urls au bon contenu.
  *
  * PHP VERSION 7.2.22
  *
- * @category   JeSaisPas
- * @package    WordPress
- * @subpackage Mytheme
+ * @category   Models
+ * @package    Standard
+ * @subpackage Standard
  * @author     François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
  * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link       ****
+ * @link       *
  * @since      1.0.0
  */
 
@@ -21,15 +20,13 @@ session_start();
 
 
 /**
- *  Description de la classe.
- *
  * Class Router
  *
- * @category Test
- * @package  Test
- * @author   Test <test@test.com>
+ * @category MVC
+ * @package  MVC
+ * @author   François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link     Test
+ * @link     *
  */
 class Router
 {
@@ -55,10 +52,10 @@ class Router
     }
 
     /**
-     * Description function
+     * Ajoute une route au Router
      *
-     * @param $route     Description Param
-     * @param $innerText Description Param
+     * @param $route     Url de la route à ajouter
+     * @param $innerText Fonction qui sera appelé à l'acces de l'url
      *
      * @return void
      */
@@ -71,11 +68,11 @@ class Router
     }
 
     /**
-     * Description function
+     * Ajoute deux routes pour un même usage au Router
      *
-     * @param $route     Description Param
-     * @param $route2    Description Param
-     * @param $innerText Description Param
+     * @param $route     Url de la route à ajouter
+     * @param $route2    Url de la 2ème route à ajouter
+     * @param $innerText Fonction qui sera appelé à l'acces d'une des deux url
      *
      * @return void
      */
@@ -86,7 +83,8 @@ class Router
     }
 
     /**
-     * Description function
+     * Vérifie les routes si la route n'existe pas renvoie vers une page d'erreur
+     * '404'
      *
      * @return void
      */
@@ -95,14 +93,14 @@ class Router
         if ((array_key_exists($_SERVER["REQUEST_URI"], self::$url)) == false) {
             Controller::createErrorView('404');
         }
-
     }
 
     /**
-     * Description function
+     * Ajoute d'une route au Router avec un accès uniquement en tant qu'utilisateur
+     * connecté
      *
-     * @param $route     Description Param
-     * @param $innerText Description Param
+     * @param $route     Url de la route à ajouter
+     * @param $innerText Fonction qui sera appelé à l'acces de l'url
      *
      * @return void
      */
@@ -114,10 +112,10 @@ class Router
     }
 
     /**
-     * Description function
+     * Ajoute d'une route au Router avec un accès uniquement en n'étant pas connecté
      *
-     * @param $route     Description Param
-     * @param $innerText Description Param
+     * @param $route     Url de la route à ajouter
+     * @param $innerText Fonction qui sera appelé à l'acces de l'url
      *
      * @return void
      */
@@ -129,7 +127,8 @@ class Router
     }
 
     /**
-     * Description function
+     * Création dynamique de lien en fonction de l'id des topics sur la base
+     * de donnée
      *
      * @return void
      */

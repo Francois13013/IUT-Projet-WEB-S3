@@ -357,7 +357,7 @@ class Database
         $queryOne = 'Select Content,IdUsersCat from Messages where IdMessage = ' .
             '\'' . $id . '\'';
         $returnedArray = $this->checkError($queryOne);
-        print_r($returnedArray);
+//        print_r($returnedArray);
 
         $contentToAdd = $returnedArray[0] . $newContent;
         $userToAdd = $returnedArray[1] . "," . $idUser;

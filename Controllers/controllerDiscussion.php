@@ -77,7 +77,7 @@ function addWords()
         );
         $currentTopic = $db->getTopic(CURRENTIDTOPIC);
         $messageToSend = $_POST['msg'];
-        if ($currentTopic->getStatut() != 0) {
+        if ($currentTopic->getStatus() != 0) {
             if (isset($messageToSend) && preg_match("/[A-Za-z0-9]+/", $messageToSend)
                 && count(explode(' ', $messageToSend)) <= 2
             ) {
