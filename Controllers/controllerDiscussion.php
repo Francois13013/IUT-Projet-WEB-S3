@@ -21,10 +21,10 @@ require_once 'Models/RequireAll.php';
 session_start();
 
 $database = new Database(
-    'mysql-francois.alwaysdata.net',
-    'francois_oui',
-    '0621013579',
-    'francois_project'
+    HOST,
+    USER,
+    PASSWORD,
+    TABLENAME
 );
 $currentTopic = $database->getTopic(
     explode('/Topic/', $_SERVER['REQUEST_URI'])[1]
@@ -41,10 +41,10 @@ define('LIMITMSGPERTOPIC', '10'); //Limite de message par topic
 function requestMessage()
 {
     $database = new Database(
-        'mysql-francois.alwaysdata.net',
-        'francois_oui',
-        '0621013579',
-        'francois_project'
+        HOST,
+        USER,
+        PASSWORD,
+        TABLENAME
     );
     $database->getAllMessages(CURRENTIDTOPIC);
     $allMessageFromThisTopic = $_SESSION['messagesArray' . CURRENTIDTOPIC];
@@ -70,10 +70,10 @@ function addWords()
 {
     if ($_SESSION['login'] == 'ok') {
         $db = new Database(
-            'mysql-francois.alwaysdata.net',
-            'francois_oui',
-            '0621013579',
-            'francois_project'
+            HOST,
+            USER,
+            PASSWORD,
+            TABLENAME
         );
         $currentTopic = $db->getTopic(CURRENTIDTOPIC);
         $messageToSend = $_POST['msg'];
@@ -119,10 +119,10 @@ function addWords()
 function closeMessage()
 {
     $database = new Database(
-        'mysql-francois.alwaysdata.net',
-        'francois_oui',
-        '0621013579',
-        'francois_project'
+        HOST,
+        USER,
+        PASSWORD,
+        TABLENAME
     );
     $lastid = $database->getLastMessages(CURRENTIDTOPIC);
     if ($database->checkIdUserOnMessage($lastid, $_SESSION["IdUser"]) == true) {
@@ -140,10 +140,10 @@ function closeTopic()
 {
     if ($_SESSION['login'] == 'ok' && $_SESSION["Status"] == 1) {
         $database = new Database(
-            'mysql-francois.alwaysdata.net',
-            'francois_oui',
-            '0621013579',
-            'francois_project'
+            HOST,
+            USER,
+            PASSWORD,
+            TABLENAME
         );
         $database->closeTopic(CURRENTIDTOPIC);
     }
@@ -162,10 +162,10 @@ function deleteTopic()
     if ($_SESSION['login'] == 'ok' && $_SESSION["Status"] == 1) {
 
         $database = new Database(
-            'mysql-francois.alwaysdata.net',
-            'francois_oui',
-            '0621013579',
-            'francois_project'
+            HOST,
+            USER,
+            PASSWORD,
+            TABLENAME
         );
         $database->insteadOfTrigger(CURRENTIDTOPIC);
         $database->deleteTopic(CURRENTIDTOPIC);
@@ -210,10 +210,10 @@ function echoMenu()
 function checknumbermsg()
 {
     $database = new Database(
-        'mysql-francois.alwaysdata.net',
-        'francois_oui',
-        '0621013579',
-        'francois_project'
+        HOST,
+        USER,
+        PASSWORD,
+        TABLENAME
     );
     if ($database->getNumberMessage(CURRENTIDTOPIC) >= LIMITMSGPERTOPIC) {
         // Limite de 40 messages

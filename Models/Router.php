@@ -135,10 +135,10 @@ class Router
     public static function getAllTopicsRoutes()
     {
         $database = new Database(
-            'mysql-francois.alwaysdata.net',
-            'francois_oui',
-            '0621013579',
-            'francois_project'
+            HOST,
+            USER,
+            PASSWORD,
+            TABLENAME
         );
         $database->getAllTopic();
         if (isset($_SESSION['topicArray'])) {

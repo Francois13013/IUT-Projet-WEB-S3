@@ -158,7 +158,6 @@ class Database
             echo 'erreur' . mysqli_error($this->_dbLink);
         }
     }
-
     /**
      * Verifie la requete l'execute et renvoie une donnée simple
      *
@@ -616,6 +615,4 @@ class Database
             . $idTopic . '\'';
         mysqli_query($this->getDbLink(), $query);
     }
-
-
 }

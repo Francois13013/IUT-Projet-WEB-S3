@@ -243,10 +243,10 @@ class User
     function emailAlreadyExist()
     {
         $databaseBaptiste = new Database(
-            'mysql-francois.alwaysdata.net',
-            'francois_project',
-            '0621013579',
-            'francois_user'
+            HOST,
+            USER,
+            PASSWORD,
+            TABLENAME
         );
         $query = 'Select Email from User Where Email = \'' . $this->_email . '\' ';
         if ($databaseBaptiste->comparator($query) == 1) {
@@ -277,10 +277,10 @@ class User
     function pseudoAlreadyExist()
     {
         $databaseBaptiste = new Database(
-            'mysql-francois.alwaysdata.net',
-            'francois_project',
-            '0621013579',
-            'francois_user'
+            HOST,
+            USER,
+            PASSWORD,
+            TABLENAME
         );
         $query = 'Select Surname from User Where Surname = \''
             . $this->_pseudo . '\' ';

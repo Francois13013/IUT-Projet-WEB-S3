@@ -36,10 +36,10 @@ function randPassword($length)
 
 $email = $_POST['email'];
 $databaseBaptiste = new Database(
-    'mysql-francois.alwaysdata.net',
-    'francois_project',
-    '0621013579',
-    'francois_user'
+    HOST,
+    USER,
+    PASSWORD,
+    TABLENAME
 );
 if ($databaseBaptiste->CheckEmail($email) == 1) {
     $newPass = randPassword('10');

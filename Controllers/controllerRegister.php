@@ -23,10 +23,10 @@ $password = $_POST['Password'] ;
 $secondPassword = $_POST['PasswordTwice'] ;
 $email = $_POST['Email'] ;
 $databaseBaptiste = new Database(
-    'mysql-francois.alwaysdata.net',
-    'francois_project',
-    '0621013579',
-    'francois_user'
+    HOST,
+    USER,
+    PASSWORD,
+    TABLENAME
 );
 
 

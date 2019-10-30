@@ -17,10 +17,10 @@
 require_once 'Models/RequireAll.php';
 
 $database = new Database(
-    'mysql-francois.alwaysdata.net',
-    'francois_oui',
-    '0621013579',
-    'francois_project'
+    HOST,
+    USER,
+    PASSWORD,
+    TABLENAME
 );
 $database->getAllTopic();
 
@@ -51,10 +51,10 @@ function controllerAddTopic()
     if ($_SESSION['login'] == 'ok') {
 
         $database = new Database(
-            'mysql-francois.alwaysdata.net',
-            'francois_oui',
-            '0621013579',
-            'francois_project'
+            HOST,
+            USER,
+            PASSWORD,
+            TABLENAME
         );
         if ($database->getNumberTopicOpen() <= OPENTOPICLIMIT
             && $database->getNumberTopic() <= TOPICLIMIT

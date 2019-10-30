@@ -15,10 +15,10 @@
 
 
 $database = new Database(
-    'mysql-francois.alwaysdata.net',
-    'francois_oui',
-    '0621013579',
-    'francois_project'
+        HOST,
+    USER,
+    PASSWORD,
+    TABLENAME
 );
 $topic = $database->getTopTopic();
 print_r($topic);

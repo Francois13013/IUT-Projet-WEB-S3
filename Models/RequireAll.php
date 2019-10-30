@@ -13,6 +13,11 @@
  * @since      1.0.0
  */
 
+define('HOST','mysql-francois.alwaysdata.net');
+define('USER','francois_project');
+define('PASSWORD','0621013579');
+define('TABLENAME','francois_project');
+
 /**
  * Fonction qui require la classe en parametre
  *

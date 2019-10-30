@@ -66,10 +66,10 @@ function changePassword()
 {
     $user = $_SESSION['user'];
     $databaseBaptiste = new Database(
-        'mysql-francois.alwaysdata.net',
-        'francois_project',
-        '0621013579',
-        'francois_user'
+        HOST,
+        USER,
+        PASSWORD,
+        TABLENAME
     );
     $newPassword = $_POST['ChangePassword'];
     $user->setPassword($newPassword);
@@ -89,10 +89,10 @@ function changeEmail()
 {
     $user = $_SESSION['user'];
     $databaseBaptiste = new Database(
-        'mysql-francois.alwaysdata.net',
-        'francois_project',
-        '0621013579',
-        'francois_user'
+        HOST,
+        USER,
+        PASSWORD,
+        TABLENAME
     );
     $newEmail = $_POST['ChangeEmail'];
     $user->setEmail($newEmail);
