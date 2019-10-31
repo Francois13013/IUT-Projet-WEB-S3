@@ -28,8 +28,8 @@
 </head>
 <body>
 <header>
-    <img alt="logo site" id='logoFreenote' src="../../Public/media/freenote.png" >
-    <img alt="logo utilisateur" id="logoUser" src="../../Public/media/user.png" >
+    <img alt="logo site" id='logoFreenote' src="../../Public/media/freenoteO.png" >
+    <img alt="logo utilisateur" id="logoUser" src="../../Public/media/UserOrange.png" >
 </header>
 
 <form class="userMenu" method="post">
