@@ -264,12 +264,21 @@ input{
 }
 
 button {
-    background-color: #E8A87C;
+    /*background-color: #E8A87C;*/
+    background-color: #d3d3d3;
+    border-color: #ffcb60;
+    border-style: dot-dot-dash;
     border-radius: 4%;
     border-width: 0;
 }
 body {
-    background-color: #0080dc;
+    /*background-image: url("/Public/media/Sans-titre-1.jpg");*/
+    /*background-repeat: no-repeat ;*/
+    /*background-attachment: fixed ;*/
+    /*background-position:top center;*/
+    /*background-color:  #0080dc;*/
+    /*background: linear-gradient(#0080dc,deepskyblue);*/
+    background: linear-gradient(#1D4850,#425B8A);
     position: relative;
     height:100%;
     /*overflow-y: scroll;*/
@@ -285,7 +294,9 @@ header{
     justify-content: space-around;
     top:0;
     align-items: center;
-    /*background-color: blueviolet;*/
+    background-color: #1D4850;
+    border-style: double;
+    border-color: #ffcb60;
     z-index:3;
 }
 
@@ -320,7 +331,8 @@ header img{
     justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
-    background: #E27D60;
+    background: linear-gradient(#1D4850,#425B8A);
+    border-color: #ffcb60;
     font-size: 30px;
 }
 
@@ -328,7 +340,6 @@ header img{
     /*height:14%;*/
     font-size: 20px;
 }
-
 
 
 
@@ -424,11 +435,18 @@ footer a {
     margin-left:15%;
     margin-right:15%;
     align-items: center;
+    border: 4px ridge #ffcb60;
     border-radius: 12px;
-    background-color: #E27D60;
+    /*background: linear-gradient(SandyBrown, LightSalmon);*/
+    /*background: linear-gradient(#ffa483, #ffb347);*/
+    background: linear-gradient(#1D4850,#425B8A);
+    /*#ffb347);*/
+    font-style: normal ;
+    font-family: "Sitka Text";
+    color: wheat;
 }
 #mainInfo *{
-    font-size: 21px;
+    font-size: 20px;
 
     margin: 4%;
     display:flex;
@@ -545,7 +563,7 @@ footer a {
         /*top:8.5%;*/
         top:-27%;
         border-radius: 26px;
-        border: 2px solid #E8A87C;
+        border: 2px solid #ffcb60;
     }
     #userMenuOff{
         top:8.5%;
@@ -598,7 +616,6 @@ footer a {
         font-size: 18px;
     }
     #mainInfo *{
-        font-size: 24px;
         margin:1%;
         width:60%;
 
