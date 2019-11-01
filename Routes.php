@@ -47,12 +47,6 @@ Router::add(
 );
 
 Router::add(
-    '/test', function () {
-        Controller::test();
-    }
-);
-
-Router::add(
     '/Contact', function () {
         Controller::createView('viewContact');
     }
