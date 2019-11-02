@@ -16,8 +16,7 @@
  */
 ?>
 
-
-<form id="" action="/Controllers/controllerRegister.php" method="post">
+<form id="formRegister" action="/Controllers/controllerRegister.php" method="post">
     <label id="pseudoLabel" for="pseudoInput">Pseudo</label>
     <input id="pseudoInput" class="pseudo" type="text" name="Pseudo">
     <label id="emailLabel" for="emailInput">Email</label>
@@ -32,7 +31,6 @@
 
     <input id="submitform" type="submit" value="submit">
 </form>
-
 
 <?php
 $bypass = array();
