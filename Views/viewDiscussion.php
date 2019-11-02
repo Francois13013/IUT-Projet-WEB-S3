@@ -33,9 +33,17 @@ session_start();
     ?>
     <div id='ContentTopic'>
         <form method="post"  onsubmit="<?php addWords();?>">
-            <label>Message</label>
-            <input type='text' name="msg">
-            <button action="submit">Envoyer</button>
+            <?php if (isset($_SESSION['login'])) {
+                $html = '<label > Message</label >';
+                $html .= '<input type = "text" name = "msg" >';
+                $html .= '<button action = "submit" > Envoyer</button >';
+            } else {
+                $html = '<a>';
+                $html .= 'Connectez-vous ou inscrivez-vous pour envoyer un message';
+                $html .= '</a>';
+            }
+            echo $html;
+            ?>
         </form>
         <div id="allMessages">
             <?php requestMessage();?>
