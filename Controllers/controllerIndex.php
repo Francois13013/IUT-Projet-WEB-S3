@@ -34,9 +34,24 @@ define('TOPICLIMIT', '20'); //Limite globale du nombre de topic ouvert ou fermé
  */
 function requestTop()
 {
-    $html = '<h1>#1 bla bla bla bla</h1>';
-    $html .= '<h1>#2 bla bla bla bla</h1>';
-    $html .= '<h1>#3 bla bla bla bla</h1>';
+    $database = new Database(
+        HOST,
+        USER,
+        PASSWORD,
+        TABLENAME
+    );
+    $arrayTop = $database->getTopTopic();
+    $topic1 = $database->getTopic($arrayTop[0]);
+    $topic2 = $database->getTopic($arrayTop[1]);
+    $topic3 = $database->getTopic($arrayTop[2]);
+    $html = '<h2 class="TopTopic" id="Titre">' . 'Voici les topics les plus actifs';
+    $html .= '</h2>';
+    $html .= '<h3 class="TopTopic" onclick="location.href=\'/Topic/';
+    $html .= $topic1->getIdTopic() . '\'" >#1 ' . $topic1->getNameTopic() .'</h3>';
+    $html .= '<h3 class="TopTopic" onclick="location.href=\'/Topic/';
+    $html .= $topic2->getIdTopic() . '\'" >#2 ' . $topic2->getNameTopic() .'</h3>';
+    $html .= '<h3 class="TopTopic" onclick="location.href=\'/Topic/';
+    $html .= $topic3->getIdTopic() . '\'" >#3 ' . $topic3->getNameTopic() .'</h3>';
     echo $html;
 }
 

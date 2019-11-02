@@ -597,7 +597,7 @@ class Database
     }
 
     /**
-     * Obtenir le top des topics, a finir de com
+     * Obtenir le top des topics
      *
      * @return array
      */
@@ -605,8 +605,8 @@ class Database
     {
         $query = 'Select IdTopic from Messages group by IdTopic
             order by count(IdTopic) DESC LIMIT 3;';
-        $row = mysqli_fetch_assoc(mysqli_query($this->getDbLink(), $query));
-        return $row[0];
+        $returnedArray = $this->checkError($query);
+        return $returnedArray;
     }
 
     /**
