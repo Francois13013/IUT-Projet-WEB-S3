@@ -22,24 +22,10 @@ require_once 'Controllers/controllerIndex.php'
 <link rel="stylesheet" href="../Public/css/styleIndex.css">
     <div id='containerInfoTop'>
          <div class="container" id="containerInfo">
-           <p>e depuis les années 1500, quand un imprimeur anonyme assembla ensemble
-               des morceaux de texte pour réaliser
-            un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq
-               siècles, mais s'est aussi adapté à la bureautique
-            informatique, sans que son contenu n'en soit modifié. Il a été popularisé
-               dans les années 1960 grâce à la vente de feuilles Letraset contenant
-               des passages du Lorem Ipsum, et, plus récemment, par son inclusion
-               dans des applications de mise en page de
-               des passages du Lorem Ipsum, et, plus récemment, par son inclusion
-               dans des applications de mise en page de
-               des passages du Lorem Ipsum, et, plus récemment, par son inclusion
-               dans des applications de mise en page de
-               des passages du Lorem Ipsum, et, plus récemment, par son inclusion
-               dans des applications de mise en page de
-
-            des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans
-               des applications de mise en page de
-            texte, comme Aldus PageMaker. </p>
+           <p>Bienvenue sur FreeNote un site d'un nouveau genre développé par un groupe d'étudiants qui permet d'échanger à travers de courts messages de 1 ou 2 mots par utilisateur et que chaque utilisateur peut continuer jusqu'a ce que le message soit fermée.
+               Les topics étant ouverts par les utilisateurs chacun peuvent trouver un sujet qui l'intéresse ou créer directement le sujet sur lequel il aimerait discuter.Qu'il soit utilisateur ou visiteur chacun peut consulter les différents
+               sujets mais seuls les utilisateurs peuvent discuter à travers la plateforme.Avec Freenote partager de facon dynamique sur des sujets quelconques devient une addiction !
+           </p>
          </div>
          <div class="container" id="containerTop">
                 <?php requestTop();?>
