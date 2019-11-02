@@ -48,6 +48,9 @@ function requestMessage()
     );
     $database->getAllMessages(CURRENTIDTOPIC);
     $allMessageFromThisTopic = $_SESSION['messagesArray' . CURRENTIDTOPIC];
+    if (empty($allMessageFromThisTopic)) {
+       echo '<p id="pasdemsg">' . 'Pas de message dans ce topic' . '</a>';
+    }
     foreach ($allMessageFromThisTopic as &$thisMessage) {
         $idCurrent = $thisMessage->getIdMessage();
         $html = '<div>';
