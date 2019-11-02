@@ -14,15 +14,18 @@
  */
 
     session_start();
-if (isset($_SESSION['MailSend']) && $_SESSION['MailSend'] == 'whynot') {
-    echo 'Mail envoyé si ' . " l'adresse" . ' email existe.';
-}
-require_once ('../Controllers/controllerForgetPassword.php');
+
 
 ?>
 
-<form id='ForgetPassword' action="../Controllers/controllerForgetPassword.php" method="POST">
+<form id='ForgetPassword' action="/Controllers/controllerForgetPassword.php" method="POST">
     <label for="inputEmailForgetPassword" >Saisissez-vôtre adresse mail</label>
     <input id="inputEmailForgetPassword" name='email' type='text'>
     <button>Envoyer</button>
+    <?php
+    if (isset($_SESSION['MailSend']) && $_SESSION['MailSend'] == 'whynot') {
+        echo '<p>' . 'Un email avec un nouveau mot de passe vient d\'être envoyé 
+        si ' . " l'adresse" . ' email existe.' . '</p>';
+        unset($_SESSION['MailSend']);
+    } ?>
 </form>

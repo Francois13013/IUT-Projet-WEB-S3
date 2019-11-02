@@ -14,7 +14,8 @@
  * @since      1.0.0
  */
 
-require_once 'Models/RequireAll.php';
+require_once '../Models/RequireAll.php';
+//require_once '../Models/Database.php';
 
 session_start();
 
@@ -51,5 +52,6 @@ if ($databaseBaptiste->CheckEmail($email) == 1) {
     $databaseBaptiste->updatePassword($email, sha1($newPass));
 }
 $_SESSION['MailSend'] = "whynot";
+var_dump($_POST['email']);
 header('Location: /ForgetPassword');
 exit();
