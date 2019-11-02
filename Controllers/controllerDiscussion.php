@@ -55,8 +55,8 @@ function requestMessage()
         $html .= $thisMessage->getcontent();
         $html .= '</p>';
         if (isset($_SESSION["IdUser"]) == true) {
-            $html .= '<a>';
-            $html .= 'Supprime ce message';
+            $html .= '<a class="deleteButton">';
+            $html .= 'Supprimer ce message';
             $html .= '</a>';
         }
         $html .= '</div>';

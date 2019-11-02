@@ -301,6 +301,25 @@ footer a {
     text-align: center;
 }
 
+#divisionButton{
+    display:flex;
+    justify-content: space-around;
+    width:80%;
+}
+
+#divisionButton * {
+    width:40%;
+}
+
+#allMessages * {
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
 @media only screen and (min-width: 1100px) {
     #midpage {
         height: 91.5%;
@@ -416,5 +435,10 @@ footer a {
 
     #mainInfo h1 {
         font-size: 48px;
+    }
+    #MenuTopicIn{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
     }
 }
