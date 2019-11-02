@@ -60,7 +60,6 @@ function controllerAddTopic()
             && $database->getNumberTopic() <= TOPICLIMIT
         ) {
             if (isset($_POST['nameTopic']) && !empty($_POST['nameTopic'])
-                && !empty($_POST['nameTopic']) && $_POST
             ) {
                 $database->newTopic($_POST['nameTopic']);
                 unset($_POST['nameTopic']);
@@ -93,4 +92,3 @@ function request()
             '</div>';
     }
 }
-

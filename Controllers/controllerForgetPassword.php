@@ -52,6 +52,6 @@ if ($databaseBaptiste->CheckEmail($email) == 1) {
     $databaseBaptiste->updatePassword($email, sha1($newPass));
 }
 $_SESSION['MailSend'] = "whynot";
-var_dump($_POST['email']);
+unset($_POST['email']);
 header('Location: /ForgetPassword');
 exit();

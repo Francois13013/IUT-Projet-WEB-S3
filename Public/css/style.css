@@ -16,9 +16,10 @@ input{
 button {
     background-color: #d3d3d3;
     border-color: #ffcb60;
-    border-style: dot-dot-dash;
     border-radius: 4%;
     border-width: 0;
+    padding-right: 2.5%;
+    padding-left: 2.5%;
 }
 body {
     background-color: #425B8A;
@@ -175,7 +176,8 @@ footer a {
 #mainInfo{
     display:flex;
     flex-direction: column;
-    margin-top:20%;
+    margin-top:10%;
+    margin-bottom:10%;
     width:70%;
     justify-content: space-around;
     margin-left:15%;
@@ -183,6 +185,8 @@ footer a {
     align-items: center;
     border: 4px ridge #ffcb60;
     border-radius: 12px;
+    overflow-y:auto;
+
     /*background: linear-gradient(SandyBrown, LightSalmon);*/
     /*background: linear-gradient(#ffa483, #ffb347);*/
     background: linear-gradient(#1D4850,#425B8A);
@@ -203,7 +207,7 @@ footer a {
 }
 
 #mainInfo div form button{
-    /*background-color: ;*/
+    width:30%;
 }
 
 #mainInfo div input,#mainInfo div form{
@@ -408,6 +412,7 @@ footer a {
         width: 55%;
         margin-left: 22.5%;
         margin-right: 22.5%;
+        margin-bottom: 0;
     }
 
     #mainInfo h1 {
