@@ -49,13 +49,35 @@ function requestMessage()
     $database->getAllMessages(CURRENTIDTOPIC);
     $allMessageFromThisTopic = $_SESSION['messagesArray' . CURRENTIDTOPIC];
     foreach ($allMessageFromThisTopic as &$thisMessage) {
+        $idCurrent = $thisMessage->getIdMessage();
         $html = '<div>';
         $html .= '<p class="Message">';
         $html .= $thisMessage->getcontent();
         $html .= '</p>';
+        if (isset($_SESSION["IdUser"]) == true) {
+            $html .= '<a>';
+            $html .= 'Supprime ce message';
+            $html .= '</a>';
+        }
         $html .= '</div>';
         echo $html;
     }
+}
+
+/**
+ * @param $email
+ * @return bool
+ */
+function RmMessage($IdMessage){
+    $db = new PDO(
+        'mysql:host=mysql-francois.alwaysdata.net;dbname=francois_project',
+        'francois_project',
+        '0621013579');
+
+    $sql =  'DELETE FROM Messages Where IdMessage = IdMessageBind';
+    $dbp = $db->prepare($sql);
+    $dbp->bindParam('IdMessageBind',$IdMessage);
+    $dbp->execute();
 }
 
 /**

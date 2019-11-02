@@ -249,14 +249,6 @@ class Database
         }
     }
 
-    /**
-     * @param $email
-     * @return bool
-     */
-    function test14(){
-        echo 'test';
-    }
-
 //    /**
 //     * Verifie si l'email est déjà existant
 //     *
