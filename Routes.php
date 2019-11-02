@@ -52,6 +52,12 @@ Router::add(
     }
 );
 
+Router::add(
+    '/Admin', function () {
+    Controller::createStandardView('viewAdmin');
+}
+);
+
 Router::getAllTopicsRoutes();
 Router::forceHTTPS();
 Router::checkErrorUrl();

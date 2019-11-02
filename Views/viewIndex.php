@@ -54,10 +54,4 @@ require_once 'Controllers/controllerIndex.php'
             </form>
             <?php request();?>
     </div>
-
-
-
 </div>
-<?php
-
-?>
