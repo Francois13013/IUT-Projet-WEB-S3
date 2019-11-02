@@ -182,17 +182,18 @@ footer a {
     margin-left:15%;
     margin-right:15%;
     align-items: center;
-    border: 4px ridge #ffcb60;
+    border: 4px ridge ;
     border-radius: 12px;
     overflow-y:auto;
 
     /*background: linear-gradient(SandyBrown, LightSalmon);*/
     /*background: linear-gradient(#ffa483, #ffb347);*/
-    background: linear-gradient(#1D4850,#425B8A);
+    background: linear-gradient(#4c96af,whitesmoke);
+
     /*#ffb347);*/
     font-style: normal ;
     font-family: "Sitka Text";
-    color: black;
+    color: dimgrey;
 }
 #mainInfo *{
     font-size: 20px;
