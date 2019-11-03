@@ -12,31 +12,6 @@
  * @link       *
  * @since      1.0.0
  */
-
-//
-//$database = new Database(
-//        HOST,
-//    USER,
-//    PASSWORD,
-//    TABLENAME
-//);
-//
-//function getTopTopic()
-//{
-//    $database = new Database(
-//        HOST,
-//        USER,
-//        PASSWORD,
-//        TABLENAME
-//    );
-//    $query = 'Select IdTopic from Messages group by IdTopic
-//            order by count(IdTopic) DESC LIMIT 3;';
-//    $returnedArray = $database->checkError($query);
-//    return $returnedArray;
-//}
-//
-//$topic = getTopTopic();
-//print_r($topic);
-
 ?>
+
 <h1>Vous avez cette Erreur</h1>

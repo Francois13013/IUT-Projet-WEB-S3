@@ -13,7 +13,8 @@
  * @since      1.0.0
  */
 
-require_once 'Controllers/controllerDiscussion.php';
+require __DIR__ . "/../Controllers/controllerDiscussion.php";
+//require_once '../Controllers/controllerDiscussion.php';
 session_start();
 
 ?>
@@ -25,7 +26,8 @@ session_start();
         closeMessage();
     } else if (array_key_exists('CloseDiscussion', $_POST)) {
         closeTopic();
-    } else if (array_key_exists('RenameTopic', $_POST)) {
+    } else if (array_key_exists('rmMessage', $_POST)) {
+        rmmsg($_POST['rmMessageInput']);
     } else if (array_key_exists('DeleteTopic', $_POST)) {
         deleteTopic();
     }

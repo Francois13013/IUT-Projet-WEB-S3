@@ -58,9 +58,9 @@ function requestMessage()
         $html .= $thisMessage->getcontent();
         $html .= '</p>';
         if (isset($_SESSION["IdUser"]) == true) {
-            $html .= '<a class="deleteButton">';
-            $html .= 'Supprimer ce message';
-            $html .= '</a>';
+            $html .= '<p class="IdMessage">';
+            $html .= $idCurrent;
+            $html .= '</p>';
         }
         $html .= '</div>';
         echo $html;
@@ -71,17 +71,18 @@ function requestMessage()
  * @param $email
  * @return bool
  */
-function RmMessage($IdMessage){
-    $db = new PDO(
-        'mysql:host=mysql-francois.alwaysdata.net;dbname=francois_project',
-        'francois_project',
-        '0621013579');
+function rmmsg($IdMessage){
 
-    $sql =  'DELETE FROM Messages Where IdMessage = IdMessageBind';
-    $dbp = $db->prepare($sql);
-    $dbp->bindParam('IdMessageBind',$IdMessage);
-    $dbp->execute();
+    $database = new Database(
+        HOST,
+        USER,
+        PASSWORD,
+        TABLENAME
+    );
+    $sql =  'DELETE FROM Messages Where IdMessage =\'' . $IdMessage . '\'';
+    mysqli_query($database->getDbLink(), $sql);
 }
+
 
 /**
  * Verifie si les conditions de rajout de mot son valide
@@ -116,7 +117,7 @@ function addWords()
                 } else {
                     $lastMessage = $db->getLastMessages(CURRENTIDTOPIC);
                     if ($db->checkIdUserOnMessage($lastMessage, $idUser) == false) {
-                        //verif si l'user a ecrit ou pas
+                        //verifie si l'user a ecrit ou pas
                         if ($db->getLastMessages(CURRENTIDTOPIC)) {
                             $db->addContentMsg(
                                 $db->getLastMessages(CURRENTIDTOPIC),
@@ -129,7 +130,11 @@ function addWords()
                         }
                     }
                 }
+            } else {
+//                $_SESSION['ProblemeDiscussion'] .= 'MsgNotOk';
             }
+        } else {
+//            $_SESSION['ProblemeDiscussion'] .= 'TopicClose';
         }
     }
     unset($_POST['msg']);
@@ -216,9 +221,12 @@ function echoMenu()
         $html .= '<div id="MenuAdminDiscussion">';
         $html .= '<input type="submit" name="CloseDiscussion" 
         class="button" value="Fermer la discussion" />';
-        $html .= '<input type="text" name="RenameTopicText"/>';
-        $html .= '<input type="submit" name="RenameTopic" class="button" 
-        value="Renomer le topic" />';
+
+        $html .= '<label for="rmMessageInput">Id du message à supprimer</label>';
+        $html .= '<input id="rmMessageInput" type="text" name="rmMessageInput"/>';
+        $html .= '<input type="submit" name="rmMessage" class="button" 
+        value="Supprimer le message" />';
+
         $html .= '<input type="submit" name="DeleteTopic" class="button" 
         value="Supprimer le topic" />';
         $html .= '</div>';
