@@ -3,7 +3,7 @@
     <footer id="footer">
         <a>Copyright Iut Informatique ©</a>
         <a class="bottom" href="#" onClick="MyWindow=window.open(
-            '/Index','Accueil','width=600,height=300'
+            '/AboutUs','A propos de nous','width=600,height=300'
             ); return false;">A propos de nous</a>
     </footer>
 <script src="../../Public/js/menu.js"></script>

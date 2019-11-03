@@ -321,8 +321,14 @@ footer a {
     align-items: center;
 }
 
+#pasdemsg{
+    margin-top:5%;
+    font-size: 26px;
+}
+
 @media only screen and (min-width: 1100px) {
     #midpage {
+        overflow-y: auto;
         height: 91.5%;
     }
 

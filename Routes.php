@@ -47,15 +47,15 @@ Router::add(
 );
 
 Router::add(
-    '/Contact', function () {
-        Controller::createView('viewContact');
-    }
-);
-
-Router::add(
     '/Admin', function () {
     Controller::createStandardView('viewAdmin');
+});
+
+Router::add(
+    '/AboutUs', function () {
+    Controller::createView('viewAboutUs');
 }
+
 );
 
 Router::getAllTopicsRoutes();
