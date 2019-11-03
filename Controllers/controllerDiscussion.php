@@ -95,48 +95,52 @@ function rmmsg($IdMessage){
 function addWords()
 {
     if ($_SESSION['login'] == 'ok') {
-        $db = new Database(
-            HOST,
-            USER,
-            PASSWORD,
-            TABLENAME
-        );
-        $currentTopic = $db->getTopic(CURRENTIDTOPIC);
-        $messageToSend = $_POST['msg'];
-        if ($currentTopic->getStatus() != 0) {
+        if ($_POST['msg']) {
+            $messageToSend = $_POST['msg'];
             if (isset($messageToSend) && preg_match("/[A-Za-z0-9]+/", $messageToSend)
                 && count(explode(' ', $messageToSend)) <= 2
             ) {
-                $idUser = $_SESSION["IdUser"];
-                if ($db->getLastMessageStatut(CURRENTIDTOPIC) == 0) {
-                    $db->newMessage(CURRENTIDTOPIC, $idUser);
-                    $lastMessage = $db->getLastMessages(CURRENTIDTOPIC);
-                    $db->addContentMsg(
-                        $lastMessage, $_POST['msg'], $_SESSION["IdUser"]
-                    );
-                } else {
-                    $lastMessage = $db->getLastMessages(CURRENTIDTOPIC);
-                    if ($db->checkIdUserOnMessage($lastMessage, $idUser) == false) {
-                        //verifie si l'user a ecrit ou pas
-                        if ($db->getLastMessages(CURRENTIDTOPIC)) {
-                            $db->addContentMsg(
-                                $db->getLastMessages(CURRENTIDTOPIC),
-                                ' ' . $_POST['msg'], $idUser
-                            );
-                        } else {
-                            $db->newMessage(CURRENTIDTOPIC, $idUser);
-                            $lastMessage = $db->getLastMessages(CURRENTIDTOPIC);
-                            $db->addContentMsg($lastMessage, $_POST['msg'], $idUser);
+                $db = new Database(
+                    HOST,
+                    USER,
+                    PASSWORD,
+                    TABLENAME
+                );
+                $currentTopic = $db->getTopic(CURRENTIDTOPIC);
+                if ($currentTopic->getStatus() != 0) {
+                    $idUser = $_SESSION["IdUser"];
+                    if ($db->getLastMessageStatut(CURRENTIDTOPIC) == 0) {
+                        $db->newMessage(CURRENTIDTOPIC, $idUser);
+                        $lastMessage = $db->getLastMessages(CURRENTIDTOPIC);
+                        $db->addContentMsg(
+                            $lastMessage, $_POST['msg'], $_SESSION["IdUser"]
+                        );
+                    } else {
+                        $lastMessage = $db->getLastMessages(CURRENTIDTOPIC);
+                        if ($db->checkIdUserOnMessage($lastMessage, $idUser) == false) {
+                            //verifie si l'user a ecrit ou pas
+                            if ($db->getLastMessages(CURRENTIDTOPIC)) {
+                                $db->addContentMsg(
+                                    $db->getLastMessages(CURRENTIDTOPIC),
+                                    ' ' . $_POST['msg'], $idUser
+                                );
+                            } else {
+                                $db->newMessage(CURRENTIDTOPIC, $idUser);
+                                $lastMessage = $db->getLastMessages(CURRENTIDTOPIC);
+                                $db->addContentMsg($lastMessage, $_POST['msg'], $idUser);
+                            }
                         }
                     }
+                } else {
+                    $_SESSION['inputError'] = 'Le topic est fermée';
                 }
             } else {
-//                $_SESSION['ProblemeDiscussion'] .= 'MsgNotOk';
+                $_SESSION['inputError'] =
+               'Le message doit contenir deux mots ou moins sans charactères spéciaux';
             }
-        } else {
-//            $_SESSION['ProblemeDiscussion'] .= 'TopicClose';
         }
     }
+    echo $_SESSION['inputError'];
     unset($_POST['msg']);
 }
 

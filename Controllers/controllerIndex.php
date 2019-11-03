@@ -81,15 +81,15 @@ function controllerAddTopic()
                         exit();
                     }
                 } else {
-                $_SESSION['inputTopicError'] =
+                $_SESSION['inputError'] =
                     'Le maximum de topic est atteint';
                 }
             } else {
-                $_SESSION['inputTopicError'] =
+                $_SESSION['inputError'] =
                     'Le maximum de topic ouvert est atteint';
             }
         } else {
-            $_SESSION['inputTopicError'] =
+            $_SESSION['inputError'] =
                 'Connectez-vous ou inscrivez-vous pour créer un topic.';
         }
     }

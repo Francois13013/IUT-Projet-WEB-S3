@@ -57,3 +57,14 @@ unset($_SESSION['ProblemeLog']);
 
 </body>
 </html>
+
+<?php
+if (!empty($_SESSION['inputError'])) {
+    $tt = $_SESSION['inputError'];
+    $js = '<script type="text/javascript">showPopup("';
+    $js .= $tt;
+    $js .= '");</script>';
+    echo $js;
+}
+unset($_SESSION['inputError']);
+?>

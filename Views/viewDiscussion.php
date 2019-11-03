@@ -34,7 +34,7 @@ session_start();
 
     ?>
     <div id='ContentTopic'>
-        <form method="post"  onsubmit="<?php addWords();?>">
+        <form method="post"  onsubmit="<?php addWords();?> ">
             <?php if (isset($_SESSION['login'])) {
                 $html = '<label > Message</label >';
                 $html .= '<input type = "text" name = "msg" >';
