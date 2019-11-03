@@ -14,4 +14,4 @@
  */
 ?>
 
-<h1>Vous avez cette Erreur</h1>
+<h1>Vous avez une Erreur</h1>
