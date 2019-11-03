@@ -2,9 +2,21 @@
 <link rel="stylesheet" href="../../Public/css/stylefooter.css">
     <footer id="footer">
         <a>Copyright Iut Informatique ©</a>
+        <div class="Personne">
+            <a href="https://github.com/florentRmd">Florent Reymond</a>
+        </div>
+        <div class="Personne">
+            <a href="https://github.com/corentinplee">Corentin Plee</a>
+        </div>
+        <div class="Personne">
+            <a href="https://github.com/Baptiste-Sevilla">Baptiste Sevilla</a>
+        </div>
+        <div class="Personne">
+            <a href="https://github.com/francoisAlHaddad">François Al Haddad-Siderikoudis</a>
+        </div>
         <a class="bottom" href="#" onClick="MyWindow=window.open(
             '/AboutUs','A propos de nous','width=600,height=300'
-            ); return false;">A propos de nous</a>
+            ); return false;"></a>
     </footer>
 <script src="../../Public/js/menu.js"></script>
 <script src="../../Public/js/Discussion.js"></script>

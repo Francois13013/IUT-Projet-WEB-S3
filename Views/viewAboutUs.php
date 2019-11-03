@@ -1,21 +1,17 @@
-<p>Ns sommes un grp d'etudiant de l'iut info et c'est un proje ....</p>
+<p>Nous sommes un groupe d'etudiant de l'iut info d'Aix-Marseille composé de:</p>
 <div class="Personne">
-    <p>Florent</p>
-    <p>Reymond</p>
-    <a>GitHub</a>
+    <p>Florent Reymond </p>
+    <a href="https://github.com/florentRmd">GitHub</a>
 </div>
 <div class="Personne">
-    <p>Corentin</p>
-    <p>Plee</p>
-    <a>GitHub</a>
+    <p>Corentin Plee</p>
+    <a href="https://github.com/corentinplee">GitHub</a>
 </div>
 <div class="Personne">
-    <p>Baptiste</p>
-    <p>Sevilla</p>
-    <a>GitHub</a>
+    <p>Baptiste Sevilla</p>
+    <a href="https://github.com/Baptiste-Sevilla">GitHub</a>
 </div>
 <div class="Personne">
-    <p>François</p>
-    <p>Al Haddad-Siderikoudis</p>
-    <a>GitHub</a>
+    <p>François Al Haddad-Siderikoudis</p>
+    <a href="https://github.com/francoisAlHaddad">GitHub</a>
 </div>
