@@ -6,9 +6,6 @@
             <a href="https://github.com/corentinplee">Corentin Plee</a>
             <a href="https://github.com/Baptiste-Sevilla">Baptiste Sevilla</a>
             <a href="https://github.com/francoisAlHaddad">François Al Haddad-Siderikoudis</a>
-        <a class="bottom" href="#" onClick="MyWindow=window.open(
-            '/AboutUs','A propos de nous','width=600,height=300'
-            ); return false;"></a>
     </footer>
 <script src="../../Public/js/menu.js"></script>
 <script src="../../Public/js/Discussion.js"></script>

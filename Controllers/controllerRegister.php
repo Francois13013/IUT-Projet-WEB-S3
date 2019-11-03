@@ -33,21 +33,27 @@ if (!empty($_POST['Pseudo']) || !empty($_POST['Password'])
     || !empty($_POST['PasswordTwice']
     || !empty($_POST['Email']))) {
     $user = new User($username, $email, $password, '', '');
-    if ($secondPassword == $password) {
-        if ($user->checkUser() == true) {
-            $databaseBaptiste->insertUser($user);
+    if (isset($_POST['checkbox'])) {
+        if ($secondPassword == $password) {
+            if ($user->checkUser() == true) {
+                $databaseBaptiste->insertUser($user);
+            } else {
+                header('Location: /Register');
+                exit();
+            }
         } else {
+            if (isset($_SESSION['Probleme'])) {
+                $_SESSION['Probleme'] .= ',SecondPassword';
+            } else {
+                $_SESSION['Probleme'] = "SecondPassword";
+            }
+            echo $_SESSION['Probleme'];
+            $user->checkUser();
             header('Location: /Register');
             exit();
         }
     } else {
-        if (isset($_SESSION['Probleme'])) {
-            $_SESSION['Probleme'] .= ',SecondPassword';
-        } else {
-            $_SESSION['Probleme'] = "SecondPassword";
-        }
-        echo $_SESSION['Probleme'];
-        $user->checkUser();
+        $_SESSION['inputError'] = 'Merci d\'accepter les conditions d\'utilisations.';
         header('Location: /Register');
         exit();
     }

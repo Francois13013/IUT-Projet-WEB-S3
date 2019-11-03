@@ -325,10 +325,6 @@ class User
                 $_SESSION['Probleme'] = "Password";
             }
             $return = false;
-        } else {
-            $_SESSION['inputError'] = 'Le mot de passe doit être';
-            $_SESSION['inputError'] .= ' inférieur à 16 charactères';
-            $_SESSION['inputError'] .= ' et supérieur à 8 charactères.';
         }
 
         if ($this->checkEmail() == false) {
@@ -338,10 +334,6 @@ class User
                 $_SESSION['Probleme'] = "Email";
             }
             $return = false;
-        } else {
-            $_SESSION['inputError'] = 'L\'adresse doit être standard';
-            $_SESSION['inputError'] .= 'et l\' hebergeur ne doit pas être';
-            $_SESSION['inputError'] .= 'jetable';
         }
 
         if ($this->checkPseudo() == false) {

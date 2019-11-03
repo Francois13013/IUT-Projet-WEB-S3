@@ -61,5 +61,5 @@ Pseudo.onclick = function ()
 
 Email.onclick = function ()
 {
-    popupAnotherTitle('Information','L\'adresse doit être standard et l\' hebergeur ne doit pas être jetable');
+    popupAnotherTitle('Information','L\'adresse doit être standard et l\'hebergeur ne doit pas être jetable xxxxxx');
 }

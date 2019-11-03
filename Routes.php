@@ -52,11 +52,14 @@ Router::add(
 });
 
 Router::add(
+    '/UserConditions', function () {
+    Controller::createView('viewUserConditions');
+});
+
+Router::add(
     '/AboutUs', function () {
     Controller::createView('viewAboutUs');
-}
-
-);
+});
 
 Router::getAllTopicsRoutes();
 Router::forceHTTPS();
