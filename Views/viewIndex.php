@@ -41,3 +41,13 @@ require_once 'Controllers/controllerIndex.php'
             <?php request();?>
     </div>
 </div>
+<?php
+    if (!empty($_SESSION['inputTopicError'])) {
+        $tt = $_SESSION['inputTopicError'];
+        $js = '<script type="text/javascript">showPopup("';
+        $js .= $tt;
+        $js .= '")</script>';
+        echo $js;
+    }
+    unset($_SESSION['inputTopicError']);
+?>

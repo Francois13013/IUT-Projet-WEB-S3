@@ -63,26 +63,34 @@ function requestTop()
  */
 function controllerAddTopic()
 {
-    if ($_SESSION['login'] == 'ok') {
-
+    if (isset($_POST['nameTopic']) && !empty($_POST['nameTopic'])) {
+        if ($_SESSION['login'] == 'ok') {
         $database = new Database(
             HOST,
             USER,
             PASSWORD,
             TABLENAME
         );
-        if ($database->getNumberTopicOpen() <= OPENTOPICLIMIT
-            && $database->getNumberTopic() <= TOPICLIMIT
-        ) {
-            if (isset($_POST['nameTopic']) && !empty($_POST['nameTopic'])
-            ) {
-                $database->newTopic($_POST['nameTopic']);
-                unset($_POST['nameTopic']);
-                header("Refresh:0");
-                exit();
+            if ($database->getNumberTopicOpen() < OPENTOPICLIMIT) {
+                if ($database->getNumberTopic() < TOPICLIMIT) {
+                    if (isset($_POST['nameTopic']) && !empty($_POST['nameTopic'])
+                    ) {
+                        $database->newTopic($_POST['nameTopic']);
+                        unset($_POST['nameTopic']);
+                        header("Refresh:0");
+                        exit();
+                    }
+                } else {
+                $_SESSION['inputTopicError'] =
+                    'Le maximum de topic est atteint';
+                }
+            } else {
+                $_SESSION['inputTopicError'] =
+                    'Le maximum de topic ouvert est atteint';
             }
         } else {
-            //Prob here
+            $_SESSION['inputTopicError'] =
+                'Connectez-vous ou inscrivez-vous pour créer un topic.';
         }
     }
 }
@@ -94,18 +102,17 @@ function controllerAddTopic()
  */
 function request()
 {
+        foreach ($_SESSION['topicArray'] as &$value) {
+            $onclk = 'onClick=' . 'location.href="/Topic/' . $value->getIdTopic() . '";';
+            if ($value->getStatus() == 1) {
+                $txt = 'ouvert';
+            } else {
+                $txt = 'Fermée';
+            }
 
-    foreach ($_SESSION['topicArray'] as &$value) {
-        $onclk = 'onClick=' . 'location.href="/Topic/' . $value->getIdTopic() . '";';
-        if ($value->getStatus() == 1) {
-            $txt = 'ouvert';
-        } else {
-            $txt = 'Fermée';
+            echo '<div class = \'topicRow\' ' . $onclk . '>' .
+                '<p class=\'NameTopic\'>' . $value->getNameTopic() . '</p>' .
+                '<p class=\'Statut\'>' . $txt . '</p>' .
+                '</div>';
         }
-
-        echo '<div class = \'topicRow\' ' . $onclk . '>' .
-            '<p class=\'NameTopic\'>' . $value->getNameTopic() . '</p>' .
-            '<p class=\'Statut\'>' . $txt . '</p>' .
-            '</div>';
-    }
 }

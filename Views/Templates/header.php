@@ -22,6 +22,7 @@
 
     ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../../Public/js/popup.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="1000000" >
     <title>FreeNote</title>
