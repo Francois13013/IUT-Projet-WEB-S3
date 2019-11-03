@@ -15,6 +15,7 @@
  * @link       *
  * @since      1.0.0
  */
+
 require_once '../Models/RequireAll.php';
 
 session_start();
@@ -30,8 +31,9 @@ $databaseBaptiste = new Database(
 );
 
 if (!empty($_POST['Pseudo']) || !empty($_POST['Password'])
-    || !empty($_POST['PasswordTwice']
-    || !empty($_POST['Email']))) {
+    || !empty($_POST['PasswordTwice'])
+    || !empty($_POST['Email'])
+) {
     $user = new User($username, $email, $password, '', '');
     if (isset($_POST['checkbox'])) {
         if ($secondPassword == $password) {
@@ -53,7 +55,8 @@ if (!empty($_POST['Pseudo']) || !empty($_POST['Password'])
             exit();
         }
     } else {
-        $_SESSION['inputError'] = 'Merci d\'accepter les conditions d\'utilisations.';
+        $_SESSION['inputError'] = 'Merci d\'accepter les conditions d\'';
+        $_SESSION['inputError'] = 'utilisations.';
         header('Location: /Register');
         exit();
     }

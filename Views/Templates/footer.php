@@ -5,7 +5,8 @@
             <a href="https://github.com/florentRmd">Florent Reymond</a>
             <a href="https://github.com/corentinplee">Corentin Plee</a>
             <a href="https://github.com/Baptiste-Sevilla">Baptiste Sevilla</a>
-            <a href="https://github.com/francoisAlHaddad">François Al Haddad-Siderikoudis</a>
+            <a href="https://github.com/francoisAlHaddad">
+                François Al Haddad-Siderikoudis</a>
     </footer>
 <script src="../../Public/js/menu.js"></script>
 <script src="../../Public/js/logged.js"></script>

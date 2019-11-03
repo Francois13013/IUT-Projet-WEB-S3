@@ -75,7 +75,7 @@ function changePassword()
     if (!empty($_POST['ChangePassword'])) {
         $user->setPassword($newPassword);
         if ($user->CheckPassword() == true) {
-            $databaseBaptiste->updatePassword($user->getEmail(), sha1($newPassword));;
+            $databaseBaptiste->updatePassword($user->getEmail(), sha1($newPassword));
             $_SESSION['user'] = $user;
         } else {
             $_SESSION['inputError'] = 'Le mot de passe doit être';
@@ -103,7 +103,7 @@ function changeEmail()
     if (!empty($_POST['ChangeEmail'])) {
         $newEmail = $_POST['ChangeEmail'];
         $user->setEmail($newEmail);
-        if ($user->CheckEmail() == true || $user->CheckEmailHost($newEmail) == true) {
+        if ($user->CheckEmail() || $user->CheckEmailHost($newEmail)) {
             $databaseBaptiste->updateEmail($user->getId(), $newEmail);
             $_SESSION['user'] = $user;
         } else {

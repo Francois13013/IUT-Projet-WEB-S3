@@ -66,8 +66,11 @@ function controllerAddTopic()
     if (isset($_POST['nameTopic']) && !empty($_POST['nameTopic'])) {
         if ($_SESSION['login'] == 'ok') {
             if (isset($_POST['nameTopic']) && strlen($_POST['nameTopic']) > 2) {
-                if (!preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/'
-                    , $_POST['nameTopic'])) {
+                if (!preg_match(
+                    '/[\'^£$%&*()}{@#~?><>,|=_+¬-]/',
+                    $_POST['nameTopic']
+                )
+                ) {
                     $database = new Database(
                         HOST,
                         USER,
@@ -81,12 +84,12 @@ function controllerAddTopic()
                             header("Refresh:0");
                             exit();
                         } else {
-                            $_SESSION['inputError'] =
-                                'Le maximum de topic est atteint';
+                            $_SESSION['inputError'] = 'Le maximum de topic';
+                            $_SESSION['inputError'] .= ' est atteint';
                         }
                     } else {
-                        $_SESSION['inputError'] =
-                            'Le maximum de topic ouvert est atteint';
+                        $_SESSION['inputError'] = 'Le maximum de topic ouvert';
+                        $_SESSION['inputError'] .= ' est atteint';
                     }
                 } else {
                     $_SESSION['inputError'] = 'Le nom du topic ne doit pas avoir';
@@ -97,8 +100,8 @@ function controllerAddTopic()
                 $_SESSION['inputError'] .= ' 2 charatères.';
             }
         } else {
-            $_SESSION['inputError'] =
-                'Connectez-vous ou inscrivez-vous pour créer un topic.';
+            $_SESSION['inputError'] = 'Connectez-vous ou ';
+            $_SESSION['inputError'] = 'inscrivez-vous pour créer un topic.';
         }
     }
 }

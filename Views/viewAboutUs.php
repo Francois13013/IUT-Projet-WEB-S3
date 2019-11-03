@@ -1,3 +1,5 @@
+<?php
+?>
 <p>Nous sommes un groupe d'etudiant de l'iut info d'Aix-Marseille composé de:</p>
 <div class="Personne">
     <p>Florent Reymond </p>

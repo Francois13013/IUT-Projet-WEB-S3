@@ -67,3 +67,5 @@ Router::add(
 Router::getAllTopicsRoutes();
 Router::forceHTTPS();
 Router::checkErrorUrl();
+
+?>

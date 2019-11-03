@@ -39,7 +39,8 @@
     </div>
 
 
-    <input id="passwordInputRegister" class="password" type="password" name="Password">
+    <input id="passwordInputRegister" class="password" type="password"
+           name="Password">
     <label for="twicePasswordInput">Repeter mot de passe</label>
 
 

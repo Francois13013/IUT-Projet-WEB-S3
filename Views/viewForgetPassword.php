@@ -16,7 +16,8 @@
     session_start();
 ?>
 
-<form id='ForgetPassword' action="/Controllers/controllerForgetPassword.php" method="POST">
+<form id='ForgetPassword' action="/Controllers/controllerForgetPassword.php"
+      method="POST">
     <label for="inputEmailForgetPassword" >Saisissez-vôtre adresse mail</label>
     <input id="inputEmailForgetPassword" name='email' type='text'>
     <button>Envoyer</button>

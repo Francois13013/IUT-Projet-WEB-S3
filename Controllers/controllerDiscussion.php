@@ -68,7 +68,10 @@ function requestMessage()
 }
 
 /**
- * @param  $email
+ * Supprime un message à l'aide de son Id
+ *
+ * @param $IdMessage Id du message à supprimer
+ *
  * @return bool
  */
 function rmmsg($IdMessage)
@@ -98,7 +101,8 @@ function addWords()
     if ($_SESSION['login'] == 'ok') {
         if ($_POST['msg']) {
             $messageToSend = $_POST['msg'];
-            if (isset($messageToSend) && preg_match("/[A-Za-z0-9\",@]+/", $messageToSend)
+            if (isset($messageToSend)
+                && preg_match("/[A-Za-z0-9\",@]+/", $messageToSend)
                 && !(count(explode(' ', $messageToSend)) > 2)
             ) {
                 $db = new Database(
@@ -118,7 +122,7 @@ function addWords()
                         );
                     } else {
                         $lastMessage = $db->getLastMessages(CURRENTIDTOPIC);
-                        if ($db->checkIdUserOnMessage($lastMessage, $idUser) == false) {
+                        if (!($db->checkIdUserOnMessage($lastMessage, $idUser))) {
                             //verifie si l'user a ecrit ou pas
                             if ($db->getLastMessages(CURRENTIDTOPIC)) {
                                 $db->addContentMsg(
@@ -127,8 +131,14 @@ function addWords()
                                 );
                             } else {
                                 $db->newMessage(CURRENTIDTOPIC, $idUser);
-                                $lastMessage = $db->getLastMessages(CURRENTIDTOPIC);
-                                $db->addContentMsg($lastMessage, $_POST['msg'], $idUser);
+                                $lastMessage = $db->getLastMessages(
+                                    CURRENTIDTOPIC
+                                );
+                                $db->addContentMsg(
+                                    $lastMessage,
+                                    $_POST['msg'],
+                                    $idUser
+                                );
                             }
                         }
                     }
@@ -136,8 +146,8 @@ function addWords()
                     $_SESSION['inputError'] = 'Le topic est fermée';
                 }
             } else {
-                $_SESSION['inputError'] = 'Le message doit contenir deux mots ou moins';
-                $_SESSION['inputError'] = 'sans charactères spéciaux';
+                $_SESSION['inputError'] = 'Le message doit contenir deux mots ou ';
+                $_SESSION['inputError'] = 'moins sans charactères spéciaux';
                 $_SESSION['inputError'] = '(Exceptés " , @ )';
             }
         }

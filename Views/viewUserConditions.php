@@ -1,3 +1,5 @@
+<?php
+?>
 <h1>Condition d'utilisation</h1>
 <ul>
     <li>J'accepte que toute mes communications soit tracables</li>

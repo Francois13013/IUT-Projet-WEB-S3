@@ -249,13 +249,13 @@ class Database
         }
     }
 
-    //    /**
-    //     * Verifie si l'email est déjà existant
-    //     *
-    //     * @param $email Email à vérifier
-    //     *
-    //     * @return bool
-    //     */
+    /**
+     * Verifie si l'email est déjà existant
+     *
+     * @param $email Email à vérifier
+     *
+     * @return bool
+     */
     function checkEmail($email)
     {
         $query = 'Select Email from User Where Email = \'' . $email . '\' ';
