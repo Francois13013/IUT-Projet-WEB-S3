@@ -14,8 +14,6 @@
  */
 
     session_start();
-
-
 ?>
 
 <form id='ForgetPassword' action="/Controllers/controllerForgetPassword.php" method="POST">

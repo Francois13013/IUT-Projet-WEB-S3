@@ -32,6 +32,7 @@ if ($_SESSION['login'] == 'ok') {
         . 'loggedMenu('.' \''. $_SESSION["Surname"] .'\' '.');'
         . '</script>';
 }
+
 echo $_SESSION['ProblemeLog'];
 echo '<script type="text/javascript" src="../../Public/js/RedBorder.js"></script>';
 if (isset($_SESSION['ProblemeLog']) && $_SESSION['ProblemeLog'] = 'BadLog') {

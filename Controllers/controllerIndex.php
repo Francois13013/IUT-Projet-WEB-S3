@@ -81,6 +81,8 @@ function controllerAddTopic()
                 header("Refresh:0");
                 exit();
             }
+        } else {
+//            $_SESSION['ProblemeCreateIndex'] = ''
         }
     }
 }

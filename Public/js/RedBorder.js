@@ -2,28 +2,26 @@ function ErrorCall(errorname)
 {
     let tmp = errorname;
     if (errorname === 'BadLog') {
-        if (window.innerWidth <= 1100) {
-            document.querySelector('.menuphoneuser').classList.toggle("offmenu");
-
-        } else {
-            document.querySelector('.menuphoneuser').classList.toggle("menuuserpcoff");
-        }
-        tmp = 'usernameinput';
-        ErrorCall('passwordinput');
+        document.querySelector('#logoUser').click();
+        tmp = 'usernameInput';
+        ErrorCall('passwordInput');
     }
     if (errorname === 'PseudoExistant') {
-        tmp = 'Surname';
+        tmp = 'pseudoInput';
         document.getElementById('labelPseudo').innerHTML = document.getElementById('labelPseudo').innerHTML + ' (Pseudo déjà pris)';
     }
     if (errorname === 'EmailExistant') {
-        tmp = 'Email';
-        document.getElementById('labelEmail').innerHTML = document.getElementById('labelEmail').innerHTML + ' (Email déjà incrite)';
+        tmp = 'emailInput';
+        document.getElementById('emailLabel').innerHTML = document.getElementById('emailLabel').innerHTML + ' (Email déjà incrite)';
     }
     if (errorname === 'SecondPassword') {
-        tmp = 'RepeterMDP'; ErrorCall('Password');
+        tmp = 'twicePasswordInput'; ErrorCall('passwordInputRegister');
+    }
+    if (errorname === 'Password') {
+        tmp = 'passwordInputRegister';
     }
     if (errorname === 'Pseudo') {
-        tmp = 'Surname';
+        tmp = 'pseudoInput';
     }
     document.getElementById(tmp).style.borderWidth = '2px';
     document.getElementById(tmp).style.borderColor = 'Red';

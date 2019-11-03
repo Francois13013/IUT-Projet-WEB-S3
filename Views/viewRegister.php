@@ -22,7 +22,7 @@
     <label id="emailLabel" for="emailInput">Email</label>
     <input id="emailInput" class="email" type="text" name="Email">
     <label for="passwordInput">Mot de passe</label>
-    <input id="passwordInput" class="password" type="password" name="Password">
+    <input id="passwordInputRegister" class="password" type="password" name="Password">
     <label for="twicePasswordInput">Repeter Mot de passe</label>
     <input id="twicePasswordInput"
            class="twicePassword" type="password" name="PasswordTwice">
