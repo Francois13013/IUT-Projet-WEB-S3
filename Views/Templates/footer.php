@@ -1,7 +1,7 @@
 </div>
 <link rel="stylesheet" href="../../Public/css/stylefooter.css">
     <footer id="footer">
-        <a>Copyright Iut Informatique ©</a>
+        <a>Copyright Iut Informatique 2019 ©</a>
             <a href="https://github.com/florentRmd">Florent Reymond</a>
             <a href="https://github.com/corentinplee">Corentin Plee</a>
             <a href="https://github.com/Baptiste-Sevilla">Baptiste Sevilla</a>

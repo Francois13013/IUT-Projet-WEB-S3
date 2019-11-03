@@ -79,8 +79,8 @@ function changePassword()
             $_SESSION['user'] = $user;
         } else {
             $_SESSION['inputError'] = 'Le mot de passe doit être';
-            $_SESSION['inputError'] .= ' inférieur à 16 charactères';
-            $_SESSION['inputError'] .= ' et supérieur à 8 charactères.';
+            $_SESSION['inputError'] .= ' supérieur à 8 charactères';
+            $_SESSION['inputError'] .= ' et inférieur à 16 charactères.';
         }
     }
 }
