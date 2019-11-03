@@ -72,10 +72,16 @@ function changePassword()
         TABLENAME
     );
     $newPassword = $_POST['ChangePassword'];
-    $user->setPassword($newPassword);
-    if ($user->CheckPassword() == true) {
-        $databaseBaptiste->updatePassword($user->getEmail(), sha1($newPassword));;
-        $_SESSION['user'] = $user;
+    if (!empty($_POST['ChangePassword'])) {
+        $user->setPassword($newPassword);
+        if ($user->CheckPassword() == true) {
+            $databaseBaptiste->updatePassword($user->getEmail(), sha1($newPassword));;
+            $_SESSION['user'] = $user;
+        } else {
+            $_SESSION['inputError'] = 'Le mot de passe doit être';
+            $_SESSION['inputError'] .= ' inférieur à 16 charactères';
+            $_SESSION['inputError'] .= ' et supérieur à 8 charactères.';
+        }
     }
 }
 
