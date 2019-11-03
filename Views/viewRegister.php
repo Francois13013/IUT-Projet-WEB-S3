@@ -17,17 +17,37 @@
 ?>
 
 <form id="formRegister" action="/Controllers/controllerRegister.php" method="post">
-    <label id="pseudoLabel" for="pseudoInput">Pseudo</label>
+    <div class="labelQuestion">
+        <label id="pseudoLabel" for="pseudoInput">Pseudo</label>
+        <img class="questionMark" src="../Public/media/questionMark.png"
+             id="pseudoQuestionMark" alt="Question">
+    </div>
     <input id="pseudoInput" class="pseudo" type="text" name="Pseudo">
-    <label id="emailLabel" for="emailInput">Email</label>
+
+    <div class="labelQuestion">
+        <label id="emailLabel" for="emailInput">Email</label>
+        <img class="questionMark" src="../Public/media/questionMark.png"
+             id="emailQuestionMark" alt="Question">
+    </div>
+
     <input id="emailInput" class="email" type="text" name="Email">
-    <label for="passwordInput">Mot de passe</label>
+
+    <div class="labelQuestion">
+        <label for="passwordInputRegister">Mot de passe</label>
+        <img class="questionMark" src="../Public/media/questionMark.png"
+             id="passwordQuestionMark" alt="Question">
+    </div>
+
+
     <input id="passwordInputRegister" class="password" type="password" name="Password">
-    <label for="twicePasswordInput">Repeter Mot de passe</label>
+    <label for="twicePasswordInput">Repeter mot de passe</label>
+
+
     <input id="twicePasswordInput"
            class="twicePassword" type="password" name="PasswordTwice">
     <input id="checkbox" class="" type="checkbox" name="checkbox" value="close">
-    <label for="checkbox">J'accepte les conditions d'utilisation</label>
+    <label for="checkbox" id="labelCheckBox">J'accepte les conditions
+        d'utilisation</a></label>
 
     <input id="submitform" type="submit" value="submit">
 </form>
@@ -57,3 +77,5 @@ if ($count == true) {
 }
     unset($_SESSION['Probleme']);
 ?>
+
+<script type="text/javascript" src="../Public/js/Register.js"></script>

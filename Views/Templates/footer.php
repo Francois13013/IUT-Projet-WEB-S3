@@ -13,6 +13,8 @@
 <script src="../../Public/js/menu.js"></script>
 <script src="../../Public/js/Discussion.js"></script>
 <script src="../../Public/js/logged.js"></script>
+<script src="../../Public/js/popup.js"></script>
+
 <?php
 /**
  * Footer
@@ -35,8 +37,6 @@ if ($_SESSION['login'] == 'ok') {
         . 'loggedMenu('.' \''. $_SESSION["Surname"] .'\' '.');'
         . '</script>';
 }
-
-echo $_SESSION['ProblemeLog'];
 echo '<script type="text/javascript" src="../../Public/js/RedBorder.js"></script>';
 if (isset($_SESSION['ProblemeLog']) && $_SESSION['ProblemeLog'] = 'BadLog') {
     echo '<script type="text/javascript">'

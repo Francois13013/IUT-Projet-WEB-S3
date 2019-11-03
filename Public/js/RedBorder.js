@@ -23,6 +23,9 @@ function ErrorCall(errorname)
     if (errorname === 'Pseudo') {
         tmp = 'pseudoInput';
     }
-    document.getElementById(tmp).style.borderWidth = '2px';
+    if (errorname === 'Email') {
+        tmp = 'emailInput';
+    }
+    document.getElementById(tmp).style.borderWidth = '3px';
     document.getElementById(tmp).style.borderColor = 'Red';
 }

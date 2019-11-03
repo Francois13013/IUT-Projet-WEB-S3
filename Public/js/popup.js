@@ -36,3 +36,30 @@ function showPopup(errorText)
         backgroundDivError.remove();
     }
 }
+
+function popupAnotherTitle(newTitle,errorText)
+{
+    showPopup(errorText);
+    document.querySelector('#errorTitle').innerText = newTitle;
+}
+
+Pseudo = document.querySelector("#pseudoQuestionMark");
+Email = document.querySelector("#emailQuestionMark");
+Password = document.querySelector("#passwordQuestionMark");
+
+Password.onclick = function ()
+{
+    popupAnotherTitle('Information','Le mot de passe doit ' +
+        'être supérieur à 8 charactères et inférieur à 16 charactères.');
+}
+
+Pseudo.onclick = function ()
+{
+    popupAnotherTitle('Information','Le pseudo doit ' +
+        'être supérieur à 3 charactères et inférieur à 16 charactères.');
+}
+
+Email.onclick = function ()
+{
+    popupAnotherTitle('Information','L\'adresse doit être standard et l\' hebergeur ne doit pas être jetable');
+}
