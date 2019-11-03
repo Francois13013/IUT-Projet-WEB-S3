@@ -61,11 +61,3 @@ Router::add(
 Router::getAllTopicsRoutes();
 Router::forceHTTPS();
 Router::checkErrorUrl();
-
-//
-//$test = new Router();
-//$test->add('/testa', function (){
-//    require ('header.php');
-//    include_once('footer.php');
-//});
-//$test->Launch();
