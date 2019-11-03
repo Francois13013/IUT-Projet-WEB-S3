@@ -19,7 +19,6 @@ require_once 'Controllers/controllerIndex.php'
 ?>
 
 <div id="mainIndex">
-<link rel="stylesheet" href="../Public/css/styleIndex.css">
     <div id='containerInfoTop'>
          <div class="container" id="containerInfo">
            <p>Bienvenue sur FreeNote un site d'un nouveau genre développé par un groupe d'étudiants qui permet d'échanger à travers de courts messages de 1 ou 2 mots par utilisateur et que chaque utilisateur peut continuer jusqu'a ce que le message soit fermée.

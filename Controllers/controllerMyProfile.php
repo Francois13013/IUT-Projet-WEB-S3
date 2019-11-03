@@ -100,10 +100,15 @@ function changeEmail()
         PASSWORD,
         TABLENAME
     );
-    $newEmail = $_POST['ChangeEmail'];
-    $user->setEmail($newEmail);
-    if ($user->CheckEmail() == true || $user->CheckEmailHost($newEmail) == true) {
-        $databaseBaptiste->updateEmail($user->getId(), $newEmail);
-        $_SESSION['user'] = $user;
+    if (!empty($_POST['ChangeEmail'])) {
+        $newEmail = $_POST['ChangeEmail'];
+        $user->setEmail($newEmail);
+        if ($user->CheckEmail() == true || $user->CheckEmailHost($newEmail) == true) {
+            $databaseBaptiste->updateEmail($user->getId(), $newEmail);
+            $_SESSION['user'] = $user;
+        } else {
+            $_SESSION['inputError'] = 'L\'adresse doit être standard';
+            $_SESSION['inputError'] .= ' et l\'hebergeur ne doit pas être jetable.';
+        }
     }
 }

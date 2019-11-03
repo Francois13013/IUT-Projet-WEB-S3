@@ -8,7 +8,6 @@
             <a href="https://github.com/francoisAlHaddad">François Al Haddad-Siderikoudis</a>
     </footer>
 <script src="../../Public/js/menu.js"></script>
-<script src="../../Public/js/Discussion.js"></script>
 <script src="../../Public/js/logged.js"></script>
 <script src="../../Public/js/popup.js"></script>
 

@@ -48,18 +48,21 @@ Router::add(
 
 Router::add(
     '/Admin', function () {
-    Controller::createStandardView('viewAdmin');
-});
+        Controller::createStandardView('viewAdmin');
+    }
+);
 
 Router::add(
     '/UserConditions', function () {
-    Controller::createView('viewUserConditions');
-});
+        Controller::createView('viewUserConditions');
+    }
+);
 
 Router::add(
     '/AboutUs', function () {
-    Controller::createView('viewAboutUs');
-});
+        Controller::createView('viewAboutUs');
+    }
+);
 
 Router::getAllTopicsRoutes();
 Router::forceHTTPS();

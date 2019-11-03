@@ -82,7 +82,7 @@ class Database
             echo 'Erreur : ' . mysqli_error($this->_dbLink) . '<br/>';
             // Affiche la requête envoyée.
             echo 'Requête : ' . $query . '<br/>';
-//            exit();
+            //            exit();
         }
         if (!($dbResult = mysqli_query($this->_dbLink, $query))) {
             echo 'Erreur de requête<br/>';
@@ -90,7 +90,7 @@ class Database
             echo 'Erreur : ' . mysqli_error($this->_dbLink) . '<br/>';
             // Affiche la requête envoyée.
             echo 'Requête : ' . $query . '<br/>';
-//            exit();
+            //            exit();
         } else {
             $returnArray = array();
             while ($row = mysqli_fetch_assoc($dbResult)) {
@@ -173,7 +173,7 @@ class Database
             echo 'Erreur : ' . mysqli_error($this->_dbLink) . '<br/>';
             // Affiche la requête envoyée.
             echo 'Requête : ' . $query . '<br/>';
-//            exit();
+            //            exit();
         }
         if (!($dbResult = mysqli_query($this->_dbLink, $query))) {
             echo 'Erreur de requête<br/>';
@@ -181,7 +181,7 @@ class Database
             echo 'Erreur : ' . mysqli_error($this->_dbLink) . '<br/>';
             // Affiche la requête envoyée.
             echo 'Requête : ' . $query . '<br/>';
-//            exit();
+            //            exit();
         }
         return $dbResult;
     }
@@ -249,13 +249,13 @@ class Database
         }
     }
 
-//    /**
-//     * Verifie si l'email est déjà existant
-//     *
-//     * @param $email Email à vérifier
-//     *
-//     * @return bool
-//     */
+    //    /**
+    //     * Verifie si l'email est déjà existant
+    //     *
+    //     * @param $email Email à vérifier
+    //     *
+    //     * @return bool
+    //     */
     function checkEmail($email)
     {
         $query = 'Select Email from User Where Email = \'' . $email . '\' ';

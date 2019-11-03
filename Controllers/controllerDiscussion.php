@@ -49,7 +49,7 @@ function requestMessage()
     $database->getAllMessages(CURRENTIDTOPIC);
     $allMessageFromThisTopic = $_SESSION['messagesArray' . CURRENTIDTOPIC];
     if (empty($allMessageFromThisTopic)) {
-       echo '<p id="pasdemsg">' . 'Pas de message dans ce topic' . '</a>';
+        echo '<p id="pasdemsg">' . 'Pas de message dans ce topic' . '</a>';
     }
     foreach ($allMessageFromThisTopic as &$thisMessage) {
         $idCurrent = $thisMessage->getIdMessage();
@@ -68,10 +68,11 @@ function requestMessage()
 }
 
 /**
- * @param $email
+ * @param  $email
  * @return bool
  */
-function rmmsg($IdMessage){
+function rmmsg($IdMessage)
+{
 
     $database = new Database(
         HOST,
@@ -136,7 +137,7 @@ function addWords()
                 }
             } else {
                 $_SESSION['inputError'] =
-               'Le message doit contenir deux mots ou moins sans charactères spéciaux';
+                'Le message doit contenir deux mots ou moins sans charactères spéciaux';
             }
         }
     }

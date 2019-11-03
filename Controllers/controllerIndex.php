@@ -65,12 +65,12 @@ function controllerAddTopic()
 {
     if (isset($_POST['nameTopic']) && !empty($_POST['nameTopic'])) {
         if ($_SESSION['login'] == 'ok') {
-        $database = new Database(
-            HOST,
-            USER,
-            PASSWORD,
-            TABLENAME
-        );
+            $database = new Database(
+                HOST,
+                USER,
+                PASSWORD,
+                TABLENAME
+            );
             if ($database->getNumberTopicOpen() < OPENTOPICLIMIT) {
                 if ($database->getNumberTopic() < TOPICLIMIT) {
                     if (isset($_POST['nameTopic']) && !empty($_POST['nameTopic'])
@@ -81,7 +81,7 @@ function controllerAddTopic()
                         exit();
                     }
                 } else {
-                $_SESSION['inputError'] =
+                    $_SESSION['inputError'] =
                     'Le maximum de topic est atteint';
                 }
             } else {
@@ -102,17 +102,17 @@ function controllerAddTopic()
  */
 function request()
 {
-        foreach ($_SESSION['topicArray'] as &$value) {
-            $onclk = 'onClick=' . 'location.href="/Topic/' . $value->getIdTopic() . '";';
-            if ($value->getStatus() == 1) {
-                $txt = 'ouvert';
-            } else {
-                $txt = 'Fermée';
-            }
-
-            echo '<div class = \'topicRow\' ' . $onclk . '>' .
-                '<p class=\'NameTopic\'>' . $value->getNameTopic() . '</p>' .
-                '<p class=\'Statut\'>' . $txt . '</p>' .
-                '</div>';
+    foreach ($_SESSION['topicArray'] as &$value) {
+        $onclk = 'onClick=' . 'location.href="/Topic/' . $value->getIdTopic() . '";';
+        if ($value->getStatus() == 1) {
+            $txt = 'ouvert';
+        } else {
+            $txt = 'Fermée';
         }
+
+        echo '<div class = \'topicRow\' ' . $onclk . '>' .
+            '<p class=\'NameTopic\'>' . $value->getNameTopic() . '</p>' .
+            '<p class=\'Statut\'>' . $txt . '</p>' .
+            '</div>';
+    }
 }
