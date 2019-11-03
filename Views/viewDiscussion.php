@@ -14,7 +14,7 @@
  */
 
 require __DIR__ . "/../Controllers/controllerDiscussion.php";
-//require_once '../Controllers/controllerDiscussion.php';
+
 session_start();
 
 ?>

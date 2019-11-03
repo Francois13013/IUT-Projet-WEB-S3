@@ -153,7 +153,6 @@ class Database
             '\',\'' . '2' . '\');';
         if (mysqli_query($this->_dbLink, $query)) {
             echo '<meta http-equiv="refresh" content="0;url=' . "/Thanks" . '" />';
-            //            header('Location : /Index');
         } else {
             echo 'erreur' . mysqli_error($this->_dbLink);
         }
@@ -202,7 +201,6 @@ class Database
             $User->getPseudo() . '\' ';
         $dbResult = $this->error($query);
         if (mysqli_num_rows(mysqli_query($this->_dbLink, $query)) == 0) {
-            //            echo 'Utilisateur Introuvable';
             $_SESSION['ProblemeLog'] = 'BadLog';
             header('Location: /Index');
             exit();
@@ -211,7 +209,6 @@ class Database
                 $User->getPassword()
             )
             ) {
-                //                session_start();
                 $_SESSION["login"] = 'ok';
 
                 $array = array(
@@ -241,7 +238,6 @@ class Database
                 header('Location: /Index');
                 exit();
             } else {
-                //                echo 'mdp invalide';
                 $_SESSION['ProblemeLog'] = 'BadLog';
                 header('Location: /Index');
                 exit();
@@ -356,7 +352,6 @@ class Database
         $queryOne = 'Select Content,IdUsersCat from Messages where IdMessage = ' .
             '\'' . $id . '\'';
         $returnedArray = $this->checkError($queryOne);
-        //        print_r($returnedArray);
 
         $contentToAdd = $returnedArray[0] . $newContent;
         $userToAdd = $returnedArray[1] . "," . $idUser;
@@ -430,7 +425,6 @@ class Database
     {
         $queryOne = 'Insert INTO Messages (IdTopic,IdUsersCat) VALUES
             ("' . $idTopic . '"' . ',"' . $idUser . '")';
-        //        $this->error($queryOne);
         mysqli_query($this->_dbLink, $queryOne);
     }
 

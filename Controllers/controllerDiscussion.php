@@ -57,7 +57,7 @@ function requestMessage()
         $html .= '<p class="Message">';
         $html .= $thisMessage->getcontent();
         $html .= '</p>';
-        if (isset($_SESSION["IdUser"]) == true) {
+        if (isset($_SESSION["IdUser"]) == 1) {
             $html .= '<p class="IdMessage">';
             $html .= $idCurrent;
             $html .= '</p>';
@@ -123,7 +123,7 @@ function addWords()
                     } else {
                         $lastMessage = $db->getLastMessages(CURRENTIDTOPIC);
                         if (!($db->checkIdUserOnMessage($lastMessage, $idUser))) {
-                            //verifie si l'user a ecrit ou pas
+                            //verifie si l'user a écrit ou pas
                             if ($db->getLastMessages(CURRENTIDTOPIC)) {
                                 $db->addContentMsg(
                                     $db->getLastMessages(CURRENTIDTOPIC),

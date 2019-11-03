@@ -15,7 +15,6 @@
  */
 
 require_once '../Models/RequireAll.php';
-//require_once '../Models/Database.php';
 
 session_start();
 

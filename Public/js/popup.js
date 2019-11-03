@@ -1,6 +1,5 @@
 function showPopup(errorText)
 {
-    // alert('1');
     imgClose = document.createElement('p');
     imgClose.setAttribute("id", "textClose");
     imgClose.innerText = 'Fermer';

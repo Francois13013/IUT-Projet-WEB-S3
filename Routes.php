@@ -47,12 +47,6 @@ Router::add(
 );
 
 Router::add(
-    '/Admin', function () {
-        Controller::createStandardView('viewAdmin');
-    }
-);
-
-Router::add(
     '/UserConditions', function () {
         Controller::createView('viewUserConditions');
     }

@@ -184,10 +184,6 @@ class User
             "6" => "@univ-amu.fr",
         );
 
-        //preg_match( " /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)
-        //*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)
-        //*\.[a-zA-Z]{2,4}$/ " , $email ) ) {
-
             $strstrEmail = strstr($email, '@');
         for ($i = 1; $i <= count($array); $i++) {
             if ($strstrEmail == $array[$i]) {

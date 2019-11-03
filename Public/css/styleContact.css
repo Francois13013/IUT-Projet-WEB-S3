@@ -1,27 +1,3 @@
-/************************/
-
-
-/*.area-style{*/
-/*    height:200px;*/
-/*    resize: none;*/
-/*}*/
-/*.u-full-width{*/
-/*    width:100%;*/
-/*    box-sizing: border-box;*/
-/*}*/
-/*.columns, .columns {*/
-/*    align-items: center;*/
-/*}*/
-/*label{*/
-/*    display: block;*/
-/*    float: bottom;*/
-/*    align-items: center;*/
-/*}*/
-
-/*#ligne{*/
-/*    width:100%;*/
-/*}*/
-
 #contactform {
     display:flex;
     flex-direction: column;
@@ -51,60 +27,10 @@ body{
     background-image: url('../media/background.jpg');
 }
 
-
-/************************/
-
 @media only screen and (max-width: 1100px) {
     footer {
         position:relative;
         width:100%;
-        /*height:100%;*/
         bottom: 0;
     }
 }
-
-/* css contact a voir plus tard
-footer {
-    padding: 10px;
-    text-align: center;
-    color: white;
-    z-index: 3;
-}
-
-ul{
-    display:  flex;
-}
-a{
-    color:black;
-}
-form{
-    background-color: grey;
-}
-#contactform{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    align-content: center;
-    height:80%;
-    padding-top: 3%;
-    width:100%;
-}
-#contactform * {
-    align-self: center;
-    text-align: center;
-}
-.inputcontact, #subb {
-    max-width:430px;
-    width:63%;
-    height:6%;
-    border-radius: 8px;
-    font-size: 20px;
-}
-.inputcontact2, #subb{
-    max-width:430px;
-    width:63%;
-    height:6%;
-    border-radius:8px;
-    font-size:20px;
-}/*a modifier pour montrer un plus grand cadre pour le message a envoyé*/

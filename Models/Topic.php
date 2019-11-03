@@ -14,8 +14,6 @@
  */
 
 require_once 'RequireAll.php';
-//require_once 'Database.php';
-//require_once 'User.php';
 
 /**
  * Class Topic
