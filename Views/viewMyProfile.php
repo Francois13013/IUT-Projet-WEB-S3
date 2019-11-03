@@ -27,12 +27,12 @@ require_once 'Controllers/controllerMyProfile.php';
     <?php showInfo(); ?>
     <div>
         <form method="post" onsubmit='<?php changeEmail();?>'>
-            <label>Changer Adrs Mail</label>
+            <label>Changer mon adresse mail</label>
             <input name="ChangeEmail" type="text">
             <button type="submit" >Changer</button>
         </form>
         <form method="post" onsubmit='<?php changePassword();?>'>
-            <label>Changer Mot de passe</label>
+            <label>Changer mon mot de passe</label>
             <input name="ChangePassword" type="text">
             <button type="submit" >Changer</button>
         </form>
