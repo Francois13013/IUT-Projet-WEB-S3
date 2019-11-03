@@ -65,33 +65,41 @@ function controllerAddTopic()
 {
     if (isset($_POST['nameTopic']) && !empty($_POST['nameTopic'])) {
         if ($_SESSION['login'] == 'ok') {
-            $database = new Database(
-                HOST,
-                USER,
-                PASSWORD,
-                TABLENAME
-            );
-            if ($database->getNumberTopicOpen() < OPENTOPICLIMIT) {
-                if ($database->getNumberTopic() < TOPICLIMIT) {
-                    if (isset($_POST['nameTopic']) && !empty($_POST['nameTopic'])
-                    ) {
-                        $database->newTopic($_POST['nameTopic']);
-                        unset($_POST['nameTopic']);
-                        header("Refresh:0");
-                        exit();
+            if (isset($_POST['nameTopic']) && strlen($_POST['nameTopic']) > 2) {
+                if (!preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/'
+                    , $_POST['nameTopic'])) {
+                    $database = new Database(
+                        HOST,
+                        USER,
+                        PASSWORD,
+                        TABLENAME
+                    );
+                    if ($database->getNumberTopicOpen() < OPENTOPICLIMIT) {
+                        if ($database->getNumberTopic() < TOPICLIMIT) {
+                            $database->newTopic($_POST['nameTopic']);
+                            unset($_POST['nameTopic']);
+                            header("Refresh:0");
+                            exit();
+                        } else {
+                            $_SESSION['inputError'] =
+                                'Le maximum de topic est atteint';
+                        }
+                    } else {
+                        $_SESSION['inputError'] =
+                            'Le maximum de topic ouvert est atteint';
                     }
                 } else {
-                    $_SESSION['inputError'] =
-                    'Le maximum de topic est atteint';
+                    $_SESSION['inputError'] = 'Le nom du topic ne doit pas avoir';
+                    $_SESSION['inputError'] .= 'de charactères spéciaux.';
                 }
             } else {
-                $_SESSION['inputError'] =
-                    'Le maximum de topic ouvert est atteint';
+                $_SESSION['inputError'] = 'Le nom du topic doit être supérieur à';
+                $_SESSION['inputError'] .= ' 2 charatères.';
             }
-        } else {
-            $_SESSION['inputError'] =
-                'Connectez-vous ou inscrivez-vous pour créer un topic.';
         }
+    } else {
+        $_SESSION['inputError'] =
+            'Connectez-vous ou inscrivez-vous pour créer un topic.';
     }
 }
 
