@@ -26,6 +26,7 @@
     <meta http-equiv="refresh" content="1000000" >
     <title>FreeNote</title>
     <link rel="stylesheet" href="../../Public/css/style.css">
+    <link rel="stylesheet" href="../../Public/css/errorPopupJs.css">
 </head>
 <body>
 <header>

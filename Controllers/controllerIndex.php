@@ -82,7 +82,7 @@ function controllerAddTopic()
                 exit();
             }
         } else {
-//            $_SESSION['ProblemeCreateIndex'] = ''
+            //Prob here
         }
     }
 }
