@@ -52,6 +52,14 @@ header{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    width:90%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 4%;
+}
+
+#formRegister * {
+    font-size:24px;
 }
 
 header img{
@@ -99,6 +107,7 @@ footer{
 
 footer a {
     color:white;
+    font-size: 32px;
 }
 
 #containerTopic {
