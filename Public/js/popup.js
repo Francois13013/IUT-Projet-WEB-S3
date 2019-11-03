@@ -50,17 +50,17 @@ Password = document.querySelector("#passwordQuestionMark");
 Password.onclick = function () {
     popupAnotherTitle(
         'Information','Le mot de passe doit ' +
-        'être supérieur à 8 charactères et inférieur à 16 charactères.'
+        'être supérieur à 8 caractères et inférieur à 32 caractères.'
     );
 }
 
 Pseudo.onclick = function () {
     popupAnotherTitle(
         'Information','Le pseudo doit ' +
-        'être supérieur à 3 charactères et inférieur à 16 charactères.'
+        'être supérieur à 3 caractères et inférieur à 16 caractères.'
     );
 }
 
 Email.onclick = function () {
-    popupAnotherTitle('Information','L\'adresse doit être standard et l\'hebergeur ne doit pas être jetable.');
+    popupAnotherTitle('Information','L\'adresse doit être standard et l\'hébergeur ne doit pas être jetable.');
 }

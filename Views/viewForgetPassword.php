@@ -18,13 +18,13 @@
 
 <form id='ForgetPassword' action="/Controllers/controllerForgetPassword.php"
       method="POST">
-    <label for="inputEmailForgetPassword" >Saisissez-vôtre adresse mail</label>
+    <label for="inputEmailForgetPassword" >Saisissez-votre adresse mail</label>
     <input id="inputEmailForgetPassword" name='email' type='text'>
     <button>Envoyer</button>
     <?php
     if (isset($_SESSION['MailSend']) && $_SESSION['MailSend'] == 'whynot') {
-        echo '<p>' . 'Un email avec un nouveau mot de passe vient d\'être envoyé 
-        si ' . " l'adresse" . ' email existe.' . '</p>';
+        echo '<p>' . 'Un e-mail avec un nouveau mot de passe vient de vous être 
+        envoyé si ' . " l'adresse" . ' e-mail existe.' . '</p>';
         unset($_SESSION['MailSend']);
     } ?>
 </form>

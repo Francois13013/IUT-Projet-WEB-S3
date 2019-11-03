@@ -23,7 +23,7 @@ require_once 'Models/RequireAll.php';
  *
  * @return string
  */
-function stautsToString()
+function statutToString()
 {
     if ($_SESSION["Status"] == 1) {
         return 'Admin';
@@ -46,18 +46,18 @@ function showInfo()
     $html .= '<p>' . $_SESSION["Surname"] . '</p>';
     $html .= '</div>';
     $html .= '<div>';
-    $html .= '<p>Email</p>';
+    $html .= '<p>E-mail</p>';
     $html .= '<p>' . $_SESSION["Email"] . '</p>';
     $html .= '</div>';
     $html .= '<div>';
-    $html .= '<p>Status</p>';
-    $html .= '<p>' . stautsToString() . '</p>';
+    $html .= '<p>Statut</p>';
+    $html .= '<p>' . statutToString() . '</p>';
     $html .= '</div>';
     echo $html;
 }
 
 /**
- * Traite les informations du formulaire et appel un changement de mot de passe
+ * Traite les informations du formulaire et appelle un changement de mot de passe
  * si le nouveau mot de passe correspond au critère de sécurité
  *
  * @return void
@@ -79,8 +79,8 @@ function changePassword()
             $_SESSION['user'] = $user;
         } else {
             $_SESSION['inputError'] = 'Le mot de passe doit être';
-            $_SESSION['inputError'] .= ' supérieur à 8 charactères';
-            $_SESSION['inputError'] .= ' et inférieur à 16 charactères.';
+            $_SESSION['inputError'] .= ' supérieur à 8 caractères';
+            $_SESSION['inputError'] .= ' et inférieur à 32 caractères.';
         }
     }
 }
@@ -108,7 +108,7 @@ function changeEmail()
             $_SESSION['user'] = $user;
         } else {
             $_SESSION['inputError'] = 'L\'adresse doit être standard';
-            $_SESSION['inputError'] .= ' et l\'hebergeur ne doit pas être jetable.';
+            $_SESSION['inputError'] .= ' et l\'hébergeur ne doit pas être jetable.';
         }
     }
 }

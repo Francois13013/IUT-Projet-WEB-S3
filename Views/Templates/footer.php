@@ -3,7 +3,7 @@
     <footer id="footer">
         <a>Copyright Iut Informatique 2019 ©</a>
             <a href="https://github.com/florentRmd">Florent Reymond</a>
-            <a href="https://github.com/corentinplee">Corentin Plee</a>
+            <a href="https://github.com/corentinplee">Corentin Plée</a>
             <a href="https://github.com/Baptiste-Sevilla">Baptiste Sevilla</a>
             <a href="https://github.com/francoisAlHaddad">
                 François Al Haddad-Siderikoudis</a>

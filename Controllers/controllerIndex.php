@@ -93,15 +93,15 @@ function controllerAddTopic()
                     }
                 } else {
                     $_SESSION['inputError'] = 'Le nom du topic ne doit pas avoir';
-                    $_SESSION['inputError'] .= 'de charactères spéciaux.';
+                    $_SESSION['inputError'] .= ' de caractères spéciaux.';
                 }
             } else {
                 $_SESSION['inputError'] = 'Le nom du topic doit être supérieur à';
-                $_SESSION['inputError'] .= ' 2 charatères.';
+                $_SESSION['inputError'] .= ' 2 caractères.';
             }
         } else {
             $_SESSION['inputError'] = 'Connectez-vous ou ';
-            $_SESSION['inputError'] = 'inscrivez-vous pour créer un topic.';
+            $_SESSION['inputError'] .= 'inscrivez-vous pour créer un topic.';
         }
     }
 }
@@ -116,9 +116,9 @@ function request()
     foreach ($_SESSION['topicArray'] as &$value) {
         $onclk = 'onClick=' . 'location.href="/Topic/' . $value->getIdTopic() . '";';
         if ($value->getStatus() == 1) {
-            $txt = 'ouvert';
+            $txt = 'Ouvert';
         } else {
-            $txt = 'Fermée';
+            $txt = 'Fermé';
         }
 
         echo '<div class = \'topicRow\' ' . $onclk . '>' .

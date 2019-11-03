@@ -147,7 +147,7 @@ function addWords()
                 }
             } else {
                 $_SESSION['inputError'] = 'Le message doit contenir deux mots ou ';
-                $_SESSION['inputError'] = 'moins sans charactères spéciaux';
+                $_SESSION['inputError'] = 'moins sans caractères spéciaux';
                 $_SESSION['inputError'] = '(Exceptés " , @ )';
             }
         }

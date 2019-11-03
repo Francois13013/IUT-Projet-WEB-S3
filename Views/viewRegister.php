@@ -41,7 +41,7 @@
 
     <input id="passwordInputRegister" class="password" type="password"
            name="Password">
-    <label for="twicePasswordInput">Repeter mot de passe</label>
+    <label for="twicePasswordInput">Répéter mot de passe</label>
 
 
     <input id="twicePasswordInput"

@@ -167,7 +167,7 @@ class User
     }
 
     /**
-     * Verifie si l'hebergeur de l'email est "connu"
+     * Verifie si l'hébergeur de l'email est "connu"
      *
      * @param $email Email à vérifier
      *
@@ -202,13 +202,13 @@ class User
 
 
     /**
-     * Vérifie si le mot de passe est entre 8 et 16 charactères
+     * Vérifie si le mot de passe est entre 8 et 32 caractères
      *
      * @return bool
      */
     function checkPassword()
     {
-        if (strlen($this->_password) < 8 || strlen($this->_password)>16) {
+        if (strlen($this->_password) < 8 || strlen($this->_password)>32) {
             return false;
         } else {
             return true;
@@ -256,7 +256,7 @@ class User
     }
 
     /**
-     * Verifie si le pseudo est entre 3 et 16 charatères
+     * Verifie si le pseudo est entre 3 et 16 caractères
      *
      * @return bool
      */

@@ -24,12 +24,13 @@ require_once 'Controllers/controllerIndex.php'
            <p>Bienvenue sur FreeNote un site d'un nouveau genre développé par un
                groupe d'étudiants qui permet d'échanger à travers de courts messages
                 de 1 ou 2 mots par utilisateur et que chaque utilisateur peut
-               continuer jusqu'a ce que le message soit fermée.
-               Les topics étant ouverts par les utilisateurs chacun peuvent
+               continuer jusqu'à ce que le message soit fermé.
+               Les topics étant ouverts par les utilisateurs chacun peut
                trouver un sujet qui l'intéresse ou créer directement le sujet sur
-               lequel il aimerait discuter.Qu'il soit utilisateur ou visiteur chacun
-               peut consulter les différents sujets mais seuls les utilisateurs
-               peuvent discuter à travers la plateforme.Avec Freenote partager de
+               lequel il aimerait discuter.Un topic se ferme au bout de 10 messages.
+               Qu'il soit utilisateur ou visiteur chacun peut consulter les
+               différents sujets mais seuls les utilisateurs
+               peuvent discuter à travers la plateforme. Avec Freenote partager de
                facon dynamique sur des sujets quelconques devient une addiction !
            </p>
          </div>
@@ -42,7 +43,7 @@ require_once 'Controllers/controllerIndex.php'
                   onsubmit="<?php controllerAddTopic();?>" >
                 <label></label>
                 <input type="text" name="nameTopic">
-                <button action="submit"> Créer nouveau topic </button>
+                <button action="submit"> Créer un nouveau topic </button>
             </form>
             <?php request();?>
     </div>

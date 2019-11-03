@@ -56,7 +56,7 @@ if (!empty($_POST['Pseudo']) || !empty($_POST['Password'])
         }
     } else {
         $_SESSION['inputError'] = 'Merci d\'accepter les conditions d\'';
-        $_SESSION['inputError'] = 'utilisations.';
+        $_SESSION['inputError'] .= 'utilisation.';
         header('Location: /Register');
         exit();
     }

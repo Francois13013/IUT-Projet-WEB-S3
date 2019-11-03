@@ -1,8 +1,8 @@
 <?php
 ?>
-<h1>Condition d'utilisation</h1>
+<h1>Conditions d'utilisation</h1>
 <ul>
-    <li>J'accepte que toute mes communications soit tracables</li>
+    <li>J'accepte que toutes mes communications soient tracables</li>
     <li>Pas d'insultes</li>
     <li>Pas de flood</li>
     <li>Pas de sujet politique</li>
