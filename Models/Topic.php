@@ -80,7 +80,7 @@ class Topic
 
 
     /**
-     * Attribut une nouvelle valeur a idTopic
+     * Attribut une nouvelle valeur à idTopic
      *
      * @param $tmp Valeur de l'Id Topic
      *
@@ -92,7 +92,7 @@ class Topic
     }
 
     /**
-     * Attribut une nouvelle valeur a nameTopic
+     * Attribut une nouvelle valeur à nameTopic
      *
      * @param $tmp Valeur de nameTopic
      *
@@ -104,7 +104,7 @@ class Topic
     }
 
     /**
-     * Attribut une nouvelle valeur a status
+     * Attribut une nouvelle valeur à statut
      *
      * @param $tmp Valeur de status
      *

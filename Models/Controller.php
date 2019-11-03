@@ -1,6 +1,6 @@
 <?php
 /**
- * Fichier qui permet de gerer les controllers du site.
+ * Fichier qui permet de gérer les controllers du site.
  * Avec des fonctions des différents types de vues
  *
  * PHP VERSION 7.2.22

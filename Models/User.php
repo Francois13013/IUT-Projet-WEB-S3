@@ -107,7 +107,7 @@ class User
     }
 
     /**
-     * Attribut une nouvelle valeur a pseudo
+     * Attribut une nouvelle valeur à pseudo
      *
      * @param $tmp Valeur du pseudo
      *
@@ -119,7 +119,7 @@ class User
     }
 
     /**
-     * Attribut une nouvelle valeur a email
+     * Attribut une nouvelle valeur à email
      *
      * @param $tmp Valeur de l'email
      *
@@ -131,7 +131,7 @@ class User
     }
 
     /**
-     * Attribut une nouvelle valeur a Password
+     * Attribut une nouvelle valeur à Password
      *
      * @param $tmp Valeur du Password
      *
@@ -143,7 +143,7 @@ class User
     }
 
     /**
-     * Attribut une nouvelle valeur a Id
+     * Attribut une nouvelle valeur à Id
      *
      * @param $tmp Valeur de l'Id
      *
@@ -155,7 +155,7 @@ class User
     }
 
     /**
-     * Attribut une nouvelle valeur a Statut
+     * Attribut une nouvelle valeur à Statut
      *
      * @param $tmp Valeur du Statut
      *
@@ -236,7 +236,7 @@ class User
     }
 
     /**
-     * Verifie si l'adresse Mail existe déjà dans la base de donnée
+     * Verifie si l'adresse Mail existe déjà dans la base de données
      *
      * @return bool
      */
@@ -270,7 +270,7 @@ class User
     }
 
     /**
-     * Verifie si le pseudo existe déjà dans la base de donnée
+     * Verifie si le pseudo existe déjà dans la base de données
      *
      * @return bool
      */

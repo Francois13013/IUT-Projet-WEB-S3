@@ -1,7 +1,7 @@
 <?php
 /**
  * Controller de la view MyProfile
- * Fait le lien entre les boutons et la base de donnée et traite
+ * Fait le lien entre les boutons et la base de données et traite
  * les informations mis en "POST"
  *
  * PHP VERSION 7.2.22
@@ -86,7 +86,7 @@ function changePassword()
 }
 
 /**
- * Traite les informations du formulaire et appel un changement adresse mail
+ * Traite les informations du formulaire et appelle un changement adresse mail
  * si le nouveau mot de passe correspond au critère attendu
  *
  * @return void

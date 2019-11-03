@@ -1,7 +1,7 @@
 <?php
 /**
  * Controller de la view ForgetPassword
- * Recupère les informations dans POST et les traites
+ * Récupère les informations dans POST et les traite
  *
  * PHP VERSION 7.2.22
  *

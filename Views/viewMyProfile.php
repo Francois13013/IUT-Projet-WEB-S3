@@ -1,15 +1,13 @@
 <?php
 
 /**
- * Footer
- *
- * Main footer file for the theme.
+ * Vue MyProfile
  *
  * PHP VERSION 7.2.22
  *
- * @category   JeSaisPas
- * @package    WordPress
- * @subpackage Mytheme
+ * @category   View
+ * @package    Standard
+ * @subpackage Standard
  * @author     François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>
  * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
  * @link       ****

@@ -1,7 +1,7 @@
 <?php
 /**
  * Controller de la view Index
- * Recupère les Topics
+ * Récupère les Topics et les gère.
  *
  * PHP VERSION 7.2.22
  *
@@ -28,7 +28,7 @@ define('OPENTOPICLIMIT', '10'); //Limite de topic ouvert en même temps
 define('TOPICLIMIT', '20'); //Limite globale du nombre de topic ouvert ou fermé
 
 /**
- * Affiche les topics où il y a le plus de message
+ * Affiche les topics où il y a le plus de messages
  *
  * @return void
  */
@@ -107,7 +107,7 @@ function controllerAddTopic()
 }
 
 /**
- * Recupère les topics et les affiches
+ * Récupère les topics et les affiches
  *
  * @return void
  */

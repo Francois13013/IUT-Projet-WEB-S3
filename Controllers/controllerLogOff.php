@@ -1,7 +1,7 @@
 <?php
 /**
  * Controller de la view Index
- * Detruit la session en cours
+ * Détruit la session en cours
  * Et actualise la page
  *
  * PHP VERSION 7.2.22

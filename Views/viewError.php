@@ -1,10 +1,10 @@
 <?php
 /**
- * En cours
+ * Page d'erreur
  *
  * PHP VERSION 7.2.22
  *
- * @category   Models
+ * @category   View
  * @package    Standard
  * @subpackage Standard
  * @author     François Al Haddad Siderikoudis <FrancoisAlHaddad@gmail.com>

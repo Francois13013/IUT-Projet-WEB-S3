@@ -34,7 +34,7 @@ define('CURRENTIDTOPIC', $currentTopic->getIdTopic());
 define('LIMITMSGPERTOPIC', '10'); //Limite de message par topic
 
 /**
- * Récupère l'ensemble des messages de la base de donnée et les affiche
+ * Récupère l'ensemble des messages de la base de données et les affiche
  *
  * @return void
  */
@@ -90,7 +90,7 @@ function rmmsg($IdMessage)
 
 /**
  * Verifie si les conditions de rajout de mot son valide
- * Puis concatene le texte mis en input dans la base de donnée
+ * Puis concatene le texte mis en input dans la base de données
  * avec la partie de message déjà existant
  * Si c'est le premier message d'un topic en crée un
  *
@@ -157,7 +157,7 @@ function addWords()
 }
 
 /**
- * Recupere l'id du dernier message
+ * Récupère l'id du dernier message
  * et marque le status du dernier message sur "Fermé" de la discussion
  *
  * @return void
@@ -177,7 +177,7 @@ function closeMessage()
 }
 
 /**
- * Selectionne la base de donnée
+ * Selectionne la base de données
  * et marque le status du topic courant sur "Fermé"
  *
  * @return void
@@ -196,7 +196,7 @@ function closeTopic()
 }
 
 /**
- * Selectionne la base de donnée
+ * Selectionne la base de données
  * et supprime le topic courant
  * ainsi que les messages du topic
  * Renvoie sur l'accueil

@@ -1,6 +1,6 @@
 <?php
 /**
- * Fichier qui permet de gerer les base de donnée du site.
+ * Fichier qui permet de gérer les bases de données du site.
  * Element central du site
  *
  * PHP VERSION 7.2.22
@@ -294,7 +294,7 @@ class Database
     }
 
     /**
-     * Recupère un objet topic en fonction d'un Id depuis la base de donnée
+     * Récupère un objet topic en fonction d'un Id depuis la base de données
      *
      * @param $id description param
      *
@@ -310,7 +310,7 @@ class Database
     }
 
     /**
-     * Instancies les objet messages d'un topic depuis la base de donnée
+     * Instancies les objet messages d'un topic depuis la base de données
      * Pour les ajouter dans une variable $_SESSION
      *
      * @param $id Id du Topic
@@ -372,7 +372,7 @@ class Database
     }
 
     /**
-     * Met a jour le mot de passe dans la base de donnée
+     * Met a jour le mot de passe dans la base de données
      *
      * @param $email       Email de l'utilisateur
      * @param $newPassword Nouveau mot de passe
@@ -388,7 +388,7 @@ class Database
     }
 
     /**
-     * Met a jour l'adresse email dans la base de donnée
+     * Met a jour l'adresse email dans la base de données
      *
      * @param $id       Id de l'utilisateur
      * @param $newEmail Nouvelle adresse mail
@@ -458,7 +458,7 @@ class Database
     }
 
     /**
-     * Marque le status d'un message à ferme dans la base de donnée
+     * Marque le status d'un message à ferme dans la base de données
      *
      * @param $id Id du message
      *
@@ -484,7 +484,7 @@ class Database
     }
 
     /**
-     * Récupère le nombre de topic sur la base de donnée
+     * Récupère le nombre de topic sur la base de données
      *
      * @return mixed
      */

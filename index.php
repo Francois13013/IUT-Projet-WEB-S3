@@ -1,7 +1,7 @@
 <?php
 /**
- * Lancement du site appel des routes.php et redirection
- * (Page optionnel si on change le chemin standard du serveur sur Appache)
+ * Lancement du site appelle des routes et redirection
+ * (Page optionnelle si on change le chemin standard du serveur sur Appache)
  *
  * PHP VERSION 7.2.22
  *
