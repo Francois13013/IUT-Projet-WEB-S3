@@ -98,8 +98,8 @@ function addWords()
     if ($_SESSION['login'] == 'ok') {
         if ($_POST['msg']) {
             $messageToSend = $_POST['msg'];
-            if (isset($messageToSend) && preg_match("/[A-Za-z0-9]+/", $messageToSend)
-                && count(explode(' ', $messageToSend)) <= 2
+            if (isset($messageToSend) && preg_match("/[A-Za-z0-9\",@]+/", $messageToSend)
+                && !(count(explode(' ', $messageToSend)) > 2)
             ) {
                 $db = new Database(
                     HOST,
@@ -136,8 +136,9 @@ function addWords()
                     $_SESSION['inputError'] = 'Le topic est fermée';
                 }
             } else {
-                $_SESSION['inputError'] =
-                'Le message doit contenir deux mots ou moins sans charactères spéciaux';
+                $_SESSION['inputError'] = 'Le message doit contenir deux mots ou moins';
+                $_SESSION['inputError'] = 'sans charactères spéciaux';
+                $_SESSION['inputError'] = '(Exceptés " , @ )';
             }
         }
     }

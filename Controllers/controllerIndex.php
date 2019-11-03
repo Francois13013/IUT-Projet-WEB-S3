@@ -96,10 +96,10 @@ function controllerAddTopic()
                 $_SESSION['inputError'] = 'Le nom du topic doit être supérieur à';
                 $_SESSION['inputError'] .= ' 2 charatères.';
             }
+        } else {
+            $_SESSION['inputError'] =
+                'Connectez-vous ou inscrivez-vous pour créer un topic.';
         }
-    } else {
-        $_SESSION['inputError'] =
-            'Connectez-vous ou inscrivez-vous pour créer un topic.';
     }
 }
 
